@@ -1,0 +1,1 @@
+Goal-Oriented-Agents is a project that aims to develop multi-agents systems that can learn to achieve goals in a complex environment. And the core part is borrowing from Generative Agents created by @joonspk-research.
