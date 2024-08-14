@@ -1,6 +1,6 @@
 import request from "request";
-const AK = "tycSiflHALvv7PufZjw9ZtMh"
-const SK = "xb7SVTX2cTVWbnNNoP75IsVYBh21AubG"
+const AK = process.env.AK
+const SK = process.env.SK
 
 async function sendQuery(prompt) {
     var options = {
