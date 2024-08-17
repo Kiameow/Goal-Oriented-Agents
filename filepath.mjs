@@ -6,3 +6,7 @@ export function getPromptPath() {
 export function getAgentsPath() {
     return __dirname + "/agents";
 }
+
+export function getScenPath() {
+    return __dirname + "/scen";
+}
