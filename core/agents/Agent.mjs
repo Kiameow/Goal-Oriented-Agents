@@ -12,15 +12,16 @@
 // }
 
 import { extractContentBetweenFlags } from "../../helper.mjs";
-import globalState from "../globalState.mjs";
+import globalState from "../globalTime.mjs";
 import { getAgentInfo } from "./agentHelper.mjs";
-import { dailyPlanning } from "./planning.mjs";
+import { dailyPlanning, getCurrentPlan, getNextAction, hourlyPlanning } from "./planning.mjs";
 
 class Agent {
     constructor(id) {
         this.id = id;
         this.dailyPlans = "";
-        this.nextFiveMinutesAction = "";
+        this.hourlyPlans = "";
+        this.nextAction = "";
     }
 
     async init() {
@@ -32,16 +33,55 @@ class Agent {
     async getDailyPlans() {
         const data = await dailyPlanning(this.id, globalState.getDate())
         const dailyPlans = extractContentBetweenFlags(data, "<##FLAG##>");
+        console.log(dailyPlans);
         if (dailyPlans) {
             this.dailyPlans = dailyPlans;
         } else {
             console.log("No daily plans found for today.");
         }
-        return this.dailyPlans;
+
+        this.dailyPlans = dailyPlans;
+        if (this.dailyPlans) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    async getNextFiveMinutesAction() {
-        this.nextFiveMinutesAction = await this.getNextFiveMinutesAction();
+    async getHourlyPlans() {
+        if (!this.dailyPlans) {
+            console.log("Cannot get hourly plans without daily plans.");
+            return false;
+        }
+
+        try {
+            const data = await hourlyPlanning(this.id, this.dailyPlans, globalState.getDate())
+            const hourlyPlans = extractContentBetweenFlags(data, "<##FLAG##>");
+            console.log(hourlyPlans);
+            if (hourlyPlans) {
+                const timeTable = JSON.parse(hourlyPlans);
+                this.hourlyPlans = timeTable;
+            } else {
+                console.log("No hourly plans found for today.");
+            }
+
+            if (this.hourlyPlans) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (error) {
+            console.warn("error | getHourlyPlans | Agent.mjs | ", error);
+            return false;
+        }
+    }
+
+    async getNextAction() {
+        // compare the current time with the timetable and return the current running plan
+        const planRightNow = getCurrentPlan(this.hourlyPlans, globalState.getTime())
+        const surroundingRightNow = 
+        this.nextAction = await getNextAction(this.id, planRightNow, surroundingRightNow, globalState.getDate(), globalState.getTime(), 10) 
     }
 }
 
