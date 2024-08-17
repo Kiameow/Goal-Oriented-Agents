@@ -1,6 +1,5 @@
 import request from "request";
-const AK = process.env.AK
-const SK = process.env.SK
+import dotenv from "dotenv";
 
 async function sendQuery(prompt) {
     var options = {
@@ -38,6 +37,9 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=fa
             let timestamp = new Date().toISOString();
             try {
                 const result = await sendQuery(prompt);
+                if (result.error_msg) {
+                    throw new Error(result.error_msg);
+                }
                 console.log(`${timestamp}: Attempt ${attempts} succeeded: ${result}`);
                 return result;
             } catch (e) {
@@ -66,6 +68,8 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=fa
  * @return string 鉴权签名信息（Access Token）
  */
 function getAccessToken() {
+    dotenv.config();
+    const { AK, SK } = process.env;
 
     let options = {
         'method': 'POST',
