@@ -12,6 +12,6 @@
 
 {{ agentName }}'s goal is {{ goal }}, who assumes the role of {{ role }}.
 ---
-Today is {{datetime}}. Output the {{agentName}}'s plan today in broad-strokes according to the prompt above. The output should be a list with serial number where each item are in the form of "<Number>.<StartTime> to <EndTime>:<Plan>". The first plan's start time should be {{wakeHour}}. Output multiple plans until {{agentName}} get rest. Do not output anything else. Be sure to include the <##FLAG##> sign.
+Today is day {{datetime}}. Output the {{agentName}}'s plan today in broad-strokes according to the prompt above. The output should be a list with serial number where each item are in the form of "<Number>.<StartTime> to <EndTime>:<Plan>". The first plan's start time should be {{wakeHour}}. Output multiple plans until {{agentName}} get rest. Do not output anything else. Be sure to include the <##FLAG##> sign.
 Example output:
 "output": "<##FLAG##>1. 9:00 am to 10:00 am: Wake up and complete the morning routine (brush teeth, shower, get dressed). 2. 10:00 am to 2:00 pm: Attend college classes.<##FLAG##>"
