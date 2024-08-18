@@ -6,6 +6,7 @@
 //     },
 
 import { getScenPath } from "../../filepath.mjs";
+import fs from "fs";
 
 // ]
 class Scen {
@@ -17,6 +18,7 @@ class Scen {
           }, new Map());
     }
 
+    // 读取场景文件
     static fromJson(filePath) {
         try {
             const data = fs.readFileSync(filePath, 'utf8');
@@ -28,6 +30,7 @@ class Scen {
           }
     }
 
+    // 更新某个agent的位置
     updateAgentLocation(agentID, locationID) {
         if (locationID)
         this.agentsDistribution.set(locationID, agentID);

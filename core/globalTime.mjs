@@ -1,5 +1,3 @@
-import Scen from "./scen/Scen.mjs";
-
 class GlobalTime {
     constructor(day = 0, hour = 0, minute = 0) {
       this.day = day;
@@ -34,6 +32,10 @@ class GlobalTime {
   
     getCurrentTime() {
       return `Day ${this.day}, ${String(this.hour).padStart(2, '0')}:${String(this.minute).padStart(2, '0')}`;
+    }
+
+    getCurrentDay() {
+      return this.day
     }
 
     getCurrentClockTime() {

@@ -40,7 +40,8 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=fa
                 if (result.error_msg) {
                     throw new Error(result.error_msg);
                 }
-                console.log(`${timestamp}: Attempt ${attempts} succeeded: ${result}`);
+                console.log(`${timestamp}: Attempt ${attempts} succeeded:`);
+                console.dir(result);
                 return result;
             } catch (e) {
                 console.log(`${timestamp}: Attempt ${attempts} failed: ${e}`);

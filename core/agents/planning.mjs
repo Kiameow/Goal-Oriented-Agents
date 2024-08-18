@@ -2,20 +2,22 @@ import { sendQuerySafely } from "../llm/sendQuery.mjs";
 import { getPromptPath, getAgentsPath } from "../../filepath.mjs";
 import { handlebarHydrate, readJsonFile } from "../../helper.mjs";
 import { getAgentInfo, getCommonset } from "./agentHelper.mjs";
+import { globalAgents } from "./Agent.mjs";
+import { getEstatesInfo } from "./percive.mjs";
 
 async function dailyPlanning(agentId, datetime) {
 // {{commonset}}
 
 // In general, {{lifestyle}}
 // Today is {{datetime}}. Here is {{agentName}}'s plan today in broad-strokes (with the time of the day. e.g., have a lunch at 12:00 pm, watch TV from 7 to 8 pm): 1) wake up and complete the morning routine at {{wakeHour}}, 2)
-    const agentInfo = await getAgentInfo(agentId);
+    const agentInfo = globalAgents.get(agentId);
     const commonset = getCommonset(agentInfo);
 
     const templatePath = getPromptPath() + "/dailyPlanning.hbs";
     const prompt = await handlebarHydrate(templatePath, {
         commonset: commonset,
         datetime: datetime,
-        agentName: agentInfo.agentName,
+        agentName: agentInfo.name,
         goal: agentInfo.goal,
         role: agentInfo.role,
         wakeHour: agentInfo.wakeHour,
@@ -28,7 +30,7 @@ async function dailyPlanning(agentId, datetime) {
 // TODO getNextFiveMinutesAction
 // TODO hourlyPlanning
 async function hourlyPlanning(agentId, dailyPlans, datetime) {
-    const agentInfo = await getAgentInfo(agentId);
+    const agentInfo = globalAgents.get(agentId);
     const commonset = getCommonset(agentInfo);
 
     const templatePath = getPromptPath() + "/hourlyPlanning.hbs";
@@ -36,7 +38,7 @@ async function hourlyPlanning(agentId, dailyPlans, datetime) {
         commonset: commonset,
         datetime: datetime,
         dailyPlans: dailyPlans,
-        agentName: agentInfo.agentName,
+        agentName: agentInfo.name,
         goal: agentInfo.goal,
         role: agentInfo.role,
     })
@@ -45,19 +47,19 @@ async function hourlyPlanning(agentId, dailyPlans, datetime) {
     return response.result;
 }
 
-async function getNextAction(agentId, planRightNow, surrounding, datetime, clocktime, duration) {
-    const agentInfo = await getAgentInfo(agentId);
+async function getNextAction(agentId, planRightNow, surrounding, time, duration) {
+    const agentInfo = globalAgents.get(agentId);
     const commonset = getCommonset(agentInfo);
     const estates = await getEstatesInfo();
     
     const templatePath = getPromptPath() + "/getNextAction.hbs";
     const prompt = await handlebarHydrate(templatePath, {
         commonset: commonset,
-        datetime: datetime,
-        clocktime: clocktime,
+        surrounding: surrounding,
+        clocktime: time,
         estates: estates,
         plan: planRightNow,
-        agentName: agentInfo.agentName,
+        agentName: agentInfo.name,
         goal: agentInfo.goal,
         role: agentInfo.role,
     })
@@ -78,7 +80,7 @@ async function getCurrentPlan(timetable, clocktime) {
     // better way may be to delete the passed plans, so the first plan will be the current plan
     let planRightNow = "";
     timetable.forEach(item => {
-        if (item.clockScale < clocktime.hour) {
+        if ( clocktime.hour < item.clockScale ) {
             planRightNow = item.plan;
         }
     });

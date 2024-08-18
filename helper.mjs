@@ -17,7 +17,9 @@ export function extractContentBetweenFlags(str, flag) {
     const end = str.indexOf(flag, start);
     
     if (start !== -1 && end !== -1 && start < end) {
-        return str.substring(start, end).trim();
+        const _str = str.substring(start, end).trim();
+        const result = _str.split("\\").join("");
+        return result;
     }
     
     return null;
