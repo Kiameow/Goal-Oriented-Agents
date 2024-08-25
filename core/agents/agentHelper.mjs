@@ -13,7 +13,7 @@ async function getAgentInfo(agentName) {
     //     "currentPlace": "Maria Lopez's Home",
     //     "dailyPlan": ""
     // }
-    const agentInfoPath = getAgentsPath() + `/${agentName}.json`;
+    const agentInfoPath = getAgentsPath() + `/${agentName}/info.json`;
     const agentInfo = await readJsonFile(agentInfoPath);
 
     return agentInfo;

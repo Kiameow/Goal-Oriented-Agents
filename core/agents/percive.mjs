@@ -9,27 +9,36 @@ import { globalAgents } from "./Agent.mjs";
  * @param {*} surrounding 
  * @returns 
  */
-async function getSurroundingInfo(locationID, targetAgentID) {
-    const locationInfo = globalScen.locations.find(location => location.id === locationID); // locationInfo is an object the describes the location
-    const agentIDs = globalScen.agentsDistribution.get(locationID).filter(agentID => agentID !== targetAgentID); // agents is an array of objects that describe the agents in the location
-    const agents = agentIDs.map(agentID => globalAgents.get(agentID)); 
+async function getSurroundingInfo(agent) {
+    try {
+        const locationInfo = globalScen.locations.find(location => location.id === agent.currentLocation); // locationInfo is an object the describes the location
+        const agentIDs = globalScen.agentsDistribution.get(agent.currentLocation).filter(agentID => agentID !== targetAgentID); // agents is an array of objects that describe the agents in the location
+        const agents = agentIDs.map(agentID => globalAgents.get(agentID).agentInfo); 
 
-    const templatePath = getPromptPath() + "/agentSurroundings.hbs";
-    const prompt = await handlebarHydrate(templatePath, {
-        location: locationInfo.name,
-        agents: agents
-    })
-    return prompt;
+        const templatePath = getPromptPath() + "/agentSurroundings.hbs";
+        const prompt = await handlebarHydrate(templatePath, {
+            location: locationInfo.name,
+            agents: agents.length > 0 ? agents : null
+        })
+        return prompt;
+    } catch (error) {
+        console.error(error);
+    }
+    
 }
 
 async function getEstatesInfo() {
-    const locations = globalScen.locations;
+    try {
+        const locations = globalScen.locations;
 
-    const templatePath = getPromptPath() + "/estates.hbs";
-    const prompt = await handlebarHydrate(templatePath, {
-        locations: locations,
-    })
-    return prompt;
+        const templatePath = getPromptPath() + "/estates.hbs";
+        const prompt = await handlebarHydrate(templatePath, {
+            locations: locations,
+        })
+        return prompt;
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 export { getSurroundingInfo, getEstatesInfo };
