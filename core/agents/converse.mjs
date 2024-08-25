@@ -10,7 +10,9 @@ async function willToConverse(agent) {
     try {
         const random = Math.random();
         if (random < 0.5) {
-            return null;
+            return {
+                will_converse: false
+            }
         }
 
         const surroundingInfo = getSurroundingInfo(agent);
@@ -31,10 +33,17 @@ async function willToConverse(agent) {
         return result;
     } catch (e) {
         console.error(e);
+        return {
+            will_converse: false
+        }
     }
 }
 
-async function converse(agentsList, topic) {
+async function converse(agentsList, topic, depth=5) {
+    if (depth <= 0) {
+        return null;
+    }
+
     try {
         const prompt = getPrompt("converse", {
             participants: agentsList,
@@ -49,5 +58,8 @@ async function converse(agentsList, topic) {
         return result;
     } catch (e) {
         console.error(e);
+        return converse(agentsList, topic, depth-1)
     }
 }
+
+export { willToConverse, converse };
