@@ -1,7 +1,7 @@
 [
     {
         "id": "MLH",
-        "name": "Maria Lopez's Home",
+        "name": "Maria Lopez Home",
         "description": "Where Maria Lopez rest",
         "rents/month": 0,
         "owned": true
@@ -16,14 +16,14 @@
     {
         "id": "BPG",
         "name": "Bay Park Gardens",
-        "description": "A serene garden setting in the Bay Park district, ideal for a family-friendly restaurant. This spot is surrounded by greenery and provides a peaceful escape from the city. It’s located near the waterfront, with a rent fee of $7,500 per month.",
+        "description": "A serene garden setting in the Bay Park district, ideal for a family-friendly restaurant. This spot is surrounded by greenery and provides a peaceful escape from the city. It is located near the waterfront, with a rent fee of $7,500 per month.",
         "rents/month": 7500,
         "owned": false
     },
     {
         "id": "SCL",
         "name": "Sunset Corner Lounge",
-        "description": "A cozy corner space in a trendy neighborhood, perfect for a casual dining restaurant. It’s located on Sunset Boulevard, surrounded by boutiques and cafes, making it a hotspot for foot traffic. The rent fee is $6,000 per month.",
+        "description": "A cozy corner space in a trendy neighborhood, perfect for a casual dining restaurant. It is located on Sunset Boulevard, surrounded by boutiques and cafes, making it a hotspot for foot traffic. The rent fee is $6,000 per month.",
         "rents/month": 6000,
         "owned": false
     }

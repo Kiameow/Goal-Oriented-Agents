@@ -11,6 +11,7 @@
 //     "wakeHour": "9am"
 // }
 
+import chalk from "chalk";
 import { extractContentBetweenFlags } from "../../helper.mjs";
 import globalTime from "../globalTime.mjs";
 import globalState from "../globalTime.mjs";
@@ -21,26 +22,27 @@ import { dailyPlanning, getCurrentPlan, getNextAction, hourlyPlanning } from "./
 class Agent {
     constructor(id) {
         this.id = id;
+        this.agentInfo = {};
         this.dailyPlans = "";
         this.hourlyPlans = [];
         this.nextAction = "";
         this.currentLocation = "";
+        this.innerThoughts = "";
     }
 
     async init() {
-        const agentInfo = await getAgentInfo(this.id);
-        Object.assign(this, agentInfo);
-        this.currentLocation = agentInfo.initialLocation;
+        this.agentInfo = await getAgentInfo(this.id);
+        this.currentLocation = this.agentInfo.initialLocation;
     }
 
     async getDailyPlans() {
-        const data = await dailyPlanning(this.id, globalTime.getCurrentDay())
+        const data = await dailyPlanning(this.agentInfo, globalTime.getCurrentDay())
         const dailyPlans = extractContentBetweenFlags(data, "<##FLAG##>");
-        console.log(dailyPlans);
+        console.log(chalk.blue(dailyPlans));
         if (dailyPlans) {
             this.dailyPlans = dailyPlans;
         } else {
-            console.log("No daily plans found for today.");
+            console.warn("No daily plans found for today.");
         }
 
         this.dailyPlans = dailyPlans;
@@ -53,25 +55,27 @@ class Agent {
 
     async getHourlyPlans() {
         if (!this.dailyPlans) {
-            console.log("Cannot get hourly plans without daily plans.");
+            console.warn("Cannot get hourly plans without daily plans.");
             return false;
         }
 
         try {
-            const data = await hourlyPlanning(this.id, this.dailyPlans, globalTime.getCurrentDay())
+            const data = await hourlyPlanning(this.agentInfo, this.dailyPlans, globalTime.getCurrentDay())
             const hourlyPlans = extractContentBetweenFlags(data, "<##FLAG##>");
-            console.log(hourlyPlans);
+            console.log(chalk.blue(hourlyPlans));
             if (hourlyPlans) {
                 try {
                     const timeTable = JSON.parse(hourlyPlans);
-                    this.hourlyPlans = timeTable;
+                    this.hourlyPlans = timeTable.map(plan => {
+                        return { ...plan, isDone: false};
+                    });
                 }
                 catch (error) {
-                    console.warn("error | getHourlyPlans | Agent.mjs | JSON.parse(hourlyPlans) | ", error);
+                    console.error("error | getHourlyPlans | Agent.mjs | JSON.parse(hourlyPlans) | ", error);
                     this.hourlyPlans = []
                 }
             } else {
-                console.log("No hourly plans found for today.");
+                console.warn("No hourly plans found for today.");
             }
 
             if (this.hourlyPlans) {
@@ -81,7 +85,7 @@ class Agent {
             }
 
         } catch (error) {
-            console.warn("error | getHourlyPlans | Agent.mjs | ", error);
+            console.error("error | getHourlyPlans | Agent.mjs | ", error);
             return false;
         }
     }
@@ -90,14 +94,14 @@ class Agent {
         // compare the current time with the timetable and return the current running plan
         // ["stay", "keep finishing the research about the local food"]
         const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.getCurrentClockTime())
-        const surroundingRightNow = await getSurroundingInfo(this.currentLocation, this.id)
-        const nextActionStr = await getNextAction(this.id, planRightNow, surroundingRightNow, globalTime.getCurrentTime(), 10) 
+        const surroundingRightNow = await getSurroundingInfo(this)
+        const nextActionStr = await getNextAction(this.agentInfo, planRightNow, surroundingRightNow, globalTime.getCurrentTime(), 10) 
         let nextAction = extractContentBetweenFlags(nextActionStr, "<##FLAG##>")
         
         nextAction = nextAction ?? ["stay", "keep doing what you are doing"]
         this.nextAction = JSON.parse(nextAction);
 
-        console.log("Next Action: I' going to ", this.nextAction[0], " and ", this.nextAction[1]);
+        console.log(chalk.blue("Next Action: I' going to ", this.nextAction[0], " and ", this.nextAction[1]));
     }
 }
 
