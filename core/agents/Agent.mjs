@@ -14,10 +14,11 @@
 import chalk from "chalk";
 import { extractContentBetweenFlags } from "../../helper.mjs";
 import globalTime from "../globalTime.mjs";
-import globalState from "../globalTime.mjs";
 import { getAgentInfo } from "./agentHelper.mjs";
 import { getSurroundingInfo } from "./percive.mjs";
 import { dailyPlanning, getCurrentPlan, getNextAction, hourlyPlanning } from "./planning.mjs";
+import { writeFile } from "fs/promises";
+import { getAgentsPath } from "../../filepath.mjs";
 
 class Agent {
     constructor(id) {
@@ -102,6 +103,27 @@ class Agent {
         this.nextAction = JSON.parse(nextAction);
 
         console.log(chalk.blue("Next Action: I' going to ", this.nextAction[0], " and ", this.nextAction[1]));
+    }
+
+    async saveToInstantMemory() {
+        // save the current state of the agent to the memory file
+        const memory = {
+            currentLocation: this.currentLocation,
+            dailyPlans: this.dailyPlans,
+            hourlyPlans: this.hourlyPlans,
+            nextAction: this.nextAction,
+            innerThoughts: this.innerThoughts
+        };
+
+        const memoryStr = JSON.stringify(memory);
+        const memoryLocation = getAgentsPath() + `/${this.id}/instant_memos.json`;
+
+        try {
+            await writeFile(memoryLocation, memoryStr, 'utf8');
+            console.log(chalk.green("Memory saved to ", memoryLocation));
+        } catch (error) {
+            console.error("error | saveToInstantMemory | Agent.mjs | ", error);
+        }
     }
 }
 
