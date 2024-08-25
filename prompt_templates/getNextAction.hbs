@@ -17,6 +17,6 @@
 
 {{ estates }}
 ---
-Right now is {{clocktime}}. {{ agentName }} {{ surrounding }}, And {{ agentName }} is plan to {{ plan }}, output what {{agentName}} will do in which place in next 10 minutes. If {{ agentName }} choose to stay in the same place, output 'stay' in destination field, otherwise, output the ID of the destination. The output should be json format and in the form of a closed bracket with destination ID (or 'stay') and action inside. Be sure to include the <##FLAG##> sign. And the content should be enclosed in double quotes.
+Right now is {{clocktime}}. {{ agentName }} {{ surrounding }} And {{ agentName }} is planning to {{ plan }}, output what {{agentName}} will do in which place in next 10 minutes. If {{ agentName }} choose to stay in the same place, output 'stay' in destination field, otherwise, output the ID of the destination. The output should be json format and in the form of a closed bracket with destination ID (or 'stay') and action inside. Be sure to include the <##FLAG##> sign. And the content should be enclosed in double quotes.
 Example output:
 "output": "<##FLAG##>["stay", "keep finishing the research about the local food"]<##FLAG##>"

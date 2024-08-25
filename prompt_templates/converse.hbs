@@ -1,0 +1,43 @@
+Generate a JSON object that represents a conversation based on the following information:
+
+Participants:
+{{#each participants}}
+- {{this.name}}
+{{/each}}
+
+Topic:
+{{topic}}
+
+Inner Thoughts:
+{{#each participants}}
+- {{this.name}}: {{this.innerThoughts}}
+{{/each}}
+
+The JSON object should have the following structure:
+
+<##FLAG##>
+{
+  "conversation": [
+    {
+      "round": 1,
+      "dialogue":
+        {
+          "speaker": "Participant 1",
+          "utterance": "..."
+        }
+    },
+    {
+      "round": 2,
+      "dialogue":
+        {
+          "speaker": "Participant 2",
+          "utterance": "..."
+        }
+    }
+  ]
+}
+<##FLAG##>
+
+Please generate up to {{rounds}} rounds of dialogue. Each round should include the participants' utterances based on their inner thoughts.
+
+And don't forget to wrap the JSON object in <##FLAG##>.
