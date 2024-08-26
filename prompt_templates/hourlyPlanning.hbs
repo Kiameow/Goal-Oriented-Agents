@@ -7,7 +7,6 @@
     role
     dailyPlans
     datetime
-    wakeHour
 }}
 ---
 {{commonset}}
@@ -16,7 +15,7 @@
 
 {{ dailyPlans }}
 ---
-Today is day {{datetime}}. Output the {{agentName}}'s hourly plan today based on the daily plan provided. The output should be in json format. The output should be a list of plan object where the inner objects are in the form of { "plan": <Plan Content>, "clockScale": <Span Of Time In Hours> }. The plan provided might not include sleep time, but youneed to fill it with "Sleep" plan. The plans should start at 0 and end at 24. The clockScale of each plan MUST be an integer, standing for finished time scale. And do not forget to include the <##FLAG##> sign. And do not output anything else.
+output what the agent should do from {{startHour}}'o clock to {{endHour}}'o clock in English in short words.
 
 Example output:
-"output": "<##FLAG##>[{ "plan": 'Sleep', "clockScale": 6 }, { "plan": 'Eat breakfast', "clockScale": 7 }, { "plan": 'Work on task A', "clockScale": 10 }, { "plan": 'Take a rest', "clockScale": 11 }, { "plan": 'Lunch', "clockScale": 12 }, { "plan": 'Take a rest', "clockScale": 13 }, { "plan": 'Work on task D', "clockScale": 17 }, { "plan": 'Dinner', "clockScale": 19 }, { "plan": 'Watch TV', "clockScale": 22 }, { "plan": 'Go to bed', "clockScale": 24 }]<##FLAG##>"
+<##FLAG##>keep doing the on-going task<##FLAG##>
