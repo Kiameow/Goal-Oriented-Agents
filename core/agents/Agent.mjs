@@ -12,13 +12,14 @@
 // }
 
 import chalk from "chalk";
-import { extractContentBetweenFlags } from "../../helper.mjs";
+import { extractContentBetweenFlags, readJsonFileAsync, readJsonFileSync, writeJsonFileAsync } from "../../helper.mjs";
 import globalTime from "../globalTime.mjs";
 import { getAgentInfo } from "./agentHelper.mjs";
 import { getSurroundingInfo } from "./percive.mjs";
 import { dailyPlanning, getCurrentPlan, getNextAction, hourlyPlanning } from "./planning.mjs";
 import { writeFile } from "fs/promises";
 import { getAgentsPath } from "../../filepath.mjs";
+import { syserror, syswarn, syslog } from "../../logger.mjs";
 
 class Agent {
     constructor(id) {
@@ -34,16 +35,22 @@ class Agent {
     async init() {
         this.agentInfo = await getAgentInfo(this.id);
         this.currentLocation = this.agentInfo.initialLocation;
+        const instantMemoPath = getAgentsPath() + `/${this.id}/instant_memos.json`;
+        const { currentLocation, dailyPlans, hourlyPlans, nextAction, innerThoughts } = await readJsonFileAsync(instantMemoPath);
+        this.currentLocation = currentLocation;
+        this.dailyPlans = dailyPlans;
+        this.hourlyPlans = hourlyPlans;
+        this.nextAction = nextAction;
+        this.innerThoughts = innerThoughts;
     }
 
     async getDailyPlans() {
-        const data = await dailyPlanning(this.agentInfo, globalTime.getCurrentDay())
-        const dailyPlans = extractContentBetweenFlags(data, "<##FLAG##>");
-        console.log(chalk.blue(dailyPlans));
+        const dailyPlans = await dailyPlanning(this.agentInfo, globalTime.value.day)
+        syslog(this.id, " dailyPlans: ", dailyPlans)
         if (dailyPlans) {
             this.dailyPlans = dailyPlans;
         } else {
-            console.warn("No daily plans found for today.");
+            syswarn("No daily plans found for today.");
         }
 
         this.dailyPlans = dailyPlans;
@@ -56,53 +63,35 @@ class Agent {
 
     async getHourlyPlans() {
         if (!this.dailyPlans) {
-            console.warn("Cannot get hourly plans without daily plans.");
+            syswarn("Cannot get hourly plans without daily plans.");
             return false;
         }
 
         try {
-            const data = await hourlyPlanning(this.agentInfo, this.dailyPlans, globalTime.getCurrentDay())
-            const hourlyPlans = extractContentBetweenFlags(data, "<##FLAG##>");
-            console.log(chalk.blue(hourlyPlans));
-            if (hourlyPlans) {
-                try {
-                    const timeTable = JSON.parse(hourlyPlans);
-                    this.hourlyPlans = timeTable.map(plan => {
-                        return { ...plan, isDone: false};
-                    });
-                }
-                catch (error) {
-                    console.error("error | getHourlyPlans | Agent.mjs | JSON.parse(hourlyPlans) | ", error);
-                    this.hourlyPlans = []
-                }
-            } else {
-                console.warn("No hourly plans found for today.");
-            }
-
-            if (this.hourlyPlans) {
-                return true;
-            } else {
-                return false;
-            }
-
+            const timetable = await hourlyPlanning(this.agentInfo, this.dailyPlans)
+            syslog(timetable);
+            this.hourlyPlans = timetable;
         } catch (error) {
-            console.error("error | getHourlyPlans | Agent.mjs | ", error);
-            return false;
+            syserror("error | getHourlyPlans | Agent.mjs | ", error);
         }
     }
 
     async getNextAction() {
         // compare the current time with the timetable and return the current running plan
         // ["stay", "keep finishing the research about the local food"]
-        const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.getCurrentClockTime())
-        const surroundingRightNow = await getSurroundingInfo(this)
-        const nextActionStr = await getNextAction(this.agentInfo, planRightNow, surroundingRightNow, globalTime.getCurrentTime(), 10) 
-        let nextAction = extractContentBetweenFlags(nextActionStr, "<##FLAG##>")
-        
-        nextAction = nextAction ?? ["stay", "keep doing what you are doing"]
-        this.nextAction = JSON.parse(nextAction);
+        const timestamp = globalTime.getCurrentTimestamp();
+        if (this.agentInfo.wakeHour > globalTime.value.hour) {
+            this.nextAction = [timestamp, "stay", "sleep"];
+        } else {
+            const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.toString())
+            const surroundingRightNow = await getSurroundingInfo(this)
+            let nextAction = await getNextAction(this.agentInfo, planRightNow, surroundingRightNow, 10) 
+            
+            this.nextAction = nextAction ?? [timestamp, "stay", "keep doing what you are doing"]
+        }
 
-        console.log(chalk.blue("Next Action: I' going to ", this.nextAction[0], " and ", this.nextAction[1]));
+        syslog("location: ", this.nextAction[1], ", action: ", this.nextAction[2]);
+        this.currentLocation = this.nextAction[1] === "stay" ? this.currentLocation : this.nextAction[1];
     }
 
     async saveToInstantMemory() {
@@ -115,15 +104,22 @@ class Agent {
             innerThoughts: this.innerThoughts
         };
 
-        const memoryStr = JSON.stringify(memory);
         const memoryLocation = getAgentsPath() + `/${this.id}/instant_memos.json`;
 
         try {
-            await writeFile(memoryLocation, memoryStr, 'utf8');
-            console.log(chalk.green("Memory saved to ", memoryLocation));
+            await writeJsonFileAsync(memoryLocation, memory);
+            syslog("Memory saved to ", memoryLocation);
         } catch (error) {
-            console.error("error | saveToInstantMemory | Agent.mjs | ", error);
+            syserror("error | saveToInstantMemory | Agent.mjs | ", error);
         }
+    }
+
+    async saveNextAction() {
+        const filepath = getAgentsPath() + `/${this.id}/next_action.json`;
+        const previousAction = readJsonFileSync(filepath) ?? [];
+        const nextAction = [...previousAction, this.nextAction];
+
+        await writeJsonFileAsync(filepath, nextAction);
     }
 }
 

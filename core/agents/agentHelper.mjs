@@ -1,5 +1,5 @@
 import { getAgentsPath } from "../../filepath.mjs";
-import { readJsonFile } from "../../helper.mjs";
+import { readJsonFileAsync } from "../../helper.mjs";
 
 async function getAgentInfo(agentName) {
     // {
@@ -14,7 +14,7 @@ async function getAgentInfo(agentName) {
     //     "dailyPlan": ""
     // }
     const agentInfoPath = getAgentsPath() + `/${agentName}/info.json`;
-    const agentInfo = await readJsonFile(agentInfoPath);
+    const agentInfo = await readJsonFileAsync(agentInfoPath);
 
     return agentInfo;
 }

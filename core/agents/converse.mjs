@@ -22,17 +22,18 @@ async function willToConverse(agent) {
             agentName: agent.name,
             goal: agent.goal,
             role: agent.role,
-            clocktime: globalTime.getCurrentClockTime()
+            clocktime: globalTime.toString()
         })
 
-        const resultStr = await sendQuerySafely(prompt, null);
+        const response = await sendQuerySafely(prompt, null);
+        const resultStr = response.result;
         let result = null;
         if (resultStr) {
             result = JSON.parse(resultStr);
         }
         return result;
     } catch (e) {
-        console.error(e);
+        syserror(e);
         return {
             will_converse: false
         }
@@ -50,14 +51,15 @@ async function converse(agentsList, topic, depth=5) {
             topic: topic,
             rounds: 10
         });
-        const resultStr = await sendQuerySafely(prompt, null);
+        const response = await sendQuerySafely(prompt, null);
+        const resultStr = response.result;
         let result = null;
         if (resultStr) {
             result = JSON.parse(resultStr);
         }
         return result;
     } catch (e) {
-        console.error(e);
+        syserror(e);
         return converse(agentsList, topic, depth-1)
     }
 }

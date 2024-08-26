@@ -1,5 +1,6 @@
 import { getPromptPath } from "../../filepath.mjs";
 import { handlebarHydrate } from "../../helper.mjs";
+import { syserror } from "../../logger.mjs";
 import { sendQuerySafely } from "../llm/sendQuery.mjs";
 import { globalScen } from "../scen/Scen.mjs";
 import { globalAgents } from "./Agent.mjs";
@@ -23,6 +24,7 @@ async function getSurroundingInfo(agent) {
         return prompt;
     } catch (error) {
         console.error(error);
+        syserror(error);
     }
     
 }
@@ -37,7 +39,7 @@ async function getEstatesInfo() {
         })
         return prompt;
     } catch (error) {
-        console.error(error);
+        syserror(error);
     }
 }
 
