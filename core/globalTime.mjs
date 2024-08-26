@@ -1,17 +1,29 @@
+import { getTimePath } from "../filepath.mjs";
+import { readJsonFileSync } from "../helper.mjs";
+import fs from "fs";
+import { syserror } from "../logger.mjs";
+
 class GlobalTime {
     constructor(day = 0, hour = 0, minute = 0) {
       this.day = day;
       this.hour = hour;
       this.minute = minute;
     }
+
+    get value() {
+      return {
+        day: this.day,
+        hour: this.hour,
+        minute: this.minute,
+      }
+    }
   
     static fromJSON(filePath) {
       try {
-        const data = fs.readFileSync(filePath, 'utf8');
-        const { day, hour, minute } = JSON.parse(data);
+        const { day, hour, minute } = readJsonFileSync(filePath);
         return new GlobalTime(day, hour, minute);
       } catch (err) {
-        console.error("Error reading or parsing JSON file:", err);
+        syserror("Error reading or parsing JSON file:", err);
         return new GlobalTime(); // 如果读取文件失败，返回默认时间
       }
     }
@@ -39,35 +51,36 @@ class GlobalTime {
       this.minute = minute;
     }
   
-    getCurrentTime() {
+    toString() {
       return `Day ${this.day}, ${String(this.hour).padStart(2, '0')}:${String(this.minute).padStart(2, '0')}`;
     }
 
-    getCurrentDay() {
-      return this.day
+    getCurrentTimestamp() {
+      return `${this.day}:${this.hour}:${this.minute}`;
     }
 
-    getCurrentClockTime() {
-      return {
-        hour: this.hour,
-        minute: this.minute,
+    isNewDay() {
+      if (this.hour === 0 && this.minute === 0) {
+        return true;
       }
+      return false;
     }
    
     toJSON() {
       return JSON.stringify({ day: this.day, hour: this.hour, minute: this.minute }, null, 2);
     }
   
-    saveToFile(filePath) {
+    saveToFile(filePath=globalTimePath) {
       try {
         fs.writeFileSync(filePath, this.toJSON(), 'utf8');
       } catch (err) {
-        console.error("Error writing to JSON file:", err);
+        syserror("Error writing to JSON file:", err);
       }
     }
   }
 
 // 创建全局状态的单例实例
-const globalTime = new GlobalTime();
+const globalTimePath = getTimePath() + '/global_time.json';
+const globalTime = GlobalTime.fromJSON(globalTimePath);
 
 export default globalTime;

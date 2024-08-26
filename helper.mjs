@@ -1,14 +1,29 @@
-import { promises as fs } from 'fs';
+import fs from 'fs';
+const fsAsync = fs.promises;
 import Handlebars from 'handlebars';
 import { getPromptPath } from './filepath.mjs';
 
-export async function readJsonFile(filePath) {
-    const fileContent = await fs.readFile(filePath, 'utf-8');
+export async function readJsonFileAsync(filepath) {
+    const fileContent = await fsAsync.readFile(filepath, 'utf-8');
+    if (fileContent === '') 
+        return null;
     return JSON.parse(fileContent);
 }
 
+export function readJsonFileSync(filepath) {
+    const fileContent = fs.readFileSync(filepath, 'utf-8');
+    if (fileContent === '') 
+        return null;
+    return JSON.parse(fileContent);
+}
+
+export async function writeJsonFileAsync(filepath, data) {
+    const jsonContent = JSON.stringify(data, null, 2);
+    await fsAsync.writeFile(filepath, jsonContent, 'utf-8');
+}
+
 export async function handlebarHydrate(templatePath, data) {
-    const template = await fs.readFile(templatePath, 'utf-8');
+    const template = await fsAsync.readFile(templatePath, 'utf-8');
     const compliedTemplate = Handlebars.compile(template);
     return compliedTemplate(data);
 } 
@@ -20,6 +35,10 @@ export async function getPrompt(fileName, data) {
 }
 
 export function extractContentBetweenFlags(str, flag) {
+    if (str.indexOf(flag) === -1) {
+        return str;
+    }
+    str = str+flag;
     const start = str.indexOf(flag) + flag.length;
     const end = str.indexOf(flag, start);
     
@@ -39,6 +58,5 @@ export function standardizeString(str) {
     result = result.split("\‘").join("\'");
     result = result.split("：").join(":");
     result = result.split("，").join(",");
-    result = result.split("\'").join("\"");
     return result;
 }

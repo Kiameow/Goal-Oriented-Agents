@@ -1,5 +1,6 @@
 import request from "request";
 import dotenv from "dotenv";
+import { syserror, syslog } from "../../logger.mjs";
 
 async function sendQuery(prompt) {
     var options = {
@@ -32,7 +33,7 @@ async function sendQuery(prompt) {
 async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=false) {
 
     if (verbose) {
-        console.log(`Sending query: ${prompt}`);
+        syslog(`Sending query: ${prompt}`);
         for (let attempts = 1; attempts <= 5; attempts++) {
             let timestamp = new Date().toISOString();
             try {
@@ -40,11 +41,11 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=fa
                 if (result.error_msg) {
                     throw new Error(result.error_msg);
                 }
-                console.log(`${timestamp}: Attempt ${attempts} succeeded:`);
-                console.dir(result);
+                syslog(`${timestamp}: Attempt ${attempts} succeeded:`);
+                syslog(result);
                 return result;
             } catch (e) {
-                console.log(`${timestamp}: Attempt ${attempts} failed: ${e}`);
+                syserror(`${timestamp}: Attempt ${attempts} failed: ${e}`);
                 if (attempts >= maxRetries) {
                     return fallBackMessage;
                 }

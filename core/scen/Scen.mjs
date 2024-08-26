@@ -7,6 +7,7 @@
 
 import { getScenPath } from "../../filepath.mjs";
 import fs from "fs";
+import { syserror } from "../../logger.mjs";
 
 // ]
 class Scen {
@@ -25,7 +26,7 @@ class Scen {
             const locationsArr = JSON.parse(data);
             return new Scen(locationsArr)
           } catch (err) {
-            console.error("Error reading or parsing JSON file:", err);
+            syserror("Error reading or parsing JSON file:", err);
             return new Scen(); // 如果读取文件失败，返回一个空场景
           }
     }
