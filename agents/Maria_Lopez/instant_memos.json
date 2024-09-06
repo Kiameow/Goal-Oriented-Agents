@@ -1,6 +1,6 @@
 {
   "currentLocation": "MLH",
-  "dailyPlans": "1. 9am to 10am: Wake up, complete the morning routine (brush teeth, shower, get dressed).\n2. 10am to 12pm: Review the financial reports and budget projections for the restaurant brand.\n3. 12pm to 1pm: Have lunch with other founders and discuss the progress and challenges faced.\n4. 1pm to 4pm: Work on financial planning and budget allocation for the upcoming months.\n5. 4pm to 5pm: Meet with the team to discuss financial strategies and ensure alignment on key decisions.\n6. 5pm to 7pm: Attend any administrative tasks or respond to emails and messages related to finances.\n7. 7pm to 9pm: Relax, take a break, and prepare for tomorrow's work.",
+  "dailyPlans": "1. 9am to 10am: Wake up, prepare for the day, and start planning for the restaurant launch.\n2. 10am to noon: Research and gather financial information necessary for the restaurant launch.\n3. Noon to 1pm: Have lunch and discuss the financial plan with other founders and friends.\n4. 1pm to 5pm: Work on budget management and financial projections.\n5. 5pm to 7pm: Rest and relax for a while before starting evening activities.\n6. 7pm onward: Attend any other necessary meetings or events related to the restaurant launch.",
   "hourlyPlans": [
     {
       "plan": "sleep",
@@ -48,77 +48,77 @@
       "isDone": false
     },
     {
-      "plan": "Wake up and complete morning routine.",
+      "plan": "Wake up, prepare for the day, and start planning for the restaurant launch.",
       "clockScale": 10,
       "isDone": false
     },
     {
-      "plan": "Review financial reports and budget projections for the restaurant brand.",
+      "plan": "From 10am to 11am, Maria Lopez should research and gather financial information necessary for the restaurant launch.",
       "clockScale": 11,
       "isDone": false
     },
     {
-      "plan": "Continue with the review of financial reports and budget projections for the restaurant brand.",
+      "plan": "Continue researching and gathering financial information necessary for the restaurant launch.",
       "clockScale": 12,
       "isDone": false
     },
     {
-      "plan": "have lunch and discuss progress and challenges with other founders.",
+      "plan": "have lunch and discuss financial plan with other founders and friends.",
       "clockScale": 13,
       "isDone": false
     },
     {
-      "plan": "From 1pm to 4pm, Maria Lopez's plan is to work on financial planning and budget allocation for the upcoming months. Therefore, from 13:00 to 14:00, she should continue with this task.\n\nOutput: Continue with financial planning and budget allocation.",
+      "plan": "From 13:00 to 14:00, Maria Lopez should continue with her research and gathering financial information necessary for the restaurant launch.",
       "clockScale": 14,
       "isDone": false
     },
     {
-      "plan": "From 14:00 to 15:00, the agent should continue working on financial planning and budget allocation for the upcoming months.",
+      "plan": "From 14:00 to 15:00, Maria Lopez should work on budget management and financial projections.",
       "clockScale": 15,
       "isDone": false
     },
     {
-      "plan": "At 15:00 to 16:00, Maria Lopez should continue working on financial planning and budget allocation for the upcoming months.",
+      "plan": "From 15:00 to 16:00, Maria Lopez should continue working on budget management and financial projections.",
       "clockScale": 16,
       "isDone": false
     },
     {
-      "plan": "Meet with the team to discuss financial strategies.",
+      "plan": "Rest and relax from 5pm to 7pm before attending any other necessary meetings or events related to the restaurant launch starting at 7pm.",
       "clockScale": 17,
       "isDone": false
     },
     {
-      "plan": "Attend administrative tasks or respond to emails and messages related to finances.",
+      "plan": "Rest and relax for a while.",
       "clockScale": 18,
       "isDone": false
     },
     {
-      "plan": "Relax and prepare for tomorrow's work.",
+      "plan": "From 18:00 to 19:00, Maria Lopez should attend any other necessary meetings or events related to the restaurant launch.",
       "clockScale": 19,
       "isDone": false
     },
     {
-      "plan": "From 7pm to 8pm, the agent should relax, take a break, and prepare for tomorrow's work.",
+      "plan": "From 7pm onward, attend any other necessary meetings or events related to the restaurant launch. Keep doing the on-going task during the period from 19:00 to 20:00.",
       "clockScale": 20,
       "isDone": false
     },
     {
-      "plan": "From 20:00 to 21:00, Maria Lopez should relax, take a break, and prepare for tomorrow's work.",
+      "plan": "From 20'o clock to 21'o clock, the agent should attend any other necessary meetings or events related to the restaurant launch.",
       "clockScale": 21,
       "isDone": false
     },
     {
-      "plan": "Relax, unwind, prepare for tomorrow's work.",
+      "plan": "From 21:00 to 22:00, Maria Lopez should attend any other necessary meetings or events related to the restaurant launch.",
       "clockScale": 22,
       "isDone": false
     },
     {
-      "plan": "Relax, unwind, and prepare for the next day's work.",
+      "plan": "From 22:00 to 23:00, the agent should continue with the evening activities related to the restaurant launch or attend any other necessary meetings or events as scheduled.",
       "clockScale": 23,
       "isDone": false
     },
     {
-      "plan": "Relax, unwind, and prepare for tomorrow's work.",
+      "plan": "Rest and relax, prepare for the next day.",
       "clockScale": 24,
       "isDone": false
     }

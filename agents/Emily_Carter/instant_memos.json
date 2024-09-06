@@ -1,0 +1,128 @@
+{
+  "currentLocation": "DTL",
+  "dailyPlans": "1. 7am to 8am: Wake up, have breakfast and check daily news for market trends and consumer behavior updates.\n2. 8am to 10am: Review brand strategies and identify key areas for improvement or further development.\n3. 10am to 12pm: Conduct research on potential target audience segments and understand their preferences.\n4. 12pm to 1pm: Take a break for lunch and relax for a while.\n5. 1pm to 4pm: Develop creative ideas for brand communication and craft compelling narratives.\n6. 4pm to 5pm: Prepare a report on the day's activities and set goals for tomorrow.\n7. 5pm to 6pm: Exercise or engage in a hobby to unwind and relieve stress.\n8. 6pm to 8pm: Dinner with family or friends, discussing ideas related to the brand plan.\n9. 8pm to 10pm: Watch a movie or read a book for relaxation before going to bed.\n10. 10pm: Get rest for the day.",
+  "hourlyPlans": [
+    {
+      "plan": "sleep",
+      "clockScale": 1,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 2,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 3,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 4,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 5,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 6,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 7,
+      "isDone": false
+    },
+    {
+      "plan": "continue with daily tasks",
+      "clockScale": 8,
+      "isDone": false
+    },
+    {
+      "plan": "Dinner with family or friends, discussing ideas related to the brand plan.",
+      "clockScale": 9,
+      "isDone": false
+    },
+    {
+      "plan": "Watch a movie or read a book for relaxation.",
+      "clockScale": 10,
+      "isDone": false
+    },
+    {
+      "plan": "Conduct research on potential target audience segments and understand their preferences during 10am to 11am.",
+      "clockScale": 11,
+      "isDone": false
+    },
+    {
+      "plan": "Conduct research on potential target audience segments and understand their preferences.",
+      "clockScale": 12,
+      "isDone": false
+    },
+    {
+      "plan": "Take a break for lunch and relax during this time period.",
+      "clockScale": 13,
+      "isDone": false
+    },
+    {
+      "plan": "Conduct research on potential target audience segments and understand their preferences during 13:00 to 14:00.",
+      "clockScale": 14,
+      "isDone": false
+    },
+    {
+      "plan": "From 14:00 to 15:00, Emily Carter should continue with her research on potential target audience segments and understand their preferences.",
+      "clockScale": 15,
+      "isDone": false
+    },
+    {
+      "plan": "Prepare a report on the day's activities during 15th to 16th hour.",
+      "clockScale": 16,
+      "isDone": false
+    },
+    {
+      "plan": "From 16:00 to 17:00, Emily Carter should prepare a report on the day's activities and set goals for tomorrow.",
+      "clockScale": 17,
+      "isDone": false
+    },
+    {
+      "plan": "Exercise or engage in a hobby from 5pm to 6pm.",
+      "clockScale": 18,
+      "isDone": false
+    },
+    {
+      "plan": "Have dinner with family or friends to discuss brand plan ideas.",
+      "clockScale": 19,
+      "isDone": false
+    },
+    {
+      "plan": "Emily Carter在19点到20点之间应该放松并准备休息，可以看电影或读书。因此，建议Emily Carter在此时段内放松自己，享受一段休闲时光，准备休息迎接第二天的工作。具体行动可以是看电影、阅读书籍或其他喜欢的活动。",
+      "clockScale": 20,
+      "isDone": false
+    },
+    {
+      "plan": "Read or watch for relaxation before bedtime.",
+      "clockScale": 21,
+      "isDone": false
+    },
+    {
+      "plan": "Watch a movie or read a book for relaxation from 9pm to 10pm before going to bed at 10pm.",
+      "clockScale": 22,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and prepare for the next day.",
+      "clockScale": 23,
+      "isDone": false
+    },
+    {
+      "plan": "Get ready for bed and rest for the day.",
+      "clockScale": 24,
+      "isDone": false
+    }
+  ],
+  "nextAction": [],
+  "innerThoughts": ""
+}

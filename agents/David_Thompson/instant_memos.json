@@ -1,0 +1,132 @@
+{
+  "currentLocation": "DTL",
+  "dailyPlans": "1. 6am to 7am: Wake up, exercise and prepare for the day.\n2. 7am to 8am: Check email and go through the necessary reports on the current state of the restaurant chain.\n3. 8am to 9am: Plan for the expansion into new markets, focusing on strategic areas and potential opportunities.\n4. 9am to 12pm: Meet with key team members to discuss strategies and plans for the expansion.\n5. 12pm to 1pm: Have lunch and review any new ideas or suggestions from the team.\n6. 1pm to 4pm: Work on project management and ensure all current projects are progressing as planned.\n7. 4pm to 5pm: Attend a meeting with investors and shareholders to update them on the progress of the company and its expansion plans.\n8. 5pm to 6pm: Focus on strategic planning for long-term growth and customer satisfaction initiatives.\n9. 6pm to evening: Relax, take some time for personal activities, and prepare for tomorrow's work.",
+  "hourlyPlans": [
+    {
+      "plan": "sleep",
+      "clockScale": 1,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 2,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 3,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 4,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 5,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 6,
+      "isDone": false
+    },
+    {
+      "plan": "Wake up, exercise, and prepare for the day.",
+      "clockScale": 7,
+      "isDone": false
+    },
+    {
+      "plan": "Check email and go through reports on the state of the restaurant chain.",
+      "clockScale": 8,
+      "isDone": false
+    },
+    {
+      "plan": "8am to 9am: Plan for expansion into new markets, focusing on strategic areas and opportunities.",
+      "clockScale": 9,
+      "isDone": false
+    },
+    {
+      "plan": "From 9am to 10am, David Thompson should meet with key team members to discuss strategies and plans for the expansion.",
+      "clockScale": 10,
+      "isDone": false
+    },
+    {
+      "plan": "Meet with key team members to discuss strategies and plans for the expansion from 10am to 11am.",
+      "clockScale": 11,
+      "isDone": false
+    },
+    {
+      "plan": "From 11am to 12pm, David Thompson should continue meeting with key team members to discuss strategies and plans for the expansion.",
+      "clockScale": 12,
+      "isDone": false
+    },
+    {
+      "plan": "have lunch and review new ideas or suggestions from the team.",
+      "clockScale": 13,
+      "isDone": false
+    },
+    {
+      "plan": "During the time from 13:00 to 14:00, David Thompson should continue with his on-going task of working on project management and ensuring all current projects are progressing as planned.",
+      "clockScale": 14,
+      "isDone": false
+    },
+    {
+      "plan": "At 14'o clock to 15'o clock, David Thompson should meet with key team members to discuss strategies and plans for the expansion.",
+      "clockScale": 15,
+      "isDone": false
+    },
+    {
+      "plan": "Focus on strategic planning for long-term growth and customer satisfaction initiatives.",
+      "clockScale": 16,
+      "isDone": false
+    },
+    {
+      "plan": "David Thompson should focus on strategic planning for long-term growth and customer satisfaction initiatives during 16'o clock to 17'o clock.",
+      "clockScale": 17,
+      "isDone": false
+    },
+    {
+      "plan": "Focus on strategic planning for long-term growth and customer satisfaction initiatives.",
+      "clockScale": 18,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, take some time for personal activities.",
+      "clockScale": 19,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, enjoy personal activities, and prepare for tomorrow's work.",
+      "clockScale": 20,
+      "isDone": false
+    },
+    {
+      "plan": "At 6pm to evening, David Thompson focuses on personal activities and prepares for tomorrow's work. Therefore, from 20'o clock to 21'o clock in the evening, he would likely be relaxing and not working on any specific task related to his job. So, the agent should suggest relaxing or taking care of personal activities during this time.",
+      "clockScale": 21,
+      "isDone": false
+    },
+    {
+      "plan": "The agent should focus on relaxing and taking some time for personal activities during the evening from 6pm to 7pm. Therefore, from 21'o clock to 22'o clock, the agent should continue to relax and prepare for tomorrow's work.",
+      "clockScale": 22,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, enjoy personal activities, and prepare for tomorrow's work.",
+      "clockScale": 23,
+      "isDone": false
+    },
+    {
+      "plan": "David Thompson should relax, take some time for personal activities, and prepare for tomorrow's work from 23rd o'clock to 24th o'clock.",
+      "clockScale": 24,
+      "isDone": false
+    }
+  ],
+  "nextAction": [
+    "1:23:50",
+    "MLH",
+    "get ready for the restaurant opening preparations"
+  ],
+  "innerThoughts": ""
+}

@@ -1,0 +1,132 @@
+{
+  "currentLocation": "DTL",
+  "dailyPlans": "\n1. 9am to 10am: Wake up, check emails and prepare for the day's work.\n2. 10am to 12pm: Analyze market trends and develop marketing strategies for the restaurant.\n3. 12pm to 1pm: Lunch break.\n4. 1pm to 5pm: Work on marketing projects, collaborate with the team and discuss ideas for promoting the restaurant's business growth.\n5. 5pm to 6pm: Evaluate the effectiveness of recent marketing strategies and adjust plans accordingly.\n6. 6pm to 8pm: Attend any urgent meetings or address any last-minute issues related to marketing.\n7. 8pm to 9pm: Relax, take a break and prepare for the day's end.\n8. 9pm onwards: Rest and prepare for the next day's activities.",
+  "hourlyPlans": [
+    {
+      "plan": "sleep",
+      "clockScale": 1,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 2,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 3,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 4,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 5,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 6,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 7,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 8,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 9,
+      "isDone": false
+    },
+    {
+      "plan": "Wake up, check emails and prepare for the day's work.",
+      "clockScale": 10,
+      "isDone": false
+    },
+    {
+      "plan": "From 10am to 11am, Zhang Chen should analyze market trends and develop marketing strategies for the restaurant.",
+      "clockScale": 11,
+      "isDone": false
+    },
+    {
+      "plan": "11am to 12pm: Develop marketing strategies for the restaurant.",
+      "clockScale": 12,
+      "isDone": false
+    },
+    {
+      "plan": "Lunch break. ##FLAG## Relax and take a break.",
+      "clockScale": 13,
+      "isDone": false
+    },
+    {
+      "plan": "From 13:00 to 14:00, Zhang Chen should work on marketing projects, collaborate with the team and discuss ideas for promoting the restaurant's business growth.",
+      "clockScale": 14,
+      "isDone": false
+    },
+    {
+      "plan": "From 14:00 to 15:00, Zhang Chen should work on marketing projects, collaborate with the team, and discuss ideas for promoting the restaurant's business growth.",
+      "clockScale": 15,
+      "isDone": false
+    },
+    {
+      "plan": "15'o clock to 16'o clock: Work on marketing projects, collaborate with team.",
+      "clockScale": 16,
+      "isDone": false
+    },
+    {
+      "plan": "From 16:00 to 17:00, the agent should continue with the marketing projects, collaborate with the team, and discuss ideas for promoting the restaurant's business growth.",
+      "clockScale": 17,
+      "isDone": false
+    },
+    {
+      "plan": "From 5pm to 6pm, the agent should attend any urgent meetings or address any last-minute issues related to marketing.",
+      "clockScale": 18,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, take a break.",
+      "clockScale": 19,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, take a break and prepare for the day's end.",
+      "clockScale": 20,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, take a break.",
+      "clockScale": 21,
+      "isDone": false
+    },
+    {
+      "plan": "From 21:00 to 22:00, Zhang Chen should relax, take a break, and prepare for the day's end.",
+      "clockScale": 22,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, prepare for tomorrow's activities.",
+      "clockScale": 23,
+      "isDone": false
+    },
+    {
+      "plan": "Rest and prepare for the next day's activities.",
+      "clockScale": 24,
+      "isDone": false
+    }
+  ],
+  "nextAction": [
+    "1:23:50",
+    "MLH",
+    "get ready for the restaurant opening preparations"
+  ],
+  "innerThoughts": ""
+}

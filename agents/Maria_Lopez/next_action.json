@@ -1480,5 +1480,505 @@
     "2:9:20",
     "MLH",
     "checking the budget plan and staff arrangements for tomorrow"
+  ],
+  [
+    "0:0:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:0:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:0:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:0:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:0:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:0:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:1:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:1:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:1:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:1:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:1:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:1:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:2:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:2:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:2:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:2:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:2:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:2:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:3:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:3:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:3:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:3:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:3:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:3:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:4:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:4:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:4:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:4:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:4:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:4:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:5:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:5:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:5:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:5:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:5:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:5:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:6:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:6:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:6:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:6:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:6:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:6:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:7:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:7:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:7:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:7:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:8:0",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:8:10",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:8:20",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:8:30",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:8:40",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:8:50",
+    "stay",
+    "sleep"
+  ],
+  [
+    "0:9:0",
+    "MLH",
+    "Check on the budget plan and make necessary adjustments"
+  ],
+  [
+    "0:9:10",
+    "MLH",
+    "prepare the budget plan"
+  ],
+  [
+    "0:9:20",
+    "MLH",
+    "checking the budget and preparing for the restaurant opening"
+  ],
+  [
+    "0:9:30",
+    "MLH",
+    "checking the budget and planning for the restaurant launch"
+  ],
+  [
+    "0:9:40",
+    "MLH",
+    "check the budget and prepare for the restaurant opening"
+  ],
+  [
+    "0:9:50",
+    "MLH",
+    "check the budget and prepare for the restaurant opening"
+  ],
+  [
+    "0:10:0",
+    "MLH",
+    "Go back home and start preparing the budget for the restaurant"
+  ],
+  [
+    "0:10:10",
+    "MLH",
+    "checking the budget and financial plan"
+  ],
+  [
+    "0:10:20",
+    "MLH",
+    "will check on the budget and financial projections"
+  ],
+  [
+    "0:10:30",
+    "MLH",
+    "go to bed"
+  ],
+  [
+    "0:10:40",
+    "MLH",
+    "checking the budget and preparing for the restaurant opening"
+  ],
+  [
+    "0:10:50",
+    "MLH",
+    "prepare financial reports and check on budget status"
+  ],
+  [
+    "0:11:0",
+    "MLH",
+    "finish preparing for the restaurant launch"
+  ],
+  [
+    "0:11:10",
+    "MLH",
+    "Go back home and start preparing the budget"
+  ],
+  [
+    "0:11:20",
+    "MLH",
+    "checking the budget and financial plan"
+  ],
+  [
+    "0:11:30",
+    "MLH",
+    "checking the budget plan"
+  ],
+  [
+    "0:11:40",
+    "MLH",
+    "checking the budget and financial plan"
+  ],
+  [
+    "0:11:50",
+    "MLH",
+    "prepare necessary documents and materials"
+  ],
+  [
+    "0:12:0",
+    "MLH",
+    "take a break and have a snack"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Check the budget and prepare for the restaurant opening"
+  ],
+  [
+    "0:12:20",
+    "MLH",
+    "Stay in Maria Lopez Home and plan the budget"
+  ],
+  [
+    "0:12:30",
+    "MLH",
+    "prepare the budget plan"
+  ],
+  [
+    "0:12:40",
+    "MLH",
+    "go back home and take a rest"
+  ],
+  [
+    "0:12:50",
+    "MLH",
+    "Will return to the Maria Lopez Home and relax for a bit before moving on to the next destination"
+  ],
+  [
+    "0:13:0",
+    "MLH",
+    "stay at home and take a break for a while"
+  ],
+  [
+    "0:13:10",
+    "MLH",
+    "prepare necessary documents and materials"
+  ],
+  [
+    "0:13:20",
+    "MLH",
+    "go back home and take a break"
+  ],
+  [
+    "0:13:30",
+    "MLH",
+    "will go back home and take a break"
+  ],
+  [
+    "0:13:40",
+    "MLH",
+    "stay at home and rest for a while before heading to the restaurant location"
+  ],
+  [
+    "0:13:50",
+    "MLH",
+    "will go back home and prepare for the opening day"
+  ],
+  [
+    "0:14:0",
+    "MLH",
+    "checking the budget and making necessary adjustments"
+  ],
+  [
+    "0:14:10",
+    "MLH",
+    "will stay in Maria Lopez Home and rest for a while"
+  ],
+  [
+    "0:14:20",
+    "MLH",
+    "rest for a while before preparing for the restaurant launch"
+  ],
+  [
+    "0:14:30",
+    "MLH",
+    "check the budget status"
+  ],
+  [
+    "0:14:40",
+    "MLH",
+    "prepare necessary documents and materials"
+  ],
+  [
+    "0:14:50",
+    "MLH",
+    "checking the budget and financial plan"
+  ],
+  [
+    "0:15:0",
+    "MLH",
+    "prepare the budget plan for the restaurant launch"
+  ],
+  [
+    "0:15:10",
+    "MLH",
+    "checking the budget and preparing for the restaurant opening"
+  ],
+  [
+    "0:15:20",
+    "MLH",
+    "check budget status and make necessary adjustments"
+  ],
+  [
+    "0:15:30",
+    "MLH",
+    "go back home and take a break"
+  ],
+  [
+    "0:15:40",
+    "MLH",
+    "check the budget and prepare for the restaurant opening"
+  ],
+  [
+    "0:15:50",
+    "MLH",
+    "Stay in Maria Lopez Home to prepare the financial plans for the restaurant brand"
+  ],
+  [
+    "0:16:0",
+    "MLH",
+    "stay and rest for a while before going to discuss with the team about the financial plan"
+  ],
+  [
+    "0:16:10",
+    "MLH",
+    "stay and rest for a while before heading to the restaurant premises"
+  ],
+  [
+    "0:16:20",
+    "MLH",
+    "checking the budget and preparing for the restaurant opening"
+  ],
+  [
+    "0:16:30",
+    "MLH",
+    "checking the budget and financial plan"
   ]
 ]
