@@ -43,11 +43,14 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=fa
                 }
                 syslog(`${timestamp}: Attempt ${attempts} succeeded:`);
                 syslog(result);
-                return result;
+                return result; // result is an object, the body part of the response 
             } catch (e) {
                 syserror(`${timestamp}: Attempt ${attempts} failed: ${e}`);
                 if (attempts >= maxRetries) {
-                    return fallBackMessage;
+                    return {
+                        "error_msg": e,
+                        "result": "<##FLAG##>" + fallBackMessage + "<##FLAG##>"
+                    }
                 }
             }
         }
