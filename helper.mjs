@@ -60,3 +60,12 @@ export function standardizeString(str) {
     result = result.split("，").join(",");
     return result;
 }
+
+export function isJSON(str) {
+    try {
+        JSON.parse(str);
+        return true;
+    } catch (e) {
+        return false;   
+    }
+}
