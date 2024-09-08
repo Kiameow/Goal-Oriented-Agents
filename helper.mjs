@@ -69,3 +69,9 @@ export function isJSON(str) {
         return false;   
     }
 }
+
+export function hasOverlap(arrA, arrB) {
+    const setA = new Set(arrA);
+    const setB = new Set(arrB);
+    return [...setA].some(item => setB.has(item));
+}
