@@ -1,6 +1,6 @@
 import request from "request";
 import dotenv from "dotenv";
-import { syserror, syslog } from "../../logger.mjs";
+import { syserror, syshttp, sysinfo, sysverbose } from "../../logger.mjs";
 
 async function sendQuery(prompt) {
     var options = {
@@ -33,7 +33,7 @@ async function sendQuery(prompt) {
 async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=false) {
 
     if (verbose) {
-        syslog(`Sending query: ${prompt}`);
+        sysverbose(`Sending query: ${prompt}`);
         for (let attempts = 1; attempts <= 5; attempts++) {
             let timestamp = new Date().toISOString();
             try {
@@ -41,8 +41,8 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=fa
                 if (result.error_msg) {
                     throw new Error(result.error_msg);
                 }
-                syslog(`${timestamp}: Attempt ${attempts} succeeded:`);
-                syslog(result);
+                syshttp(`${timestamp}: Attempt ${attempts} succeeded:`);
+                syshttp(result);
                 return result; // result is an object, the body part of the response 
             } catch (e) {
                 syserror(`${timestamp}: Attempt ${attempts} failed: ${e}`);

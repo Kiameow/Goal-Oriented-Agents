@@ -19,7 +19,9 @@ import { getSurroundingInfo } from "./percive.mjs";
 import { dailyPlanning, getCurrentPlan, getNextAction, hourlyPlanning } from "./planning.mjs";
 import { writeFile } from "fs/promises";
 import { getAgentsPath } from "../../filepath.mjs";
-import { syserror, syswarn, syslog } from "../../logger.mjs";
+import { syserror, syswarn, sysinfo } from "../../logger.mjs";
+import { converse, willToConverse } from "./converse.mjs";
+import { GlobalConversation } from "../globalConversation.mjs";
 
 class Agent {
     constructor(id) {
@@ -27,6 +29,7 @@ class Agent {
         this.agentInfo = {};
         this.dailyPlans = "";
         this.hourlyPlans = [];
+        this.currentPlan = "";
         this.nextAction = "";
         this.currentLocation = "";
         this.innerThoughts = "";
@@ -46,11 +49,11 @@ class Agent {
 
     async getDailyPlans() {
         const dailyPlans = await dailyPlanning(this.agentInfo, globalTime.value.day)
-        syslog(this.id, " dailyPlans: ", dailyPlans)
+        sysinfo(`|${this.id}| dailyPlans: ${dailyPlans}`)
         if (dailyPlans) {
             this.dailyPlans = dailyPlans;
         } else {
-            syswarn("No daily plans found for today.");
+            syswarn(`|${this.id}| No daily plans found for he/she today.`);
         }
 
         this.dailyPlans = dailyPlans;
@@ -69,29 +72,62 @@ class Agent {
 
         try {
             const timetable = await hourlyPlanning(this.agentInfo, this.dailyPlans)
-            syslog(timetable);
+            sysinfo("|", this.id, "| timetable:", timetable);
             this.hourlyPlans = timetable;
         } catch (error) {
             syserror("error | getHourlyPlans | Agent.mjs | ", error);
         }
     }
 
+    async getWillToConverse() {
+        // check whether there is another agent try to converse with this agent
+        // if yes, set the next action to converse with this agent
+        if (this.agentInfo.wakeHour > globalTime.value.hour) {
+            return;
+        } 
+        const willing = await willToConverse(this);
+        // TODO
+        // called a global function which sets the agents in list's next action to converse with the person "converse with [this_person] about [this_topic]"
+        if (willing.will_converse) {
+            GlobalConversation.push({
+                timestamp: globalTime.getCurrentTimestamp(),
+                participants: willing.converse_with.push(this.id),
+                topic: willing.topic
+            })
+        }
+    }
+
+    // nextAction = [timestamp, location, action]
+
     async getNextAction() {
         // compare the current time with the timetable and return the current running plan
         // ["stay", "keep finishing the research about the local food"]
         const timestamp = globalTime.getCurrentTimestamp();
         if (this.agentInfo.wakeHour > globalTime.value.hour) {
-            this.nextAction = [timestamp, "stay", "sleep"];
-        } else {
-            const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.toString())
-            const surroundingRightNow = await getSurroundingInfo(this)
-            let nextAction = await getNextAction(this.agentInfo, planRightNow, surroundingRightNow, 10) 
-            
-            this.nextAction = nextAction ?? [timestamp, "stay", "keep doing what you are doing"]
-        }
+            this.nextAction = [timestamp, this.currentLocation, "sleep"];
+            sysinfo("|", this.id, "| location:", this.nextAction[1], ", action:", this.nextAction[2]);
+            return;
+        } 
 
-        syslog("location: ", this.nextAction[1], ", action: ", this.nextAction[2]);
+        if (GlobalConversation.length > 0) {
+            for (let i = 0; i < GlobalConversation.length; i++) {
+                const conversation = GlobalConversation[i];
+                if (conversation.participants.includes(this.id)) {
+                    this.nextAction = [timestamp, this.currentLocation, "converse with " + conversation.participants.filter((id) => id!== this.id).join(',') + " about " + conversation.topic];
+                    return;
+                }
+            }
+        }
+        
+        const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.toString());
+        this.currentPlan = planRightNow;
+        const surroundingRightNow = await getSurroundingInfo(this)
+        let nextAction = await getNextAction(this.agentInfo, planRightNow, surroundingRightNow, 10) 
+        
+        this.nextAction = nextAction ?? [timestamp, "stay", "keep doing what you are doing"]
+
         this.currentLocation = this.nextAction[1] === "stay" ? this.currentLocation : this.nextAction[1];
+        sysinfo("|", this.id, "| location:", this.currentLocation, ", action:", this.nextAction[2]);
     }
 
     async saveToInstantMemory() {
@@ -108,7 +144,7 @@ class Agent {
 
         try {
             await writeJsonFileAsync(memoryLocation, memory);
-            syslog("Memory saved to ", memoryLocation);
+            sysinfo("|", this.id, "| Memory saved to", memoryLocation);
         } catch (error) {
             syserror("error | saveToInstantMemory | Agent.mjs | ", error);
         }
@@ -121,6 +157,12 @@ class Agent {
 
         await writeJsonFileAsync(filepath, nextAction);
     }
+
+    async clearNextActions() {
+        const filepath = getAgentsPath() + `/${this.id}/next_action.json`;
+        await writeJsonFileAsync(filepath, []);
+    }
+    
 }
 
 async function initializeAgents(agentIds) {
@@ -137,8 +179,8 @@ async function initializeAgents(agentIds) {
     });
 }
 
-const agentIds = ["Maria_Lopez"];
+const globalAgentIds = ["Maria_Lopez", "Zhang_Chen", "David_Thompson", "Emily_Carter"];
 const globalAgents = new Map();
-await initializeAgents(agentIds);
+await initializeAgents(globalAgentIds);
 
-export { Agent, globalAgents };
+export { Agent, globalAgents, globalAgentIds };

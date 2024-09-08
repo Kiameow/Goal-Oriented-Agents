@@ -1,8 +1,13 @@
 import { globalAgents } from "./core/agents/Agent.mjs";
 import globalTime from "./core/globalTime.mjs";
+import { sysinfo } from "./logger.mjs";
 
 let steps = 100;
-while (steps--) {
+
+sysinfo("Starting simulation...");
+for(let i = 0; i < steps; i++) {
+    sysinfo(`Step ${i+1} of ${steps}`);
+    sysinfo(`Current time: ${globalTime.toString()}`);
     if (globalTime.isNewDay()) {
         await performDailyAndHourlyPlans();
     }
@@ -25,6 +30,7 @@ async function performDailyAndHourlyPlans() {
 
 async function performNextAction() {
     const actionPromises = Array.from(globalAgents.values()).map(async (agent) => {
+        await agent.getWillToConverse();
         await agent.getNextAction();
         await agent.saveNextAction();
     });

@@ -10,7 +10,7 @@ import { globalAgents } from "./Agent.mjs";
 import { getEstatesInfo } from "./percive.mjs";
 import { globalScen } from "../scen/Scen.mjs";
 import chalk from "chalk";
-import { syserror, syswarn, syslog } from "../../logger.mjs";
+import { syserror, syswarn, sysinfo, sysdebug } from "../../logger.mjs";
 import globalTime from "../globalTime.mjs";
 
 async function dailyPlanning(agentInfo, datetime) {
@@ -149,7 +149,7 @@ async function getNextAction(
       );
       let nextActionStr = response.result;
       nextActionStr = extractContentBetweenFlags(nextActionStr, "<##FLAG##>");
-      syslog(nextActionStr);
+      sysdebug(nextActionStr);
       if (nextActionStr) {
         nextAction = JSON.parse(nextActionStr);
       }

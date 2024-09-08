@@ -1,5 +1,6 @@
 import winston from 'winston';
 import chalk from 'chalk';
+import dotenv from 'dotenv';
 
 // 创建自定义的颜色格式
 const colorizeFormat = winston.format.printf(({ level, message, timestamp }) => {
@@ -7,6 +8,18 @@ const colorizeFormat = winston.format.printf(({ level, message, timestamp }) => 
     let colorizedMessage;
 
     switch (level) {
+        case 'debug':
+            coloredLevel = chalk.green(level);
+            colorizedMessage = chalk.green(message);
+            break;
+        case 'verbose':
+            coloredLevel = chalk.gray(level);
+            colorizedMessage = chalk.gray(message);
+            break;
+        case 'http': 
+            coloredLevel = chalk.magenta(level);
+            colorizedMessage = chalk.magenta(message);
+            break;
         case 'info':
             coloredLevel = chalk.blue(level);
             colorizedMessage = chalk.blue(message);
@@ -32,7 +45,7 @@ const plainFormat = winston.format.printf(({ level, message, timestamp }) => {
 });
 
 const logger = winston.createLogger({
-    level: 'info', // 日志级别，info 及以上级别的日志将被记录
+    level: process.env.LOG_LEVEL || 'info', // 日志级别，info 及以上级别的日志将被记录
     format: winston.format.combine(
         winston.format.timestamp(),
         plainFormat
@@ -44,11 +57,17 @@ const logger = winston.createLogger({
                 colorizeFormat // 控制台使用带颜色的格式
             )
         }), // 输出到控制台
-        new winston.transports.File({ filename: 'combined.log', format: plainFormat }) // 输出到文件
+        new winston.transports.File({ 
+            filename: 'combined.log', 
+            format: plainFormat,
+            level: 'error'
+        }) // only capture error logs to file
     ],
 });
 
-function syslog(...args) {
+function sysinfo(...args) {
+    if (!logger.isLevelEnabled('info')) return;
+
     const message = args.map(arg => 
         typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
     ).join(' ');
@@ -56,6 +75,8 @@ function syslog(...args) {
 }
 
 function syswarn(...args) {
+    if (!logger.isLevelEnabled('warn')) return;
+
     const message = args.map(arg => 
         typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
     ).join(' ');
@@ -63,10 +84,39 @@ function syswarn(...args) {
 }
 
 function syserror(...args) {
+    if (!logger.isLevelEnabled('error')) return;
+
     const message = args.map(arg => 
         typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
     ).join(' ');
     logger.error(message);
 }
 
-export { logger, syslog, syswarn, syserror };
+function syshttp(...args) {
+    if (!logger.isLevelEnabled('http')) return;
+
+    const message = args.map(arg => 
+        typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
+    ).join(' ');
+    logger.http(message);
+}
+
+function sysverbose(...args) {
+    if (!logger.isLevelEnabled('verbose')) return;
+
+    const message = args.map(arg => 
+        typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
+    ).join(' ');
+    logger.verbose(message);
+}
+
+function sysdebug(...args) {
+    if (!logger.isLevelEnabled('debug')) return;
+
+    const message = args.map(arg => 
+        typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
+    ).join(' ');
+    logger.debug(message);
+}
+
+export { logger, sysinfo, syswarn, syserror, syshttp, sysverbose, sysdebug };
