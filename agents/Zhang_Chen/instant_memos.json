@@ -1,6 +1,6 @@
 {
   "currentLocation": "DTL",
-  "dailyPlans": "\n1. 9am to 10am: Wake up, check emails and prepare for the day's work.\n2. 10am to 12pm: Analyze market trends and develop marketing strategies for the restaurant.\n3. 12pm to 1pm: Lunch break.\n4. 1pm to 5pm: Work on marketing projects, collaborate with the team and discuss ideas for promoting the restaurant's business growth.\n5. 5pm to 6pm: Evaluate the effectiveness of recent marketing strategies and adjust plans accordingly.\n6. 6pm to 8pm: Attend any urgent meetings or address any last-minute issues related to marketing.\n7. 8pm to 9pm: Relax, take a break and prepare for the day's end.\n8. 9pm onwards: Rest and prepare for the next day's activities.",
+  "dailyPlans": "1. 9am to 10am: Wake up, have breakfast, and check market trends and recent developments in the field of marketing.\n2. 10am to 12pm: Analyze market data, develop marketing strategies, and plan out promotional activities for the day.\n3. 12pm to 1pm: Lunch break.\n4. 1pm to 5pm: Work closely with the team to implement marketing projects and ensure their successful execution.\n5. 5pm to 6pm: Evaluate the day's activities and make necessary adjustments to the marketing plan.\n6. 6pm to 8pm: Attend any meetings or events related to marketing if any.\n7. 8pm to 10pm: Relax, spend time with family or personal activities.\n8. 10pm: Go to bed and rest for tomorrow's challenges.",
   "hourlyPlans": [
     {
       "plan": "sleep",
@@ -48,77 +48,77 @@
       "isDone": false
     },
     {
-      "plan": "Wake up, check emails and prepare for the day's work.",
+      "plan": "Wake up, have breakfast, check market trends and recent developments in marketing.",
       "clockScale": 10,
       "isDone": false
     },
     {
-      "plan": "From 10am to 11am, Zhang Chen should analyze market trends and develop marketing strategies for the restaurant.",
+      "plan": "From 10am to 11am, Zhang Chen should analyze market data, develop marketing strategies, and plan out promotional activities for the day.",
       "clockScale": 11,
       "isDone": false
     },
     {
-      "plan": "11am to 12pm: Develop marketing strategies for the restaurant.",
+      "plan": "Analyze market data, develop marketing strategies, plan promotional activities.",
       "clockScale": 12,
       "isDone": false
     },
     {
-      "plan": "Lunch break. ##FLAG## Relax and take a break.",
+      "plan": "have lunch break and continue with marketing tasks after that.",
       "clockScale": 13,
       "isDone": false
     },
     {
-      "plan": "From 13:00 to 14:00, Zhang Chen should work on marketing projects, collaborate with the team and discuss ideas for promoting the restaurant's business growth.",
+      "plan": "Analyze market data and develop marketing strategies.",
       "clockScale": 14,
       "isDone": false
     },
     {
-      "plan": "From 14:00 to 15:00, Zhang Chen should work on marketing projects, collaborate with the team, and discuss ideas for promoting the restaurant's business growth.",
+      "plan": "Between 14:00 and 15:00, Zhang Chen should work closely with the team to implement marketing projects and ensure their successful execution.",
       "clockScale": 15,
       "isDone": false
     },
     {
-      "plan": "15'o clock to 16'o clock: Work on marketing projects, collaborate with team.",
+      "plan": "Work closely with team to implement marketing projects.",
       "clockScale": 16,
       "isDone": false
     },
     {
-      "plan": "From 16:00 to 17:00, the agent should continue with the marketing projects, collaborate with the team, and discuss ideas for promoting the restaurant's business growth.",
+      "plan": "Work closely with the team to implement marketing projects and ensure successful execution.",
       "clockScale": 17,
       "isDone": false
     },
     {
-      "plan": "From 5pm to 6pm, the agent should attend any urgent meetings or address any last-minute issues related to marketing.",
+      "plan": "From 5pm to 6pm, the agent should work on evaluating the day's activities and making necessary adjustments to the marketing plan. Therefore, at 17 o'clock to 18 o'clock, the agent should continue with the task of evaluating and adjusting the marketing plan.",
       "clockScale": 18,
       "isDone": false
     },
     {
-      "plan": "Relax, take a break.",
+      "plan": "From 18:00 to 19:00, the agent should attend any meetings or events related to marketing if any.",
       "clockScale": 19,
       "isDone": false
     },
     {
-      "plan": "Relax, take a break and prepare for the day's end.",
+      "plan": "From 19:00 to 20:00, Zhang Chen should relax and spend time with family or personal activities.",
       "clockScale": 20,
       "isDone": false
     },
     {
-      "plan": "Relax, take a break.",
+      "plan": "Relax, engage in family or personal activities.",
       "clockScale": 21,
       "isDone": false
     },
     {
-      "plan": "From 21:00 to 22:00, Zhang Chen should relax, take a break, and prepare for the day's end.",
+      "plan": "From 21:00 to 22:00, Zhang Chen should relax and spend time with family or personal activities.",
       "clockScale": 22,
       "isDone": false
     },
     {
-      "plan": "Relax, prepare for tomorrow's activities.",
+      "plan": "From 22:00 to 23:00, Zhang Chen should relax, spend time with family or personal activities.",
       "clockScale": 23,
       "isDone": false
     },
     {
-      "plan": "Rest and prepare for the next day's activities.",
+      "plan": "Relax, prepare for tomorrow's challenges.",
       "clockScale": 24,
       "isDone": false
     }
