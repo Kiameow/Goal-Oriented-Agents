@@ -34,13 +34,18 @@ export async function getPrompt(fileName, data) {
     return prompt;
 }
 
-export function extractContentBetweenFlags(str, flag) {
-    if (str.indexOf(flag) === -1) {
+export function extractContentBetweenFlags(str, startFlag, endFlag=startFlag) {
+    if (str.indexOf(startFlag) === -1 && str.indexOf(endFlag) === -1) {
         return str;
     }
-    str = str+flag;
-    const start = str.indexOf(flag) + flag.length;
-    const end = str.indexOf(flag, start);
+    if (str.indexOf(startFlag) === -1) {
+        str = flag + str;
+    }
+    if (str.indexOf(endFlag) === -1) {
+        str = str + flag;
+    }
+    const start = str.indexOf(startFlag) + startFlag.length;
+    const end = str.indexOf(endFlag, start);
     
     if (start !== -1 && end !== -1 && start < end) {
         const _str = str.substring(start, end);
