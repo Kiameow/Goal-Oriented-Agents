@@ -2,7 +2,7 @@ Generate a JSON object that represents a conversation based on the following inf
 
 Participants:
 {{#each participants}}
-- {{this.name}}
+- {{this.agentInfo.name}}
 {{/each}}
 
 Topic:
@@ -10,7 +10,7 @@ Topic:
 
 Inner Thoughts:
 {{#each participants}}
-- {{this.name}}: {{this.innerThoughts}}
+- {{this.agentInfo.name}}: {{this.innerThoughts}}
 {{/each}}
 
 The JSON object should have the following structure:
@@ -38,6 +38,6 @@ The JSON object should have the following structure:
 }
 <##FLAG##>
 
-Please generate up to {{rounds}} rounds of dialogue. Each round should include the participants' utterances based on their inner thoughts.
+Please generate up to {{rounds}} rounds of dialogue. Each round should include the participants' utterances based on their inner thoughts. And the dialogue content should be English.
 
 And don't forget to wrap the JSON object in <##FLAG##>.

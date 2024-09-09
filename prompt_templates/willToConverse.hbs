@@ -13,6 +13,6 @@
 
 {{ agentName }}'s goal is {{ goal }}, who assumes the role of {{ role }}, and currently {{ plan }}
 ---
-Right now is {{clocktime}}. {{ agentName }} {{ surrounding }}, based on the current situation, output whether {{ agentName }} will converse or not. 
+Right now is {{clocktime}}. {{ agentName }} {{ surrounding }} based on the current situation, output whether {{ agentName }} will converse or not. 
 If {{ agentName }} is going to converse, output whom to converse with and what to talk about in json format like this: <##FLAG##>{"will_converse": true, "converse_with": ["agent_name", "agent_name"], "topic": "topic_to_talk_about"}<##FLAG##>
 else output "<##FLAG##>{"will_converse": false}<##FLAG##>"

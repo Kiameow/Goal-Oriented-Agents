@@ -3,7 +3,7 @@ import { hasOverlap, readJsonFileAsync, writeJsonFileAsync } from "../helper.mjs
 import { converse } from "./agents/converse.mjs";
 import globalTime from "./globalTime.mjs";
 
-const GlobalConversation = [];
+let GlobalConversation = [];
 async function globalConverse() {
     while (GlobalConversation.length > 0) {
         const conversationInfo = GlobalConversation.shift();

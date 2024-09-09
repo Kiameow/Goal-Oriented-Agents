@@ -1,4 +1,5 @@
 import { globalAgents } from "./core/agents/Agent.mjs";
+import { GlobalConversation, globalConverse } from "./core/globalConversation.mjs";
 import globalTime from "./core/globalTime.mjs";
 import { sysinfo } from "./logger.mjs";
 
@@ -12,6 +13,7 @@ for(let i = 0; i < steps; i++) {
         await performDailyAndHourlyPlans();
     }
     await performNextAction();
+    sysinfo("End of step.")
     globalTime.updateTime();
     globalTime.saveToFile();
 }
@@ -29,12 +31,16 @@ async function performDailyAndHourlyPlans() {
 }
 
 async function performNextAction() {
-    const actionPromises = Array.from(globalAgents.values()).map(async (agent) => {
+    const willToConversePromises = Array.from(globalAgents.values()).map(async (agent) => {
         await agent.getWillToConverse();
+    });
+    const actionPromises = Array.from(globalAgents.values()).map(async (agent) => {
         await agent.getNextAction();
         await agent.saveNextAction();
     });
 
     // 等待所有 Agents 完成 getNextAction 调用
+    await Promise.all(willToConversePromises);
     await Promise.all(actionPromises);
+    await globalConverse();
 }
