@@ -44,8 +44,10 @@ const plainFormat = winston.format.printf(({ level, message, timestamp }) => {
     return `${timestamp} [${level}]: ${message}`;
 });
 
+dotenv.config();
+const logLevel = process.env.LOG_LEVEL || 'info';
 const logger = winston.createLogger({
-    level: process.env.LOG_LEVEL || 'info', // 日志级别，info 及以上级别的日志将被记录
+    level: logLevel, // 日志级别，info 及以上级别的日志将被记录
     format: winston.format.combine(
         winston.format.timestamp(),
         plainFormat
