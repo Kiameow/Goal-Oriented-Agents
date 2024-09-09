@@ -1,1 +1,342 @@
-[]
+[
+  [
+    "0:7:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:10",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:20",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:40",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:50",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:8:0",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:8:10",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:8:20",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:8:30",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:8:40",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:8:50",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:9:0",
+    "MLH",
+    "Wake up, prepare for the day, review financial reports."
+  ],
+  [
+    "0:9:10",
+    "MLH",
+    "Wake up, prepare for the day, review financial reports."
+  ],
+  [
+    "0:9:20",
+    "MLH",
+    "Wake up, prepare for the day, review financial reports."
+  ],
+  [
+    "0:9:30",
+    "MLH",
+    "Wake up, prepare for the day, review financial reports"
+  ],
+  [
+    "0:9:40",
+    "MLH",
+    "Wake up, prepare for the day, review financial reports"
+  ],
+  [
+    "0:9:50",
+    "MLH",
+    "Wake up, prepare for the day, review financial reports."
+  ],
+  [
+    "0:10:0",
+    "MLH",
+    "leave for Central Vista Rooftop to prepare for the meeting"
+  ],
+  [
+    "0:10:10",
+    "MLH",
+    "Meet with the team to discuss budget allocation and financial strategies."
+  ],
+  [
+    "0:10:20",
+    "MLH",
+    "prepare for the meeting"
+  ],
+  [
+    "0:10:30",
+    "MLH",
+    "meet with the team to discuss budget allocation and financial strategies"
+  ],
+  [
+    "0:10:40",
+    "MLH",
+    "stay and prepare for the meeting"
+  ],
+  [
+    "0:10:50",
+    "MLH",
+    "Go back home and prepare for the meeting"
+  ],
+  [
+    "0:11:0",
+    "MLH",
+    "Continue with the budget allocation and financial strategies discussion with the team"
+  ],
+  [
+    "0:11:10",
+    "MLH",
+    "Continue with the budget allocation and financial strategies discussion with the team"
+  ],
+  [
+    "0:11:20",
+    "MLH",
+    "Continue with the budget allocation and financial strategies discussion with the team."
+  ],
+  [
+    "0:11:30",
+    "MLH",
+    "Continue with the budget allocation and financial strategies discussion with the team"
+  ],
+  [
+    "0:11:40",
+    "MLH",
+    "Continue with the budget allocation and financial strategies discussion with the team"
+  ],
+  [
+    "0:11:50",
+    "MLH",
+    "Continue with the budget allocation and financial strategies discussion with the team"
+  ],
+  [
+    "0:12:0",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "prepare for lunch and gather thoughts on restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "stay at Maria Lopez Home, enjoy lunch, and discuss restaurant industry updates."
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "go to the kitchen and prepare for lunch"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "go to Maria Lopez Home and prepare for lunch"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "go to Maria Lopez Home, take a lunch break and discuss restaurant industry updates."
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "prepare for lunch"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "prepare for lunch"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "stay in the Maria Lopez Home to finish preparing for the restaurant launch."
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "stay in the Maria Lopez Home, plan lunch meeting location"
+  ],
+  [
+    "0:12:20",
+    "MLH",
+    "Lunch and discuss restaurant industry updates with Emily Carter"
+  ],
+  [
+    "0:12:30",
+    "MLH",
+    "have lunch with Emily Carter and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:30",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ],
+  [
+    "0:12:40",
+    "MLH",
+    "Lunch and discuss restaurant industry updates"
+  ]
+]
