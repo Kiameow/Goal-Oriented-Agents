@@ -6,8 +6,10 @@ Goal-Oriented-Agents is a project that aims to develop multi-agents systems that
 2. make sure you have installed [Node.js](https://nodejs.org/)
 3. run `npm install` in the root directory of this project
 4. create a .env file in the root directory according to the key-value pairs in the .env-template (provide your AK and SK)
-5. node test.mjs
+5. run `npm run test` to start simulation, you can adjust the LOG_LEVEL in the .env file to see more detailed or more concise log (error, warn, info, http, verbose, debug)
+6. you can check the simulation results in the `agents` directory (`next_action.json` and `globalConversation.json`)
+7. any error message will be documented in the combined.log file, you can check it to see what went wrong.
 
 ## TODO
 - [ ] add memory retrieve part
-- [ ] get the most common wake hour so the action request can be reduced
+- [ ] add task assignment part
