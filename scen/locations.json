@@ -26,6 +26,12 @@
         "description": "A cozy corner space in a trendy neighborhood, perfect for a casual dining restaurant. It is located on Sunset Boulevard, surrounded by boutiques and cafes, making it a hotspot for foot traffic. The rent fee is $6,000 per month.",
         "rents/month": 6000,
         "owned": false
+    },
+    {
+        "id": "DTL",
+        "name": "David Thompson Loft",
+        "description": "Where David Thompson rests. Also the office place for the whole team",
+        "rents/month": 0,
+        "owned": true
     }
-    
 ]

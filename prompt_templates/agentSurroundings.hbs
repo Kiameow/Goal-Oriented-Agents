@@ -3,4 +3,4 @@
   Variables: 
     locations: An array of objects containing the name and description of each location.
 }}
-is right now in {{location}}, with {{#if agents}}{{#each agents}} {{name}}, who is {{role}}{{/each}}{{else}}nobody{{/if}} around.
+is right now in {{location}}, with {{#if agents}}{{#each agents}} {{name}}, who is {{role}}{{#unless @last}},{{/unless}}{{/each}}{{else}}nobody{{/if}} around.

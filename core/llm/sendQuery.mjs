@@ -30,39 +30,25 @@ async function sendQuery(prompt) {
     });
 }
 
-async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5, verbose=false) {
-
-    if (verbose) {
-        sysverbose(`Sending query: ${prompt}`);
-        for (let attempts = 1; attempts <= 5; attempts++) {
-            let timestamp = new Date().toISOString();
-            try {
-                const result = await sendQuery(prompt);
-                if (result.error_msg) {
-                    throw new Error(result.error_msg);
-                }
-                syshttp(`${timestamp}: Attempt ${attempts} succeeded:`);
-                syshttp(result);
-                return result; // result is an object, the body part of the response 
-            } catch (e) {
-                syserror(`${timestamp}: Attempt ${attempts} failed: ${e}`);
-                if (attempts >= maxRetries) {
-                    return {
-                        "error_msg": e,
-                        "result": "<##FLAG##>" + fallBackMessage + "<##FLAG##>"
-                    }
-                }
-            }
-        }
-    }
-
+async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5) {
+    sysverbose(`Sending query: ${prompt}`);
     for (let attempts = 1; attempts <= 5; attempts++) {
+        let timestamp = new Date().toISOString();
         try {
             const result = await sendQuery(prompt);
-            return result;
+            if (result.error_msg) {
+                throw new Error(result.error_msg);
+            }
+            syshttp(`${timestamp}: Attempt ${attempts} succeeded:`);
+            syshttp(result);
+            return result; // result is an object, the body part of the response 
         } catch (e) {
+            syserror(`${timestamp}: Attempt ${attempts} failed: ${e}`);
             if (attempts >= maxRetries) {
-                return fallBackMessage;
+                return {
+                    "error_msg": e,
+                    "result": "<##FLAG##>" + fallBackMessage + "<##FLAG##>"
+                }
             }
         }
     }

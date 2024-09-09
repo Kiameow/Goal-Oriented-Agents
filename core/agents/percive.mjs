@@ -13,7 +13,8 @@ import { globalAgents } from "./Agent.mjs";
 async function getSurroundingInfo(agent) {
     try {
         const locationInfo = globalScen.locations.find(location => location.id === agent.currentLocation); // locationInfo is an object the describes the location
-        const agentIDs = globalScen.agentsDistribution.get(agent.currentLocation).filter(agentID => agentID !== targetAgentID); // agents is an array of objects that describe the agents in the location
+        // agentDistribution has no agent info, need to fix
+        const agentIDs = globalScen.agentsDistribution.get(agent.currentLocation).filter(agentID => agentID !== agent.id); // agents is an array of objects that describe the agents in the location
         const agents = agentIDs.map(agentID => globalAgents.get(agentID).agentInfo); 
 
         const templatePath = getPromptPath() + "/agentSurroundings.hbs";
@@ -23,7 +24,6 @@ async function getSurroundingInfo(agent) {
         })
         return prompt;
     } catch (error) {
-        console.error(error);
         syserror(error);
     }
     

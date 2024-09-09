@@ -34,7 +34,7 @@ class Scen {
     // 更新某个agent的位置
     updateAgentLocation(agentID, locationID) {
         if (locationID)
-        this.agentsDistribution.set(locationID, agentID);
+        this.agentsDistribution.set(locationID, [...this.agentsDistribution.get(locationID), agentID]);
     }
 }
 

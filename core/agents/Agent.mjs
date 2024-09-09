@@ -22,6 +22,7 @@ import { getAgentsPath } from "../../filepath.mjs";
 import { syserror, syswarn, sysinfo } from "../../logger.mjs";
 import { converse, willToConverse } from "./converse.mjs";
 import { GlobalConversation } from "../globalConversation.mjs";
+import { globalScen } from "../scen/Scen.mjs";
 
 class Agent {
     constructor(id) {
@@ -45,6 +46,7 @@ class Agent {
         this.hourlyPlans = hourlyPlans;
         this.nextAction = nextAction;
         this.innerThoughts = innerThoughts;
+        globalScen.updateAgentLocation(this.id, this.currentLocation);
     }
 
     async getDailyPlans() {
@@ -85,13 +87,15 @@ class Agent {
         if (this.agentInfo.wakeHour > globalTime.value.hour) {
             return;
         } 
+        const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.value);
+        this.currentPlan = planRightNow;
         const willing = await willToConverse(this);
         // TODO
         // called a global function which sets the agents in list's next action to converse with the person "converse with [this_person] about [this_topic]"
         if (willing.will_converse) {
             GlobalConversation.push({
                 timestamp: globalTime.getCurrentTimestamp(),
-                participants: willing.converse_with.push(this.id),
+                participants: [...willing.converse_with, this.id],
                 topic: willing.topic
             })
         }
@@ -119,14 +123,13 @@ class Agent {
             }
         }
         
-        const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.toString());
-        this.currentPlan = planRightNow;
         const surroundingRightNow = await getSurroundingInfo(this)
-        let nextAction = await getNextAction(this.agentInfo, planRightNow, surroundingRightNow, 10) 
+        let nextAction = await getNextAction(this.agentInfo, this.currentPlan, surroundingRightNow, 10) 
         
         this.nextAction = nextAction ?? [timestamp, "stay", "keep doing what you are doing"]
 
         this.currentLocation = this.nextAction[1] === "stay" ? this.currentLocation : this.nextAction[1];
+        globalScen.updateAgentLocation(this.id, this.currentLocation);
         sysinfo("|", this.id, "| location:", this.currentLocation, ", action:", this.nextAction[2]);
     }
 
@@ -156,6 +159,7 @@ class Agent {
         const nextAction = [...previousAction, this.nextAction];
 
         await writeJsonFileAsync(filepath, nextAction);
+        sysinfo("|", this.id, "| Next action saved to", filepath);
     }
 
     async clearNextActions() {
@@ -179,8 +183,17 @@ async function initializeAgents(agentIds) {
     });
 }
 
+// const globalAgentIds = ["Maria_Lopez"];
 const globalAgentIds = ["Maria_Lopez", "Zhang_Chen", "David_Thompson", "Emily_Carter"];
 const globalAgents = new Map();
 await initializeAgents(globalAgentIds);
 
-export { Agent, globalAgents, globalAgentIds };
+function turnIdToName(agentId) {
+    return agentId.split("_").join(" ");
+}
+
+function turnNameToId(agentName) {
+    return agentName.split(" ").join("_");
+}
+
+export { Agent, globalAgents, globalAgentIds, turnIdToName, turnNameToId };

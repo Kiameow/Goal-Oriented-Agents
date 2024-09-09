@@ -149,6 +149,7 @@ async function getNextAction(
       );
       let nextActionStr = response.result;
       nextActionStr = extractContentBetweenFlags(nextActionStr, "<##FLAG##>");
+      nextActionStr = extractContentBetweenFlags(nextActionStr, "```json", "```");
       sysdebug(nextActionStr);
       if (nextActionStr) {
         nextAction = JSON.parse(nextActionStr);
@@ -206,11 +207,11 @@ function validateNextAction(nextAction) {
  * @param {Array} timetable
  * @param {object} clocktime
  */
-async function getCurrentPlan(timetable, clocktime) {
+async function getCurrentPlan(timetable, clocktimeObj) {
   // better way may be to delete the passed plans, so the first plan will be the current plan
   let planRightNow = "take the responsibility";
   for (let item of timetable) {
-    if (item.clockScale >= clocktime.hour) {
+    if (item.clockScale > clocktimeObj.hour) {
         planRightNow = item.plan;
         return planRightNow;
       } else {
