@@ -97,7 +97,7 @@ function validateConverseWill(converseWill) {
 
 function validateConverse(converse) {
     if (!Array.isArray(converse.conversation)) {
-        sysinfo("|", "converse result is not an array")
+        syswarn("|", "converse result is not an array")
         return false;
     }
 
@@ -113,7 +113,7 @@ function validateConverse(converse) {
         }
         return false;
     })) {
-        sysinfo("|", "converse result is not valid")
+        syswarn("|", "converse result is not valid")
         return false;
     }
     return true;

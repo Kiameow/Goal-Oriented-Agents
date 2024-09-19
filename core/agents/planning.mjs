@@ -163,25 +163,6 @@ async function getNextAction(
   }
 }
 
-// function validateHourlyPlan(timetable) {
-//     if (timetable.length === 0) {
-//         syswarn("Hourly plan is empty");
-//         return false;
-//     }
-//     if (timetable[timetable.length-1].clockScale !== 24) {
-//         syswarn("Hourly plan is not 24 hours long");
-//         return false;
-//     }
-//     let tempClockScale = 0;
-//     for (let i = 0; i < timetable.length; i++) {
-//         if (timetable[i].clockScale <= tempClockScale || timetable[i].clockScale > 24) {
-//             syswarn("Hourly plan has overlapping plans");
-//             return false;
-//         }
-//         tempClockScale = timetable[i].clockScale;
-//     }
-//     return true;
-// }
 
 function validateNextAction(nextAction) {
   if (!Array.isArray(nextAction) || nextAction.length !== 2) {
