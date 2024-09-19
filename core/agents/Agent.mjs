@@ -11,7 +11,6 @@
 //     "wakeHour": "9am"
 // }
 
-import chalk from "chalk";
 import { extractContentBetweenFlags, readJsonFileAsync, readJsonFileSync, writeJsonFileAsync } from "../../helper.mjs";
 import globalTime from "../globalTime.mjs";
 import { getAgentInfo } from "./agentHelper.mjs";
@@ -23,6 +22,7 @@ import { syserror, syswarn, sysinfo } from "../../logger.mjs";
 import { converse, willToConverse } from "./converse.mjs";
 import { GlobalConversation } from "../globalConversation.mjs";
 import { globalScen } from "../scen/Scen.mjs";
+import { Memory } from "./memory.mjs";
 
 class Agent {
     constructor(id) {
@@ -34,6 +34,8 @@ class Agent {
         this.nextAction = "";
         this.currentLocation = "";
         this.innerThoughts = "";
+        this.memoryLocation = getAgentsPath() + `/${this.id}/memos.json`;
+        this.memory = {};
     }
 
     async init() {
@@ -45,6 +47,7 @@ class Agent {
         this.dailyPlans = dailyPlans;
         this.hourlyPlans = hourlyPlans;
         this.nextAction = nextAction;
+        this.memory = new Memory(this.memoryLocation);
         this.innerThoughts = innerThoughts;
         globalScen.updateAgentLocation(this.id, this.currentLocation);
     }

@@ -1,7 +1,7 @@
 import { extractContentBetweenFlags, getPrompt, isJSON } from "../../helper.mjs";
 import { syserror, sysinfo, syswarn } from "../../logger.mjs";
 import globalTime from "../globalTime.mjs";
-import { sendQuerySafely } from "../llm/sendQuery.mjs";
+import { sendQuerySafely, sendQueryWithValidation } from "../llm/sendQuery.mjs";
 import { globalAgentIds, globalAgents, turnNameToId } from "./Agent.mjs";
 import { getCommonset } from "./agentHelper.mjs";
 import { getSurroundingInfo } from "./percive.mjs";
@@ -53,17 +53,7 @@ async function converse(agentIdList, topic) {
             rounds: 10
         });
         sysinfo ("|", "converse prompt: ", prompt);
-        let result = null;
-        do {
-            const response = await sendQuerySafely(prompt, null);
-            let resultStr = response.result;
-            resultStr = extractContentBetweenFlags(resultStr, "<##FLAG##>")
-            resultStr = extractContentBetweenFlags(resultStr, "```json", "```")
-            sysinfo ("|", "converse response: ", resultStr);
-            if (resultStr && isJSON(resultStr)) {
-                result = JSON.parse(resultStr);
-            }
-        } while (!result || !validateConverse(result))
+        const result = await sendQueryWithValidation(prompt, validateConverse);
         return result;
     } catch (e) {
         syserror(e);
@@ -119,4 +109,46 @@ function validateConverse(converse) {
     return true;
 }
 
-export { willToConverse, converse };
+async function summaryConversation(conversation) {
+    try {
+        const simplifiedConversation = extractDialogues(conversation);
+        const prompt = await getPrompt("summaryConversation.hbs", {
+            conversation: simplifiedConversation
+        });
+         sysinfo ("|", "summary conversation prompt: ", prompt);
+
+        const summary = await sendQueryWithValidation(prompt, validateSummaryConversation, false)
+        
+         sysinfo ("|", "summary conversation result: ", summary);
+        return summary;
+    } catch (e) {
+        syserror(e);
+        return ""
+    }
+}
+
+function extractDialogues(conversationObject) {
+    // Check if the conversation object has the expected structure
+    if (!conversationObject || !Array.isArray(conversationObject.conversation)) {
+      throw new Error("Invalid conversation object format");
+    }
+  
+    // Map through the conversation array to create the new simplified structure
+    const simplifiedDialogues = conversationObject.conversation.map(item => {
+      return {
+        speaker: item.dialogue.speaker,
+        utterance: item.dialogue.utterance
+      };
+    });
+  
+    return simplifiedDialogues;
+}
+
+function validateSummaryConversation(summary) {
+    if (summary.length < 10) {
+        return false;
+    } 
+    return true;
+}
+
+export { willToConverse, converse, extractDialogues, summaryConversation };

@@ -1,0 +1,12 @@
+Generate a summary of the conversation below:
+
+{{#each conversation}}
+{{this.speaker}}: {{this.utterance}}
+{{/each}}
+
+The summary should be a pure string contains information about the participants, topic, and the each participant's ideas and opinions about the topic.
+
+Please ensure the final output is a single string that encapsulates the essence of the conversation.
+
+Example output format should be:
+"<##FLAG##>Participant 1 ask the question about topic X. Participant 2 responds with their opinion on the topic. Participant 3 also responds with their opinion on the topic. The final conclusion is that they should do Y, because it will benefit them and the group <##FLAG##>"

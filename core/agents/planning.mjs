@@ -1,4 +1,4 @@
-import { sendQuerySafely } from "../llm/sendQuery.mjs";
+import { sendQuerySafely, sendQueryWithValidation } from "../llm/sendQuery.mjs";
 import { getPromptPath, getAgentsPath } from "../../filepath.mjs";
 import {
   extractContentBetweenFlags,
@@ -139,22 +139,7 @@ async function getNextAction(
       role: agentInfo.role,
     });
 
-    let nextAction = [];
-    do {
-      const response = await sendQuerySafely(
-        prompt,
-        "...(No response)",
-        5,
-        true
-      );
-      let nextActionStr = response.result;
-      nextActionStr = extractContentBetweenFlags(nextActionStr, "<##FLAG##>");
-      nextActionStr = extractContentBetweenFlags(nextActionStr, "```json", "```");
-      sysdebug(nextActionStr);
-      if (nextActionStr) {
-        nextAction = JSON.parse(nextActionStr);
-      }
-    } while (!validateNextAction(nextAction));
+    let nextAction = await sendQueryWithValidation(prompt, validateNextAction);
     nextAction = [timestamp, ...nextAction];
     return nextAction;
   } catch (error) {
@@ -162,7 +147,6 @@ async function getNextAction(
     return getNextAction(agentInfo, planRightNow, surrounding, duration);
   }
 }
-
 
 function validateNextAction(nextAction) {
   if (!Array.isArray(nextAction) || nextAction.length !== 2) {

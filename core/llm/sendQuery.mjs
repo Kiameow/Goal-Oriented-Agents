@@ -1,6 +1,7 @@
 import request from "request";
 import dotenv from "dotenv";
 import { syserror, syshttp, sysinfo, sysverbose } from "../../logger.mjs";
+import { extractContentBetweenFlags, isJSON } from "../../helper.mjs";
 
 async function sendQuery(prompt) {
     var options = {
@@ -54,6 +55,32 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5) {
     }
 }
 
+async function sendQueryWithValidation(prompt, validateFn, expectJson=true) {
+    let result = null;
+    
+    do {
+        // Send the query and get the response
+        const response = await sendQuerySafely(prompt, null);
+        let resultStr = response.result;
+
+        // Extract content between flags and JSON code block
+        resultStr = extractContentBetweenFlags(resultStr, "<##FLAG##>");
+        resultStr = extractContentBetweenFlags(resultStr, "```json", "```");
+        
+        if (expectJson) {
+            // Check if resultStr is not empty and valid JSON
+            if (resultStr && isJSON(resultStr)) {
+                result = JSON.parse(resultStr);
+            }
+        } else {
+            result = resultStr;
+        }
+        
+    } while (!result || !validateFn(result)); // Use the provided validation function
+
+    return result;
+}
+
 /**
  * 使用 AK，SK 生成鉴权签名（Access Token）
  * @return string 鉴权签名信息（Access Token）
@@ -74,6 +101,6 @@ function getAccessToken() {
     })
 }
 
-export {sendQuery, sendQuerySafely };
+export {sendQuery, sendQuerySafely, sendQueryWithValidation };
 
 

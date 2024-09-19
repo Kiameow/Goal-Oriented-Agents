@@ -59,6 +59,15 @@ class GlobalTime {
       return `${this.day}:${this.hour}:${this.minute}`;
     }
 
+    parseTimestamp(timestamp) {
+      const [day, hour, minute] = timestamp.split(':');
+      return {
+        day: parseInt(day),
+        hour: parseInt(hour),
+        minute: parseInt(minute),
+      }
+    }
+
     isNewDay() {
       if (this.hour === 0 && this.minute === 0) {
         return true;
