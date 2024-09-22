@@ -1,6 +1,6 @@
-import { extractContentBetweenFlags, getPrompt, isJSON } from "../../helper.mjs";
-import { syserror, sysinfo, syswarn } from "../../logger.mjs";
-import globalTime from "../globalTime.mjs";
+import { containsChinese, extractContentBetweenFlags, getPrompt, isJSON } from "../../helper.mjs";
+import { sysdebug, syserror, sysinfo, syswarn } from "../../logger.mjs";
+import { globalTime } from "../globalTime.mjs";
 import { sendQuerySafely, sendQueryWithValidation } from "../llm/sendQuery.mjs";
 import { globalAgentIds, globalAgents, turnNameToId } from "./Agent.mjs";
 import { getCommonset } from "./agentHelper.mjs";
@@ -15,6 +15,7 @@ async function willToConverse(agent) {
         const prompt = await getPrompt("willToConverse.hbs", {
             commonset: getCommonset(agentInfo),
             plan: agent.currentPlan,
+            memos: agent.relatedMemos,
             surrounding: surroundingInfo,
             agentName: agentInfo.name,
             goal: agentInfo.goal,
@@ -47,17 +48,21 @@ async function willToConverse(agent) {
 async function converse(agentIdList, topic) {
     try {
         const agentsList = agentIdList.map(id => globalAgents.get(id));
+        const innerThoughtsPromises = agentsList.map(async (agent) => { await agent.getInnerThoughts(topic)} );
+        await Promise.all(innerThoughtsPromises);
         const prompt = await getPrompt("converse.hbs", {
             participants: agentsList,
             topic: topic,
             rounds: 10
         });
         sysinfo ("|", "converse prompt: ", prompt);
-        const result = await sendQueryWithValidation(prompt, validateConverse);
+        let result = await sendQueryWithValidation(prompt, validateConverse);
+        sysinfo ("|", "converse result: ", result);
+        result = extractDialogues(result);
         return result;
     } catch (e) {
         syserror(e);
-        return { conversation: [] };
+        return [];
     }
 }
 
@@ -86,6 +91,9 @@ function validateConverseWill(converseWill) {
 }
 
 function validateConverse(converse) {
+    if (containsChinese(JSON.stringify(converse))) {
+        return false;
+    }
     if (!Array.isArray(converse.conversation)) {
         syswarn("|", "converse result is not an array")
         return false;
@@ -109,15 +117,14 @@ function validateConverse(converse) {
     return true;
 }
 
-async function summaryConversation(conversation) {
+async function summarizeConversation(conversation) {
     try {
-        const simplifiedConversation = extractDialogues(conversation);
-        const prompt = await getPrompt("summaryConversation.hbs", {
-            conversation: simplifiedConversation
+        const prompt = await getPrompt("summarizeConversation.hbs", {
+            conversation: conversation
         });
-         sysinfo ("|", "summary conversation prompt: ", prompt);
+         sysdebug ("|", "summary conversation prompt: ", prompt);
 
-        const summary = await sendQueryWithValidation(prompt, validateSummaryConversation, false)
+        const summary = await sendQueryWithValidation(prompt, validateSummarizeConversation, false)
         
          sysinfo ("|", "summary conversation result: ", summary);
         return summary;
@@ -144,11 +151,15 @@ function extractDialogues(conversationObject) {
     return simplifiedDialogues;
 }
 
-function validateSummaryConversation(summary) {
+function validateSummarizeConversation(summary) {
     if (summary.length < 10) {
+        syswarn("|", "summary too short")
         return false;
-    } 
+    } else if (containsChinese(summary)) {
+        syswarn("|", "summary contains Chinese")
+        return false;
+    }
     return true;
 }
 
-export { willToConverse, converse, extractDialogues, summaryConversation };
+export { willToConverse, converse, extractDialogues, summarizeConversation };

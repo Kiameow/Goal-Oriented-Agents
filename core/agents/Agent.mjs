@@ -12,7 +12,7 @@
 // }
 
 import { extractContentBetweenFlags, readJsonFileAsync, readJsonFileSync, writeJsonFileAsync } from "../../helper.mjs";
-import globalTime from "../globalTime.mjs";
+import { globalTime } from "../globalTime.mjs";
 import { getAgentInfo } from "./agentHelper.mjs";
 import { getSurroundingInfo } from "./percive.mjs";
 import { dailyPlanning, getCurrentPlan, getNextAction, hourlyPlanning } from "./planning.mjs";
@@ -22,7 +22,7 @@ import { syserror, syswarn, sysinfo } from "../../logger.mjs";
 import { converse, willToConverse } from "./converse.mjs";
 import { GlobalConversation } from "../globalConversation.mjs";
 import { globalScen } from "../scen/Scen.mjs";
-import { Memory } from "./memory.mjs";
+import { getInnerThoughts, getMemosDescription, Memory } from "./memory.mjs";
 
 class Agent {
     constructor(id) {
@@ -36,6 +36,7 @@ class Agent {
         this.innerThoughts = "";
         this.memoryLocation = getAgentsPath() + `/${this.id}/memos.json`;
         this.memory = {};
+        this.relatedMemos = "";
     }
 
     async init() {
@@ -84,6 +85,17 @@ class Agent {
         }
     }
 
+    async getRelatedMemos(event) {
+        const relatedMemos = await this.memory.retrieveMemories(event);
+        const relatedMemosStr = getMemosDescription(relatedMemos);
+        this.relatedMemos = relatedMemosStr;
+    }
+
+    async getInnerThoughts(topic) {
+        const innerThoughts = await getInnerThoughts(this, topic)
+        this.innerThoughts = innerThoughts;
+    }
+
     async getWillToConverse() {
         // check whether there is another agent try to converse with this agent
         // if yes, set the next action to converse with this agent
@@ -92,6 +104,7 @@ class Agent {
         } 
         const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.value);
         this.currentPlan = planRightNow;
+        await this.getRelatedMemos(this.currentPlan)
         const willing = await willToConverse(this);
         // TODO
         // called a global function which sets the agents in list's next action to converse with the person "converse with [this_person] about [this_topic]"
@@ -126,14 +139,18 @@ class Agent {
             }
         }
         
-        const surroundingRightNow = await getSurroundingInfo(this)
-        let nextAction = await getNextAction(this.agentInfo, this.currentPlan, surroundingRightNow, 10) 
+        const surroundingRightNow = await getSurroundingInfo(this);
+        let nextAction = null;
+        while (!nextAction) {
+            nextAction = await getNextAction(this.agentInfo, this.currentPlan, surroundingRightNow, this.relatedMemos) 
+        }
         
         this.nextAction = nextAction ?? [timestamp, "stay", "keep doing what you are doing"]
 
         this.currentLocation = this.nextAction[1] === "stay" ? this.currentLocation : this.nextAction[1];
         globalScen.updateAgentLocation(this.id, this.currentLocation);
         sysinfo("|", this.id, "| location:", this.currentLocation, ", action:", this.nextAction[2]);
+        // TODO: transform the location id to name
     }
 
     async saveToInstantMemory() {
@@ -154,6 +171,10 @@ class Agent {
         } catch (error) {
             syserror("error | saveToInstantMemory | Agent.mjs | ", error);
         }
+    }
+
+    async saveToMemory() {
+        await this.memory.createMemoryNode(`${this.nextAction[2]} at ${this.currentLocation} `)
     }
 
     async saveNextAction() {
