@@ -11,5 +11,5 @@ Goal-Oriented-Agents is a project that aims to develop multi-agents systems that
 7. any error message will be documented in the combined.log file, you can check it to see what went wrong.
 
 ## TODO
-- [ ] add memory retrieve part
 - [ ] add task assignment part
+- [ ] connect to the frontend and unity
