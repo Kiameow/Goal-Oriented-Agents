@@ -80,3 +80,8 @@ export function hasOverlap(arrA, arrB) {
     const setB = new Set(arrB);
     return [...setA].some(item => setB.has(item));
 }
+
+export function containsChinese(str) {
+    const chineseRegex = /[\u4e00-\u9fff]/;
+    return chineseRegex.test(str);
+}
