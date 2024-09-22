@@ -1,6 +1,6 @@
 import { globalAgents } from "./core/agents/Agent.mjs";
 import { GlobalConversation, globalConverse } from "./core/globalConversation.mjs";
-import globalTime from "./core/globalTime.mjs";
+import { globalTime } from "./core/globalTime.mjs";
 import { sysinfo } from "./logger.mjs";
 
 let steps = 100;

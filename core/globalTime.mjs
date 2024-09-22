@@ -59,13 +59,17 @@ class GlobalTime {
       return `${this.day}:${this.hour}:${this.minute}`;
     }
 
-    parseTimestamp(timestamp) {
+    static parseTimestamp(timestamp) {
       const [day, hour, minute] = timestamp.split(':');
       return {
         day: parseInt(day),
         hour: parseInt(hour),
         minute: parseInt(minute),
       }
+    }
+
+    static getExpressiveTime({ day, hour, minute }) {
+      return `Day ${day}, ${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
     }
 
     isNewDay() {
@@ -92,4 +96,4 @@ class GlobalTime {
 const globalTimePath = getTimePath() + '/global_time.json';
 const globalTime = GlobalTime.fromJSON(globalTimePath);
 
-export default globalTime;
+export { globalTime, GlobalTime };
