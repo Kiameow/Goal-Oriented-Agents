@@ -1,6 +1,6 @@
 import request from "request";
 import dotenv from "dotenv";
-import { syserror, syshttp, sysinfo, sysverbose } from "../../logger.mjs";
+import { syserror, syshttp, sysinfo, sysverbose, syswarn } from "../../logger.mjs";
 import { extractContentBetweenFlags, isJSON } from "../../helper.mjs";
 
 async function sendQuery(prompt) {
@@ -44,7 +44,7 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5) {
             syshttp(result);
             return result; // result is an object, the body part of the response 
         } catch (e) {
-            syserror(`${timestamp}: Attempt ${attempts} failed: ${e}`);
+            syswarn(`${timestamp}: Attempt ${attempts} failed: ${e}`);
             if (attempts >= maxRetries) {
                 return {
                     "error_msg": e,

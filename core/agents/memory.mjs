@@ -1,7 +1,8 @@
-import { extractContentBetweenFlags, getPrompt, isJSON, readJsonFileAsync, readJsonFileSync, writeJsonFileAsync } from "../../helper.mjs";
+import { containsChinese, extractContentBetweenFlags, getPrompt, isJSON, readJsonFileAsync, readJsonFileSync, writeJsonFileAsync } from "../../helper.mjs";
 import { syserror, sysinfo, syswarn } from "../../logger.mjs";
-import globalTime from "../globalTime.mjs";
+import { globalTime, GlobalTime } from "../globalTime.mjs";
 import { sendQuerySafely, sendQueryWithValidation } from "../llm/sendQuery.mjs";
+import { getCommonset } from "./agentHelper.mjs";
 
 class Memory {
   constructor(memoryFilePath) {
@@ -44,9 +45,10 @@ class Memory {
     await this.saveMemories();
   }
 
-  // provide a list of keywords, return X memory nodes which gets top X scores.
+  // provide a text, return X memory nodes which gets top X scores.
   // socres = 0.5 * relevance + 0.3 * importance + 0.2 * recentness
-  retrieveMemories(keywords) {
+  async retrieveMemories(text) {
+    const keywords = await getKeywords(text);
     const { day: currentDay, hour: currentHour, minute: currentMinute } = globalTime.value;
     const currentTotalMinutes = currentDay * 1440 + currentHour * 60 + currentMinute;
   
@@ -61,7 +63,7 @@ class Memory {
   
       const importanceScore = memory.importance;
   
-      const { day: memoryDay, hour: memoryHour, minute: memoryMinute } = globalTime.parseTimestamp(memory.timestamp);
+      const { day: memoryDay, hour: memoryHour, minute: memoryMinute } = GlobalTime.parseTimestamp(memory.timestamp);
       const memoryTotalMinutes = memoryDay * 1440 + memoryHour * 60 + memoryMinute;
       const recentnessScore = Math.floor(memoryTotalMinutes / currentTotalMinutes * 100);
   
@@ -99,6 +101,11 @@ function validateKeywords(keywords) {
         return false;
     }
 
+    if (containsChinese(JSON.stringify(keywords))) {
+        syswarn("|", "Keywords result contains Chinese characters");
+        return false;
+    }
+
     // 通过验证，返回true
     return true;
 }
@@ -117,4 +124,43 @@ function validateImportance(importance) {
   return true;
 }
 
-export { Memory, getKeywords };
+function getMemosDescription(memos) {
+    return memos.map(memo => `${GlobalTime.getExpressiveTime(GlobalTime.parseTimestamp(memo.timestamp))}  ${memo.description}`).join("\n");
+}
+
+async function getInnerThoughts(agent, topic) {
+  try {
+    const agentInfo = agent.agentInfo;
+    if (agent.relatedMemos.length === 0) {
+      return "";
+    }
+    const prompt = await getPrompt("getInnerThoughts.hbs", {
+      topic: topic,
+      agentName: agentInfo.name,
+      commonset: getCommonset(agentInfo),
+      role: agentInfo.role,
+      goal: agentInfo.goal,
+      memos: agent.relatedMemos
+    });
+    const thoughts = await sendQueryWithValidation(prompt, validateInnerThoughts, false);
+    return thoughts;
+  } catch (error) {
+    syserror("inner thoughts retrieval failed: ", error);
+    return "";
+  }
+}
+
+function validateInnerThoughts(thoughts) {
+  if (typeof thoughts !== "string" || thoughts.length === 0) {
+      syswarn("|", "Inner thoughts result is not string or empty");
+      return false;
+  }
+
+  if (containsChinese(thoughts)) {
+      syswarn("|", "Inner thoughts result contains Chinese characters");
+      return false;
+  }
+  return true;
+}
+
+export { Memory, getKeywords, getMemosDescription, getInnerThoughts };

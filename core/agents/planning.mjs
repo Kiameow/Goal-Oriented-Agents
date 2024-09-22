@@ -1,6 +1,7 @@
 import { sendQuerySafely, sendQueryWithValidation } from "../llm/sendQuery.mjs";
 import { getPromptPath, getAgentsPath } from "../../filepath.mjs";
 import {
+  containsChinese,
   extractContentBetweenFlags,
   handlebarHydrate,
   readJsonFileAsync,
@@ -11,7 +12,7 @@ import { getEstatesInfo } from "./percive.mjs";
 import { globalScen } from "../scen/Scen.mjs";
 import chalk from "chalk";
 import { syserror, syswarn, sysinfo, sysdebug } from "../../logger.mjs";
-import globalTime from "../globalTime.mjs";
+import { globalTime } from "../globalTime.mjs";
 
 async function dailyPlanning(agentInfo, datetime) {
   // {{commonset}}
@@ -118,7 +119,7 @@ async function getNextAction(
   agentInfo,
   planRightNow,
   surrounding,
-  duration
+  relatedMemos
 ) {
   try {
     const timestamp = globalTime.getCurrentTimestamp();
@@ -134,6 +135,7 @@ async function getNextAction(
       clocktime: clocktime,
       estates: estates,
       plan: planRightNow,
+      memos: relatedMemos,
       agentName: agentInfo.name,
       goal: agentInfo.goal,
       role: agentInfo.role,
@@ -144,11 +146,15 @@ async function getNextAction(
     return nextAction;
   } catch (error) {
     syserror(error);
-    return getNextAction(agentInfo, planRightNow, surrounding, duration);
+    return null;
   }
 }
 
 function validateNextAction(nextAction) {
+  if (containsChinese(JSON.stringify(nextAction))) {
+    syswarn("Next action contains Chinese characters");
+    return false;
+  }
   if (!Array.isArray(nextAction) || nextAction.length !== 2) {
     syswarn("Next action is not an array of length 2");
     return false;
