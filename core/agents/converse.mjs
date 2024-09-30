@@ -22,20 +22,10 @@ async function willToConverse(agent) {
             role: agentInfo.role,
             clocktime: globalTime.toString()
         })
-        // sysinfo("|", agent.id, "| converse prompt: ", prompt);
+        sysdebug("|", agent.id, "| converse prompt: ", prompt);
 
-        let result = null;
-        do {
-            const response = await sendQuerySafely(prompt, null);
-            let resultStr = response.result;
-            sysinfo ("|", agent.id, "| converse response: ", resultStr);
-            resultStr = extractContentBetweenFlags(resultStr, "<##FLAG##>")
-            resultStr = extractContentBetweenFlags(resultStr, "```json", "```")
-            if (resultStr && isJSON(resultStr)) {
-                result = JSON.parse(resultStr);
-            }
-        } while (!result || !validateConverseWill(result))
-        // sysinfo("|", agent.id, "| converse result: ", result );
+        let result = await sendQueryWithValidation(prompt, validateConverseWill);
+        sysinfo("|", agent.id, "| converse result: ", result);
         return result;
     } catch (e) {
         syserror(e);
@@ -55,7 +45,7 @@ async function converse(agentIdList, topic) {
             topic: topic,
             rounds: 10
         });
-        sysinfo ("|", "converse prompt: ", prompt);
+        // sysinfo ("|", "converse prompt: ", prompt);
         let result = await sendQueryWithValidation(prompt, validateConverse);
         sysinfo ("|", "converse result: ", result);
         result = extractDialogues(result);
@@ -122,11 +112,11 @@ async function summarizeConversation(conversation) {
         const prompt = await getPrompt("summarizeConversation.hbs", {
             conversation: conversation
         });
-         sysdebug ("|", "summary conversation prompt: ", prompt);
+        sysdebug ("|", "summary conversation prompt: ", prompt);
 
         const summary = await sendQueryWithValidation(prompt, validateSummarizeConversation, false)
         
-         sysinfo ("|", "summary conversation result: ", summary);
+        sysinfo ("|", "summary conversation result: ", summary);
         return summary;
     } catch (e) {
         syserror(e);
