@@ -7,8 +7,10 @@ let steps = 100;
 
 sysinfo("Starting simulation...");
 for(let i = 0; i < steps; i++) {
-    sysinfo(`Step ${i+1} of ${steps}`);
-    sysinfo(`Current time: ${globalTime.toString()}`);
+    sysinfo("################################");
+    sysinfo(`# Step ${i+1} of ${steps}`);
+    sysinfo(`# Current time: ${globalTime.toString()}`);
+    sysinfo("################################");
     if (globalTime.isNewDay()) {
         await performDailyAndHourlyPlans();
     }
