@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node test.mjs",
+    "reset": "node resetWorld.mjs",
     "start": "node server/app.js",
     "dev": "nodemon server/app.js"
   },

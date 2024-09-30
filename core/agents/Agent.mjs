@@ -190,7 +190,16 @@ class Agent {
         const filepath = getAgentsPath() + `/${this.id}/next_action.json`;
         await writeJsonFileAsync(filepath, []);
     }
-    
+
+    async clearInstantMemories() {
+        const memoryLocation = getAgentsPath() + `/${this.id}/instant_memos.json`;
+        await writeJsonFileAsync(memoryLocation, {});
+    }
+
+    async clearMemories() {
+        const memoryLocation = getAgentsPath() + `/${this.id}/memos.json`;
+        await writeJsonFileAsync(memoryLocation, []);
+    }
 }
 
 async function initializeAgents(agentIds) {
