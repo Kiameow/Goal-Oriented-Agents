@@ -41,13 +41,13 @@ class Agent {
 
     async init() {
         this.agentInfo = await getAgentInfo(this.id);
-        this.currentLocation = this.agentInfo.initialLocation;
         const instantMemoPath = getAgentsPath() + `/${this.id}/instant_memos.json`;
         const { currentLocation, dailyPlans, hourlyPlans, nextAction, innerThoughts } = await readJsonFileAsync(instantMemoPath);
-        this.currentLocation = currentLocation;
+        this.currentLocation = currentLocation ?? this.agentInfo.initialLocation;;
         this.dailyPlans = dailyPlans;
         this.hourlyPlans = hourlyPlans;
-        this.nextAction = nextAction;
+        const timestamp = globalTime.getCurrentTimestamp();
+        this.nextAction = nextAction ?? [timestamp, "stay", "keep doing what you are doing"];
         this.memory = new Memory(this.memoryLocation);
         this.innerThoughts = innerThoughts;
         globalScen.updateAgentLocation(this.id, this.currentLocation);
@@ -106,9 +106,12 @@ class Agent {
         this.currentPlan = planRightNow;
         await this.getRelatedMemos(this.currentPlan)
         const willing = await willToConverse(this);
-        // TODO
-        // called a global function which sets the agents in list's next action to converse with the person "converse with [this_person] about [this_topic]"
+
         if (willing.will_converse) {
+            const someoneIsSleeping = willing.converse_with.some((id) => globalAgents.get(id).agentInfo.wakeHour < globalTime.value.hour);
+            if (someoneIsSleeping) {
+                return ;
+            }
             GlobalConversation.push({
                 timestamp: globalTime.getCurrentTimestamp(),
                 participants: [...willing.converse_with, this.id],
@@ -150,7 +153,6 @@ class Agent {
         this.currentLocation = this.nextAction[1] === "stay" ? this.currentLocation : this.nextAction[1];
         globalScen.updateAgentLocation(this.id, this.currentLocation);
         sysinfo("|", this.id, "| location:", this.currentLocation, ", action:", this.nextAction[2]);
-        // TODO: transform the location id to name
     }
 
     async saveToInstantMemory() {
@@ -167,7 +169,7 @@ class Agent {
 
         try {
             await writeJsonFileAsync(memoryLocation, memory);
-            sysinfo("|", this.id, "| Memory saved to", memoryLocation);
+            sysinfo("|", this.id, "| Instant memory saved to", memoryLocation);
         } catch (error) {
             syserror("error | saveToInstantMemory | Agent.mjs | ", error);
         }
