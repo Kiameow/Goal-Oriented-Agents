@@ -43,12 +43,16 @@ class GlobalTime {
         this.day += Math.floor(this.hour / 24); // Calculate additional days from overflowed hours
         this.hour = this.hour % 24;
       }
+
+      this.saveToFile();
     }
 
     setTime(day, hour, minute) {
       this.day = day;
       this.hour = hour;
       this.minute = minute;
+
+      this.saveToFile();
     }
   
     toString() {

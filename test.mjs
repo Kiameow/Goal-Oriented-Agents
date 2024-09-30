@@ -15,7 +15,6 @@ for(let i = 0; i < steps; i++) {
     await performNextAction();
     sysinfo("End of step.")
     globalTime.updateTime();
-    globalTime.saveToFile();
 }
 
 
