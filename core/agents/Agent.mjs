@@ -61,13 +61,6 @@ class Agent {
         } else {
             syswarn(`|${this.id}| No daily plans found for he/she today.`);
         }
-
-        this.dailyPlans = dailyPlans;
-        if (this.dailyPlans) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
     async getHourlyPlans() {
@@ -102,7 +95,7 @@ class Agent {
         if (this.agentInfo.wakeHour > globalTime.value.hour) {
             return;
         } 
-        const planRightNow = await getCurrentPlan(this.hourlyPlans, globalTime.value);
+        const planRightNow = getCurrentPlan(this.hourlyPlans, globalTime.value);
         this.currentPlan = planRightNow;
         await this.getRelatedMemos(this.currentPlan)
         const willing = await willToConverse(this);
@@ -181,8 +174,8 @@ class Agent {
 
     async saveNextAction() {
         const filepath = getAgentsPath() + `/${this.id}/next_action.json`;
-        const previousAction = readJsonFileSync(filepath) ?? [];
-        const nextAction = [...previousAction, this.nextAction];
+        const previousActions = readJsonFileSync(filepath) ?? [];
+        const nextAction = [...previousActions, this.nextAction];
 
         await writeJsonFileAsync(filepath, nextAction);
         sysinfo("|", this.id, "| Next action saved to", filepath);

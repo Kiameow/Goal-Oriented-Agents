@@ -32,18 +32,25 @@ async function dailyPlanning(agentInfo, datetime) {
       wakeHour: agentInfo.wakeHour,
     });
 
-    const response = await sendQuerySafely(prompt, "...(No response)", 5, true);
-    let dailyPlan = response.result;
-    dailyPlan = extractContentBetweenFlags(dailyPlan, "<##FLAG##>");
-    return dailyPlan;
+    const dailyPlans = sendQueryWithValidation(prompt, validateDailyPlans, false);
+    return dailyPlans;
   } catch (error) {
     syserror(error);
-    return dailyPlanning(agentInfo, datetime);
+    return `${agentInfo.name} decides to continue the tasks assigned in the morning and afternoon, take rest or eat food during the noon and night.`
   }
 }
 
-// TODO getNextFiveMinutesAction
-// TODO hourlyPlanning
+function validateDailyPlans(dailyPlan) {
+  if (containsChinese(dailyPlan)) {
+    syswarn("Daily plan contains Chinese characters");
+    return false;
+  } 
+  if (dailyPlan.length < 10) {
+    syswarn("Daily plan is too short");
+    return false;
+  }
+  return true;
+}
 
 async function getHourlyPlanPrompt(agentInfo, dailyPlans, startHour) {
   try {
@@ -102,17 +109,24 @@ async function hourlyPlanning(agentInfo, dailyPlans) {
 async function getOneHourPlan(agentInfo, dailyPlans, startHour) {
   try {
     const prompt = await getHourlyPlanPrompt(agentInfo, dailyPlans, startHour);
-    let plan = "continue with the previous plan";
-    const response = await sendQuerySafely(prompt, "...(No response)", 5, true);
-    let planStr = response.result;
-    planStr = extractContentBetweenFlags(planStr, "<##FLAG##>");
-    if (planStr) {
-      plan = planStr;
-    }
+    let plan = sendQueryWithValidation(prompt, validateOneHourPlan, false);
     return plan;
   } catch (error) {
     syserror(error);
+    return "continue with the previous plan";
   }
+}
+
+function validateOneHourPlan(oneHourPlan) {
+  if (containsChinese(oneHourPlan)) {
+    syswarn("One hour plan contains Chinese characters");
+    return false;
+  }
+  if (oneHourPlan.length === 0) {
+    syswarn("One hour plan is too short");
+    return false;
+  }
+  return true;
 }
 
 async function getNextAction(
@@ -178,7 +192,7 @@ function validateNextAction(nextAction) {
  * @param {Array} timetable
  * @param {object} clocktime
  */
-async function getCurrentPlan(timetable, clocktimeObj) {
+function getCurrentPlan(timetable, clocktimeObj) {
   // better way may be to delete the passed plans, so the first plan will be the current plan
   let planRightNow = "take the responsibility";
   for (let item of timetable) {
