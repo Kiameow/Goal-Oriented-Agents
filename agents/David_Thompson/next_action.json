@@ -1,1 +1,452 @@
-[]
+[
+  [
+    "0:0:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:6:0",
+    "DTL",
+    "Exercise"
+  ],
+  [
+    "0:6:10",
+    "DTL",
+    "Exercise and prepare for the day"
+  ],
+  [
+    "0:6:20",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about expanding the restaurant chain into new markets"
+  ],
+  [
+    "0:6:30",
+    "DTL",
+    "Exercise"
+  ],
+  [
+    "0:6:40",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about plan to expand the restaurant chain into new markets"
+  ],
+  [
+    "0:6:50",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about plan to expand the restaurant chain into new markets"
+  ],
+  [
+    "0:7:0",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about expanding the restaurant chain into new markets"
+  ],
+  [
+    "0:7:10",
+    "DTL",
+    "Focus on project management, ensure current projects are running smoothly and meeting deadlines."
+  ],
+  [
+    "0:7:20",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about discussion about the plan to expand the restaurant chain into new markets"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "Focus on project management, ensure current projects are running smoothly and meeting deadlines."
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "Focus on project management, ensure current projects are running smoothly and meeting deadlines."
+  ],
+  [
+    "0:7:30",
+    "MLH",
+    "Focus on project management, ensure current projects are running smoothly and meeting deadlines"
+  ],
+  [
+    "0:7:40",
+    "DTL",
+    "Focus on project management, ensure current projects are running smoothly and meeting deadlines."
+  ],
+  [
+    "0:7:50",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about discuss the plan to expand the restaurant chain into new markets"
+  ],
+  [
+    "0:8:0",
+    "MLH",
+    "continue the discussion about the expansion plan"
+  ],
+  [
+    "0:8:10",
+    "DTL",
+    "go to David Thompson Loft to prepare for the meeting"
+  ],
+  [
+    "0:8:20",
+    "MLH",
+    "stay and continue the discussion about expansion plans"
+  ],
+  [
+    "0:8:30",
+    "MLH",
+    "keep discussing with Maria Lopez about the financial plan"
+  ],
+  [
+    "0:8:40",
+    "MLH",
+    "converse with Maria_Lopez about Expansion plan discussion"
+  ],
+  [
+    "0:8:50",
+    "MLH",
+    "converse with Maria_Lopez about expansion plan"
+  ],
+  [
+    "0:8:50",
+    "MLH",
+    "go over the plan for expansion into new markets with Zhang Chen and Emily Carter"
+  ],
+  [
+    "0:9:0",
+    "MLH",
+    "converse with Maria_Lopez about expansion plan"
+  ],
+  [
+    "0:9:10",
+    "DTL",
+    "Meet with the team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:9:20",
+    "MLH",
+    "go to Maria Lopez Home and discuss the expansion plan with Zhang Chen and Emily Carter"
+  ],
+  [
+    "0:9:30",
+    "MLH",
+    "meet with the team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:9:40",
+    "MLH",
+    "Meet with the team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:9:50",
+    "MLH",
+    "Meet with the team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:10:0",
+    "MLH",
+    "From 10am to 11am, David Thompson will work on improving customer satisfaction by reviewing feedback and suggestions from previous customers."
+  ],
+  [
+    "0:10:10",
+    "MLH",
+    "From 10am to 11am, David Thompson should work on improving customer satisfaction by reviewing feedback and suggestions from previous customers."
+  ],
+  [
+    "0:10:20",
+    "MLH",
+    "From 10am to 11am, David Thompson will work on improving customer satisfaction by reviewing feedback and suggestions from previous customers at Maria Lopez Home"
+  ],
+  [
+    "0:10:30",
+    "MLH",
+    "From 10am to 10:10am, David Thompson will discuss with Maria Lopez about the expansion plan and financial planning at Maria Lopez Home (MLH)"
+  ],
+  [
+    "0:10:40",
+    "MLH",
+    "From 10am to 11am, David Thompson should work on improving customer satisfaction by reviewing feedback and suggestions from previous customers."
+  ],
+  [
+    "0:10:50",
+    "MLH",
+    "From 10am to 11am, David Thompson should work on improving customer satisfaction by reviewing feedback and suggestions from previous customers."
+  ],
+  [
+    "0:11:0",
+    "DTL",
+    "meet with team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:11:10",
+    "MLH",
+    "meet with team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:11:20",
+    "MLH",
+    "meet with team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:11:30",
+    "DTL",
+    "meet with team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:11:40",
+    "MLH",
+    "meet with team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:11:50",
+    "MLH",
+    "meet with team to discuss expansion plan and gather feedback"
+  ],
+  [
+    "0:12:0",
+    "MLH",
+    "have lunch and discuss the day's progress with key team members"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "have lunch and discuss the day's progress with key team members"
+  ],
+  [
+    "0:12:20",
+    "MLH",
+    "have lunch and discuss the day's progress with key team members"
+  ],
+  [
+    "0:12:30",
+    "MLH",
+    "have lunch and discuss the day's progress with key team members"
+  ],
+  [
+    "0:12:40",
+    "DTL",
+    "have lunch and discuss the day's progress with key team members"
+  ],
+  [
+    "0:12:50",
+    "DTL",
+    "have lunch and discuss the day's progress with key team members"
+  ],
+  [
+    "0:13:0",
+    "MLH",
+    "continue discussing with Maria Lopez about the expansion plan"
+  ],
+  [
+    "0:13:10",
+    "DTL",
+    "continue discussing the expansion plan with the team"
+  ],
+  [
+    "0:13:20",
+    "DTL",
+    "continuing with the current tasks"
+  ],
+  [
+    "0:13:30",
+    "DTL",
+    "continuing with the current tasks"
+  ],
+  [
+    "0:13:40",
+    "MLH",
+    "continue discussing the expansion plan with Maria Lopez"
+  ],
+  [
+    "0:13:50",
+    "DTL",
+    "continue discussing the expansion plan with the team"
+  ],
+  [
+    "0:14:0",
+    "DTL",
+    "Attend to administrative tasks and prepare for tomorrow's schedule"
+  ],
+  [
+    "0:14:10",
+    "DTL",
+    "Attend to administrative tasks and prepare for tomorrow's schedule"
+  ],
+  [
+    "0:14:20",
+    "DTL",
+    "Attend to administrative tasks and prepare for tomorrow's schedule"
+  ]
+]

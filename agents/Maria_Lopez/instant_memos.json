@@ -1,1 +1,131 @@
-{}
+{
+  "currentLocation": "MLH",
+  "dailyPlans": "1. 9am to 10am: Wake up, prepare for the day, and set goals for the restaurant launch project.\n2. 10am to noon: Meet with other founders and discuss the strategic plan for the restaurant brand.\n3. Noon to 1pm: Manage budget allocation for the initial stages of the restaurant launch.\n4. 1pm to 2pm: Research market trends and identify potential customers for the restaurant.\n5. 2pm to 3pm: Develop a financial plan to ensure sustainable growth and success of the restaurant.\n6. 3pm to 4pm: Take a break, have lunch, and rest for a while.\n7. 4pm to 5pm: Work on market research analysis and identify opportunities for the restaurant.\n8. 5pm to 6pm: Prepare for tomorrow's tasks and prioritize items that need to be done first.\n9. 6pm onwards: Relax, enjoy some free time, and get ready for the next day.",
+  "hourlyPlans": [
+    {
+      "plan": "sleep",
+      "clockScale": 1,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 2,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 3,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 4,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 5,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 6,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 7,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 8,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 9,
+      "isDone": false
+    },
+    {
+      "plan": "Wake up, prepare for the day, set goals for the restaurant launch project.",
+      "clockScale": 10,
+      "isDone": false
+    },
+    {
+      "plan": "From 10am to 11am, Maria Lopez should meet with other founders and discuss the strategic plan for the restaurant brand.",
+      "clockScale": 11,
+      "isDone": false
+    },
+    {
+      "plan": "meet with founders and discuss strategic plan.",
+      "clockScale": 12,
+      "isDone": false
+    },
+    {
+      "plan": "Manage budget allocation for the restaurant launch.",
+      "clockScale": 13,
+      "isDone": false
+    },
+    {
+      "plan": "Research market trends and identify potential customers for the restaurant.",
+      "clockScale": 14,
+      "isDone": false
+    },
+    {
+      "plan": "Between 14:00 and 15:00, Maria Lopez should continue with her on-going tasks.",
+      "clockScale": 15,
+      "isDone": false
+    },
+    {
+      "plan": "Between 4pm and 5pm, the agent should work on market research analysis and identify opportunities for the restaurant.",
+      "clockScale": 16,
+      "isDone": false
+    },
+    {
+      "plan": "From 16'o clock to 17'o clock, the agent should continue with the on-going task.",
+      "clockScale": 17,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, enjoy free time, get ready for next day.",
+      "clockScale": 18,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy free time.",
+      "clockScale": 19,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy free time.",
+      "clockScale": 20,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, enjoy free time.",
+      "clockScale": 21,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, enjoy free time, and get ready for the next day.",
+      "clockScale": 22,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, enjoy free time, and prepare for the next day.",
+      "clockScale": 23,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, enjoy free time, and get ready for the next day.",
+      "clockScale": 24,
+      "isDone": false
+    }
+  ],
+  "nextAction": [
+    "0:0:0",
+    "stay",
+    "keep doing what you are doing"
+  ]
+}

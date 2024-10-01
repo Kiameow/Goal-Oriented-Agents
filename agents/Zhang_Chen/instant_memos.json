@@ -1,1 +1,131 @@
-{}
+{
+  "currentLocation": "DTL",
+  "dailyPlans": "\n1. 9am to 10am: Wake up, check emails and plan for the day ahead in terms of marketing tasks.\n2. 10am to 12pm: Analyze market trends and develop effective marketing strategies for the restaurant.\n3. 12pm to 1pm: Have lunch and review previous marketing projects to identify areas for improvement.\n4. 1pm to 3pm: Work on creative promotion strategies to achieve brand exposure and sales growth.\n5. 3pm to 4pm: Collaborate with the team to discuss marketing strategies and ensure successful implementation.\n6. 4pm to 5pm: Work on customer satisfaction surveys to gather feedback and improve marketing strategies accordingly.\n7. 5pm to 6pm: Check progress of marketing projects and make necessary adjustments to ensure efficient execution capabilities.\n8. 6pm to 9pm: Rest and prepare for tomorrow's marketing tasks.",
+  "hourlyPlans": [
+    {
+      "plan": "sleep",
+      "clockScale": 1,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 2,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 3,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 4,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 5,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 6,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 7,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 8,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 9,
+      "isDone": false
+    },
+    {
+      "plan": "Wake up, check emails, and plan daily marketing tasks.",
+      "clockScale": 10,
+      "isDone": false
+    },
+    {
+      "plan": "From 10am to 11am, Zhang Chen should analyze market trends and develop marketing strategies for the restaurant.",
+      "clockScale": 11,
+      "isDone": false
+    },
+    {
+      "plan": "Analyze market trends and develop marketing strategies during 11am to 12pm.",
+      "clockScale": 12,
+      "isDone": false
+    },
+    {
+      "plan": "have lunch and review previous marketing projects.",
+      "clockScale": 13,
+      "isDone": false
+    },
+    {
+      "plan": "From 1pm to 2pm, Zhang Chen should work on creative promotion strategies to achieve brand exposure and sales growth.",
+      "clockScale": 14,
+      "isDone": false
+    },
+    {
+      "plan": "From 14:00 to 15:00, Zhang Chen should work on creative promotion strategies to achieve brand exposure and sales growth.",
+      "clockScale": 15,
+      "isDone": false
+    },
+    {
+      "plan": "Collaborate with team on marketing strategies.",
+      "clockScale": 16,
+      "isDone": false
+    },
+    {
+      "plan": "Collaborate with team on marketing strategies and ensure successful implementation.",
+      "clockScale": 17,
+      "isDone": false
+    },
+    {
+      "plan": "Collaborate with the team during 5pm to 6pm to discuss marketing strategies and ensure successful implementation of projects. From 6pm to 7pm, rest and prepare for tomorrow's marketing tasks.",
+      "clockScale": 18,
+      "isDone": false
+    },
+    {
+      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "clockScale": 19,
+      "isDone": false
+    },
+    {
+      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "clockScale": 20,
+      "isDone": false
+    },
+    {
+      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "clockScale": 21,
+      "isDone": false
+    },
+    {
+      "plan": "From 21:00 to 22:00, Zhang Chen should rest and prepare for the next day's marketing tasks.",
+      "clockScale": 22,
+      "isDone": false
+    },
+    {
+      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "clockScale": 23,
+      "isDone": false
+    },
+    {
+      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "clockScale": 24,
+      "isDone": false
+    }
+  ],
+  "nextAction": [
+    "0:0:0",
+    "stay",
+    "keep doing what you are doing"
+  ]
+}

@@ -1,1 +1,442 @@
-[]
+[
+  [
+    "0:0:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:0:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:1:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:2:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:3:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:4:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:5:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:6:0",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:6:10",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:6:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:6:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:6:40",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:6:50",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:7:0",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about expanding the restaurant chain into new markets"
+  ],
+  [
+    "0:7:10",
+    "DTL",
+    "Wake up, prepare for the day, start with a cup of coffee."
+  ],
+  [
+    "0:7:20",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about discussion about the plan to expand the restaurant chain into new markets"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "Wake up, prepare for the day, start with a cup of coffee."
+  ],
+  [
+    "0:7:40",
+    "DTL",
+    "Wake up, prepare for the day, start with a cup of coffee."
+  ],
+  [
+    "0:7:50",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about discuss the plan to expand the restaurant chain into new markets"
+  ],
+  [
+    "0:8:0",
+    "DTL",
+    "update brand planning documents and prepare for any upcoming meetings or presentations"
+  ],
+  [
+    "0:8:10",
+    "DTL",
+    "Focus on updating brand planning documents and prepare for any upcoming meetings or presentations"
+  ],
+  [
+    "0:8:20",
+    "DTL",
+    "Focus on updating brand planning documents and prepare for any upcoming meetings or presentations."
+  ],
+  [
+    "0:8:30",
+    "DTL",
+    "Focus on updating brand planning documents and prepare for any upcoming meetings or presentations."
+  ],
+  [
+    "0:8:40",
+    "DTL",
+    "focus on updating brand planning documents and prepare for any upcoming meetings or presentations"
+  ],
+  [
+    "0:8:50",
+    "DTL",
+    "Focus on updating brand planning documents and prepare for any upcoming meetings or presentations."
+  ],
+  [
+    "0:8:50",
+    "DTL",
+    "Focus on updating brand planning documents and prepare for upcoming meetings or presentations"
+  ],
+  [
+    "0:9:0",
+    "MLH",
+    "go back to Maria Lopez Home and discuss the market trends and consumer behavior data with the team"
+  ],
+  [
+    "0:9:10",
+    "MLH",
+    "converse with Zhang_Chen,Maria_Lopez about discuss the plan to expand the restaurant chain into new markets"
+  ],
+  [
+    "0:9:20",
+    "MLH",
+    "keep finishing the discussion about the expansion plan"
+  ],
+  [
+    "0:9:30",
+    "MLH",
+    "Review market trends and consumer behavior data to gain further insights"
+  ],
+  [
+    "0:9:40",
+    "MLH",
+    "keep discussing with team members about the expansion plan"
+  ],
+  [
+    "0:9:50",
+    "MLH",
+    "keep finishing the discussion about expansion into new markets"
+  ],
+  [
+    "0:10:0",
+    "MLH",
+    "Develop brand communication strategy"
+  ],
+  [
+    "0:10:10",
+    "MLH",
+    "Develop brand communication strategy"
+  ],
+  [
+    "0:10:20",
+    "MLH",
+    "Discuss with the team about the upcoming restaurant chain expansion and financial planning"
+  ],
+  [
+    "0:10:30",
+    "MLH",
+    "Develop brand communication strategy"
+  ],
+  [
+    "0:10:40",
+    "MLH",
+    "Develop brand communication strategy"
+  ],
+  [
+    "0:10:50",
+    "MLH",
+    "Develop brand communication strategy"
+  ],
+  [
+    "0:11:0",
+    "MLH",
+    "develop a brand communication strategy that resonates with the target audience"
+  ],
+  [
+    "0:11:10",
+    "MLH",
+    "develop a brand communication strategy that resonates with the target audience"
+  ],
+  [
+    "0:11:20",
+    "MLH",
+    "develop a brand communication strategy that resonates with the target audience"
+  ],
+  [
+    "0:11:30",
+    "MLH",
+    "discuss with team members about the expansion plan and its impact on brand communication"
+  ],
+  [
+    "0:11:40",
+    "MLH",
+    "stay and discuss with team members about the expansion plan"
+  ],
+  [
+    "0:11:50",
+    "stay",
+    "develop a brand communication strategy that resonates with the target audience"
+  ],
+  [
+    "0:12:0",
+    "MLH",
+    "have lunch and take a short break"
+  ],
+  [
+    "0:12:10",
+    "MLH",
+    "have lunch and take a short break"
+  ],
+  [
+    "0:12:20",
+    "MLH",
+    "have lunch and take a short break"
+  ],
+  [
+    "0:12:30",
+    "MLH",
+    "have lunch and take a short break during 12pm to 1pm slot"
+  ],
+  [
+    "0:12:40",
+    "MLH",
+    "have lunch and take a short break"
+  ],
+  [
+    "0:12:50",
+    "MLH",
+    "have lunch and take a short break"
+  ],
+  [
+    "0:13:0",
+    "MLH",
+    "continue discussing the expansion plan with the team"
+  ],
+  [
+    "0:13:10",
+    "MLH",
+    "continue discussing with the team about the expansion plan and identify potential opportunities"
+  ],
+  [
+    "0:13:20",
+    "MLH",
+    "continue discussing the expansion plan with the team"
+  ],
+  [
+    "0:13:30",
+    "MLH",
+    "continue discussing the expansion plan with the team"
+  ],
+  [
+    "0:13:40",
+    "MLH",
+    "continue discussing the expansion plan with the team"
+  ],
+  [
+    "0:13:50",
+    "MLH",
+    "continue discussing the expansion plan with the team"
+  ],
+  [
+    "0:14:0",
+    "MLH",
+    "update brand planning documents and prepare for any upcoming meetings or presentations"
+  ],
+  [
+    "0:14:10",
+    "MLH",
+    "stay"
+  ],
+  [
+    "0:14:20",
+    "MLH",
+    "meet with David Thompson to discuss the budget and financial planning"
+  ]
+]

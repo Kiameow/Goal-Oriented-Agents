@@ -1,1 +1,131 @@
-{}
+{
+  "currentLocation": "DTL",
+  "dailyPlans": "1. 6am to 7am: Wake up, exercise and prepare for the day.\n2. 7am to 8am: Review the restaurant chain's current status and identify any issues or challenges.\n3. 8am to 9am: Plan for the expansion into new markets, focusing on strategic locations and market research.\n4. 9am to 10am: Meet with the team to discuss the expansion plan and gather feedback.\n5. 10am to 12pm: Work on improving customer satisfaction by reviewing feedback and suggestions from previous customers.\n6. 12pm to 1pm: Have lunch and discuss the day's progress with key team members.\n7. 1pm to 3pm: Focus on project management, ensuring all current projects are running smoothly and meeting deadlines.\n8. 3pm to 4pm: Attend to administrative tasks and prepare for tomorrow's schedule.\n9. 4pm to 5pm: Work on long-term growth strategies, including product development and market research.\n10. 5pm to 6pm: Relax and enjoy some personal time before dinner and rest for the day.",
+  "hourlyPlans": [
+    {
+      "plan": "sleep",
+      "clockScale": 1,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 2,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 3,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 4,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 5,
+      "isDone": false
+    },
+    {
+      "plan": "sleep",
+      "clockScale": 6,
+      "isDone": false
+    },
+    {
+      "plan": "Exercise and prepare for the day.",
+      "clockScale": 7,
+      "isDone": false
+    },
+    {
+      "plan": "Focus on project management, ensure current projects are running smoothly and meeting deadlines.",
+      "clockScale": 8,
+      "isDone": false
+    },
+    {
+      "plan": "8am to 9am: Plan for expansion into new markets, focus on strategic locations and market research.",
+      "clockScale": 9,
+      "isDone": false
+    },
+    {
+      "plan": "Meet with the team to discuss expansion plan and gather feedback.",
+      "clockScale": 10,
+      "isDone": false
+    },
+    {
+      "plan": "From 10am to 11am, David Thompson should work on improving customer satisfaction by reviewing feedback and suggestions from previous customers.",
+      "clockScale": 11,
+      "isDone": false
+    },
+    {
+      "plan": "meet with team to discuss expansion plan and gather feedback.",
+      "clockScale": 12,
+      "isDone": false
+    },
+    {
+      "plan": "have lunch and discuss the day's progress with key team members.",
+      "clockScale": 13,
+      "isDone": false
+    },
+    {
+      "plan": "continuing with the current tasks assigned to him",
+      "clockScale": 14,
+      "isDone": false
+    },
+    {
+      "plan": "Attend to administrative tasks and prepare for tomorrow's schedule during 14'o clock to 15'o clock.",
+      "clockScale": 15,
+      "isDone": false
+    },
+    {
+      "plan": "Work on long-term growth strategies.",
+      "clockScale": 16,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "clockScale": 17,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "clockScale": 18,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "clockScale": 19,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy personal time.",
+      "clockScale": 20,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy personal time before dinner and rest for the day from 20:00 to 21:00.",
+      "clockScale": 21,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "clockScale": 22,
+      "isDone": false
+    },
+    {
+      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "clockScale": 23,
+      "isDone": false
+    },
+    {
+      "plan": "Relax, enjoy personal time, and prepare for the next day.",
+      "clockScale": 24,
+      "isDone": false
+    }
+  ],
+  "nextAction": [
+    "0:0:0",
+    "stay",
+    "keep doing what you are doing"
+  ]
+}

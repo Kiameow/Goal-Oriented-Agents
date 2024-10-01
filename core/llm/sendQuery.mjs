@@ -35,13 +35,14 @@ async function sendQuery(prompt) {
 async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5) {
     sysverbose(`Sending query: ${prompt}`);
     for (let attempts = 1; attempts <= 5; attempts++) {
+        const startTime = Date.now();
         let timestamp = new Date().toISOString();
         try {
             const result = await sendQuery(prompt);
             if (result.error_msg) {
                 throw new Error(result.error_msg);
             }
-            syshttp(`${timestamp}: Attempt ${attempts} succeeded:`);
+            sysinfo(`${timestamp}: Attempt ${attempts} succeeded`);
             syshttp(result);
             return result; // result is an object, the body part of the response 
         } catch (e) {
@@ -53,13 +54,20 @@ async function sendQuerySafely(prompt, fallBackMessage, maxRetries=5) {
                 }
             }
         }
+        const endTime = Date.now();
+        const elapsedTime = (endTime - startTime) / 1000;
+        sysinfo(`http request elapsed time: ${elapsedTime} seconds`);
     }
 }
 
 async function sendQueryWithValidation(prompt, validateFn, expectJson=true) {
     let result = null;
+    let retryCount = 0;
     
     do {
+        if (retryCount > 0) {
+            syswarn(`Retrying for ${retryCount} attempts: ${validateFn.name}`);
+        }
         // Send the query and get the response
         const response = await sendQuerySafely(prompt, null);
         let resultStr = response.result;
@@ -72,10 +80,14 @@ async function sendQueryWithValidation(prompt, validateFn, expectJson=true) {
             // Check if resultStr is not empty and valid JSON
             if (resultStr && isJSON(resultStr)) {
                 result = JSON.parse(resultStr);
+            } else {
+                syswarn(`Invalid JSON response: ${resultStr}`);
             }
         } else {
             result = resultStr;
         }
+
+        retryCount++;
         
     } while (!result || !validateFn(result)); // Use the provided validation function
 

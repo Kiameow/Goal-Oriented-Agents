@@ -7,5 +7,6 @@
     "role": "chief executive officer",
     "initialLocation": "DTL",
     "wakeHour": 6,
-    "goal": "expanding the restaurant chain into new markets and setting a benchmark for quality and service."
+    "goal": "expanding the restaurant chain into new markets and setting a benchmark for quality and service.",
+    "tile": 1
 }

@@ -1,7 +1,7 @@
 import { containsChinese, extractContentBetweenFlags, getPrompt, isJSON } from "../../helper.mjs";
 import { sysdebug, syserror, sysinfo, syswarn } from "../../logger.mjs";
 import { globalTime } from "../globalTime.mjs";
-import { sendQuerySafely, sendQueryWithValidation } from "../llm/sendQuery.mjs";
+import { sendQueryWithValidation } from "../llm/sendQuery.mjs";
 import { globalAgentIds, globalAgents, turnNameToId } from "./Agent.mjs";
 import { getCommonset } from "./agentHelper.mjs";
 import { getSurroundingInfo } from "./percive.mjs";
@@ -25,7 +25,7 @@ async function willToConverse(agent) {
         sysdebug("|", agent.id, "| converse prompt: ", prompt);
 
         let result = await sendQueryWithValidation(prompt, validateConverseWill);
-        sysinfo("|", agent.id, "| converse result: ", result);
+        sysinfo("|", agent.id, "| converse will result: ", result);
         return result;
     } catch (e) {
         syserror(e);
@@ -82,6 +82,7 @@ function validateConverseWill(converseWill) {
 
 function validateConverse(converse) {
     if (containsChinese(JSON.stringify(converse))) {
+        syswarn("|", "converse result contains Chinese")
         return false;
     }
     if (!Array.isArray(converse.conversation)) {
