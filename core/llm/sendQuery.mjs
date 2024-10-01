@@ -14,7 +14,8 @@ async function sendQuery(prompt) {
                 "messages": [
                         {
                                 "role": "user",
-                                "content": prompt
+                                "content": prompt,
+                                "penalty_score": 2.0
                         }
                 ]
         })
