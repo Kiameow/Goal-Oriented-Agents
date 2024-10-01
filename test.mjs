@@ -7,6 +7,7 @@ let steps = 100;
 
 sysinfo("Starting simulation...");
 for(let i = 0; i < steps; i++) {
+    const startTime = Date.now();
     sysinfo("################################");
     sysinfo(`# Step ${i+1} of ${steps}`);
     sysinfo(`# Current time: ${globalTime.toString()}`);
@@ -15,8 +16,9 @@ for(let i = 0; i < steps; i++) {
         await performDailyAndHourlyPlans();
     }
     await performNextAction();
-    sysinfo("End of step.")
     globalTime.updateTime();
+    const endTime = Date.now();
+    sysinfo(`--> Step ${i+1} took ${(endTime - startTime) / 1000 }s <--`);
 }
 
 
@@ -32,16 +34,19 @@ async function performDailyAndHourlyPlans() {
 }
 
 async function performNextAction() {
-    const willToConversePromises = Array.from(globalAgents.values()).map(async (agent) => {
-        await agent.getWillToConverse();
-    });
-    const actionPromises = Array.from(globalAgents.values()).map(async (agent) => {
-        await agent.getNextAction();
-        await agent.saveNextAction();
+    const willToConversePromises = Array.from(globalAgents.values()).map(agent => {
+        return agent.getWillToConverse();
     });
 
     // 等待所有 Agents 完成 getNextAction 调用
     await Promise.all(willToConversePromises);
+    sysinfo("Phase 1 done: will to converse")
+    const actionPromises = Array.from(globalAgents.values()).map(async (agent) => {
+        await agent.getNextAction();
+        await agent.saveNextAction();
+    });
     await Promise.all(actionPromises);
+    sysinfo("Phase 2 done: action decision")
     await globalConverse();
+    sysinfo("Phase 3 done: converse")
 }

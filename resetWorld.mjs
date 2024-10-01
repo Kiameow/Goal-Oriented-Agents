@@ -1,7 +1,10 @@
 import { globalAgents } from "./core/agents/Agent.mjs";
 import { globalTime } from "./core/globalTime.mjs";
+import { getAgentsPath } from "./filepath.mjs";
+import { writeJsonFileAsync } from "./helper.mjs";
 
 await clearAgentsMemos();
+await clearDialogs();
 globalTime.setTime(0, 0, 0);
 
 async function clearAgentsMemos() {
@@ -12,4 +15,9 @@ async function clearAgentsMemos() {
     });
 
     await Promise.all(clearPromises);
+}
+
+async function clearDialogs() {
+    const filepath = getAgentsPath() + `/globalDialogs.json`;
+    await writeJsonFileAsync(filepath, []);
 }

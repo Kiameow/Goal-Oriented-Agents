@@ -35,6 +35,9 @@ export async function getPrompt(fileName, data) {
 }
 
 export function extractContentBetweenFlags(str, startFlag, endFlag=startFlag) {
+    if (str === null || str === undefined) {
+        return "";
+    }
     if (str.indexOf(startFlag) === -1 && str.indexOf(endFlag) === -1) {
         return str;
     }
@@ -53,7 +56,7 @@ export function extractContentBetweenFlags(str, startFlag, endFlag=startFlag) {
         return result;
     }
     
-    return null;
+    return "";
 }
 
 export function standardizeString(str) {
