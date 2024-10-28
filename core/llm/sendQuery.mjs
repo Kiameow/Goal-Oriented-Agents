@@ -1,12 +1,14 @@
 import request from "request";
 import dotenv from "dotenv";
 import { syserror, syshttp, sysinfo, sysverbose, syswarn } from "../../logger.mjs";
-import { extractContentBetweenFlags, isJSON } from "../../helper.mjs";
+import { containsChinese, extractContentBetweenFlags, isJSON } from "../../helper.mjs";
 
 async function sendQuery(prompt) {
+    dotenv.config();
+    const { MODEL } = process.env;
     var options = {
         'method': 'POST',
-        'url': 'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie-speed-128k?access_token=' + await getAccessToken(),
+        'url': `https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/${MODEL}?access_token=` + await getAccessToken(),
         'headers': {
                 'Content-Type': 'application/json'
         },
@@ -71,6 +73,14 @@ async function sendQueryWithValidation(prompt, validateFn, expectJson=true) {
         // Send the query and get the response
         const response = await sendQuerySafely(prompt, null);
         let resultStr = response.result;
+        if (validateFn.name === "validateProgress") {
+            sysinfo(`Progress: ${resultStr}`);  
+        }
+
+        if (containsChinese(resultStr)) {
+            syswarn(`Result contains Chinese: ${resultStr}`);
+            continue;
+        }
 
         // Extract content between flags and JSON code block
         resultStr = extractContentBetweenFlags(resultStr, "<##FLAG##>");

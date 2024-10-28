@@ -8,20 +8,42 @@ import { getSurroundingInfo } from "./percive.mjs";
 
 // if there are other agents in the same room, decide whether to converse with them
 async function willToConverse(agent) {
-    // relationship, related memory
     try {
         const surroundingInfo = await getSurroundingInfo(agent);
         const agentInfo = agent.agentInfo;
-        const prompt = await getPrompt("willToConverse.hbs", {
-            commonset: getCommonset(agentInfo),
-            plan: agent.currentPlan,
-            memos: agent.relatedMemos,
-            surrounding: surroundingInfo,
-            agentName: agentInfo.name,
-            goal: agentInfo.goal,
-            role: agentInfo.role,
-            clocktime: globalTime.toString()
-        })
+        const commonset = getCommonset(agentInfo);
+        const prompt = `
+            ---
+            ${commonset}
+
+            ${agentInfo.name}'s goal is ${agentInfo.goal}, who assumes the role of ${agentInfo.role}, and currently ${agent.currentPlan}
+
+            related memories:
+            ${agent.relatedMemos}
+            ---
+            Right now is ${globalTime.toString()}. ${agentInfo.name} ${surroundingInfo}
+
+            Based on the task at hand and the current situation, determine if ${agentInfo.name} will converse or not. Consider the following:
+            1. Is the current task achievable without conversational interaction?
+            2. Is there a compelling reason to initiate a conversation?
+            3. Are there suitable conversation partners present?
+
+            If ${agentInfo.name} is going to converse, output a JSON object in the following format:
+            {
+                "will_converse": true,
+                "converse_with": ["agent_name1", "agent_name2"],
+                "topic": "specific_topic_to_discuss"
+            }
+            
+
+            If ${agentInfo.name} will not converse, output:
+            {
+                "will_converse": false
+            }
+            
+            Note: Ensure your response is a valid JSON object and nothing else. All content should be in English.
+        `;
+
         sysdebug("|", agent.id, "| converse prompt: ", prompt);
 
         let result = await sendQueryWithValidation(prompt, validateConverseWill);

@@ -14,29 +14,44 @@ import chalk from "chalk";
 import { syserror, syswarn, sysinfo, sysdebug } from "../../logger.mjs";
 import { globalTime } from "../globalTime.mjs";
 
-async function dailyPlanning(agentInfo, datetime) {
-  // {{commonset}}
-
-  // In general, {{lifestyle}}
-  // Today is {{datetime}}. Here is {{agentName}}'s plan today in broad-strokes (with the time of the day. e.g., have a lunch at 12:00 pm, watch TV from 7 to 8 pm): 1) wake up and complete the morning routine at {{wakeHour}}, 2)
+async function dailyPlanning(agentInfo, taskDescription, datetime) {
   try {
     const commonset = getCommonset(agentInfo);
 
-    const templatePath = getPromptPath() + "/dailyPlanning.hbs";
-    const prompt = await handlebarHydrate(templatePath, {
-      commonset: commonset,
-      datetime: datetime,
-      agentName: agentInfo.name,
-      goal: agentInfo.goal,
-      role: agentInfo.role,
-      wakeHour: agentInfo.wakeHour,
-    });
+    const prompt = `
+        ---
+        ${commonset}
 
-    const dailyPlans = sendQueryWithValidation(prompt, validateDailyPlans, false);
+        ${agentInfo.name}'s long-term goal is ${agentInfo.goal}, who assumes the role of ${agentInfo.role}.
+        ---
+        Today is day ${datetime}. ${agentInfo.name} wakes at ${agentInfo.wakeHour}am. ${taskDescription ? `${agentInfo.name}'s today's mission is ${taskDescription}.` : ''} 
+
+        Please provide a detailed plan for ${agentInfo.name}'s day, from wake-up time until bedtime. The plan should:
+        1. Be in a numbered list format.
+        2. Include specific time ranges for each activity (e.g., "7:00 AM to 8:00 AM").
+        3. Cover all major activities of the day, including meals, work/study, personal time, and sleep.
+        4. Align with ${agentInfo.name}'s role, goals, and any specific tasks mentioned.
+        5. Be realistic and allow for breaks or unexpected events.
+
+        Format each item as: "<Number>. <StartTime> to <EndTime>: <Activity description>"
+
+        Enclose your response within <##FLAG##> tags.
+
+        Example:
+        <##FLAG##>
+        1. 7:00 AM to 8:00 AM: Wake up, morning routine (hygiene, get dressed)
+        2. 8:00 AM to 8:30 AM: Breakfast and check emails
+        3. 8:30 AM to 12:00 PM: Focus on primary work tasks
+        ...
+        10. 10:30 PM to 7:00 AM: Sleep and rest for the next day
+        <##FLAG##>
+    `;
+
+    const dailyPlans = await sendQueryWithValidation(prompt, validateDailyPlans, false);
     return dailyPlans;
   } catch (error) {
     syserror(error);
-    return `${agentInfo.name} decides to continue the tasks assigned in the morning and afternoon, take rest or eat food during the noon and night.`
+    return `${agentInfo.name} decides to continue the tasks assigned in the morning and afternoon, take rest or eat food during the noon and night.`;
   }
 }
 
@@ -152,7 +167,7 @@ async function getNextAction(
       memos: relatedMemos,
       agentName: agentInfo.name,
       goal: agentInfo.goal,
-      role: agentInfo.role,
+      role: agentInfo.role
     });
 
     let nextAction = await sendQueryWithValidation(prompt, validateNextAction);

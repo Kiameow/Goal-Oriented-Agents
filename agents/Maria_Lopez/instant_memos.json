@@ -1,6 +1,6 @@
 {
   "currentLocation": "MLH",
-  "dailyPlans": "1. 9am to 10am: Wake up, prepare for the day, and set goals for the restaurant launch project.\n2. 10am to noon: Meet with other founders and discuss the strategic plan for the restaurant brand.\n3. Noon to 1pm: Manage budget allocation for the initial stages of the restaurant launch.\n4. 1pm to 2pm: Research market trends and identify potential customers for the restaurant.\n5. 2pm to 3pm: Develop a financial plan to ensure sustainable growth and success of the restaurant.\n6. 3pm to 4pm: Take a break, have lunch, and rest for a while.\n7. 4pm to 5pm: Work on market research analysis and identify opportunities for the restaurant.\n8. 5pm to 6pm: Prepare for tomorrow's tasks and prioritize items that need to be done first.\n9. 6pm onwards: Relax, enjoy some free time, and get ready for the next day.",
+  "dailyPlans": "\n1. 9:00 AM to 10:00 AM: Wake up, perform morning routine (hygiene, get dressed)\n2. 10:00 AM to 12:00 PM: Perform market research to understand the target audience's preferences and needs regarding food brands. This could include analyzing customer surveys, conducting interviews, or browsing online reviews and social media platforms.\n3. 12:00 PM to 1:30 PM: Lunch. Prepare a meal or grab a quick bite at a restaurant. Discuss the market research findings with friends or colleagues during the meal.\n4. 1:30 PM to 4:30 PM: Analyze financial data and budgets. This includes reviewing current financial statements, predicting future trends, and identifying areas for improvement or growth opportunities.\n5. 4:30 PM to 5:30 PM: Collaborate with the team on strategic planning. Discuss how the market research findings can be incorporated into the restaurant's growth strategy.\n6. 5:30 PM to 7:00 PM: Prepare for the day's end by reviewing daily work progress and summarizing key takeaways for tomorrow's meeting or plans.\n7. 7:00 PM to 9:00 PM: Personal time (exercise, social activities, family time, etc.).\n8. 9:00 PM to 10:30 PM: Evening routine (read, watch a movie, or prepare for tomorrow's work).\n9. 10:30 PM to bedtime: Relax and unwind before bedtime, ensuring a good night's sleep for tomorrow's challenges and opportunities.\n10. Repeat this daily routine until bedtime tomorrow and get sufficient rest for the next day. Maria Lopez's daily schedule should balance her focus on market research, financial analysis, strategic planning, and personal time to achieve her goals and objectives as the chief financial officer of a restaurant brand.\n",
   "hourlyPlans": [
     {
       "plan": "sleep",
@@ -48,77 +48,77 @@
       "isDone": false
     },
     {
-      "plan": "Wake up, prepare for the day, set goals for the restaurant launch project.",
+      "plan": "Wake up, perform morning routine.",
       "clockScale": 10,
       "isDone": false
     },
     {
-      "plan": "From 10am to 11am, Maria Lopez should meet with other founders and discuss the strategic plan for the restaurant brand.",
+      "plan": "From 10:00 AM to 11:00 AM, the agent should continue with the market research to understand the target audience's preferences and needs regarding food brands.",
       "clockScale": 11,
       "isDone": false
     },
     {
-      "plan": "meet with founders and discuss strategic plan.",
+      "plan": "Perform market research to understand target audience preferences and needs. This could include analyzing customer surveys, conducting interviews, or browsing online reviews and social media platforms.",
       "clockScale": 12,
       "isDone": false
     },
     {
-      "plan": "Manage budget allocation for the restaurant launch.",
+      "plan": "eat lunch, discuss market research findings with others.",
       "clockScale": 13,
       "isDone": false
     },
     {
-      "plan": "Research market trends and identify potential customers for the restaurant.",
+      "plan": "From 1 PM to 2 PM, Maria Lopez should analyze financial data and budgets. This includes reviewing current financial statements, predicting future trends, and identifying areas for improvement or growth opportunities.",
       "clockScale": 14,
       "isDone": false
     },
     {
-      "plan": "Between 14:00 and 15:00, Maria Lopez should continue with her on-going tasks.",
+      "plan": "Analyze financial data and budgets. Collaborate with the team on strategic planning.",
       "clockScale": 15,
       "isDone": false
     },
     {
-      "plan": "Between 4pm and 5pm, the agent should work on market research analysis and identify opportunities for the restaurant.",
+      "plan": "From 15:00 to 16:00, the agent should analyze financial data and budgets.",
       "clockScale": 16,
       "isDone": false
     },
     {
-      "plan": "From 16'o clock to 17'o clock, the agent should continue with the on-going task.",
+      "plan": "Collaborate with the team on strategic planning.",
       "clockScale": 17,
       "isDone": false
     },
     {
-      "plan": "Relax, enjoy free time, get ready for next day.",
+      "plan": "Exercise, social activities, family time.",
       "clockScale": 18,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy free time.",
+      "plan": "Exercise or engage in social activities.",
       "clockScale": 19,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy free time.",
+      "plan": "At 19:00 PM to 20:00 PM, the agent should engage in personal time activities such as exercise, social activities, family time, etc.",
       "clockScale": 20,
       "isDone": false
     },
     {
-      "plan": "Relax, enjoy free time.",
+      "plan": "Between 8 PM and 9 PM, the agent should engage in personal time activities such as exercise, social activities, family time, etc.",
       "clockScale": 21,
       "isDone": false
     },
     {
-      "plan": "Relax, enjoy free time, and get ready for the next day.",
+      "plan": "Relax and unwind during the evening routine.",
       "clockScale": 22,
       "isDone": false
     },
     {
-      "plan": "Relax, enjoy free time, and prepare for the next day.",
+      "plan": "Relax and unwind before bedtime.",
       "clockScale": 23,
       "isDone": false
     },
     {
-      "plan": "Relax, enjoy free time, and get ready for the next day.",
+      "plan": "Relax and unwind before bedtime.",
       "clockScale": 24,
       "isDone": false
     }
@@ -127,5 +127,6 @@
     "0:0:0",
     "stay",
     "keep doing what you are doing"
-  ]
+  ],
+  "innerThoughts": ""
 }

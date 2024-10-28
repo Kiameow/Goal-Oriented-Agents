@@ -1,28 +1,15 @@
-// {
-//     "name": "Maria Lopez",
-//     "age": "23",
-//     "gender": "male",
-//     "personality": "energetic, enthusiastic, inquisitive",
-//     "learned": "Maria Lopez is a student at Oak Hill College studying physics and a part time Twitch game streamer who loves to connect with people and explore new ideas.",
-//     "role": "student",
-//     "memoryLocation": "./memeories/MariaLopezMemory.json",
-//     "initialLocation": "Maria Lopez's Home",
-//     "lifestyle": "Maria Lopez goes to bed around 2am, awakes up around 9am, eats dinner around 6pm. She likes to hang out at Hobbs Cafe if it is before 6pm.",
-//     "wakeHour": "9am"
-// }
-
-import { extractContentBetweenFlags, readJsonFileAsync, readJsonFileSync, writeJsonFileAsync } from "../../helper.mjs";
+import { ensureFileExists, readJsonFileSync, writeJsonFileAsync } from "../../helper.mjs";
 import { globalTime } from "../globalTime.mjs";
 import { getAgentInfo } from "./agentHelper.mjs";
 import { getSurroundingInfo } from "./percive.mjs";
 import { dailyPlanning, getCurrentPlan, getNextAction, hourlyPlanning } from "./planning.mjs";
-import { writeFile } from "fs/promises";
 import { getAgentsPath } from "../../filepath.mjs";
 import { syserror, syswarn, sysinfo } from "../../logger.mjs";
-import { converse, willToConverse } from "./converse.mjs";
+import { willToConverse } from "./converse.mjs";
 import { GlobalConversation } from "../globalConversation.mjs";
 import { globalScen } from "../scen/Scen.mjs";
 import { getInnerThoughts, getMemosDescription, Memory } from "./memory.mjs";
+import { GlobalTaskManager, TaskManager } from "./assignment.mjs";
 
 class Agent {
     constructor(id) {
@@ -37,29 +24,46 @@ class Agent {
         this.memoryLocation = getAgentsPath() + `/${this.id}/memos.json`;
         this.memory = {};
         this.relatedMemos = "";
+        this.taskLocation = getAgentsPath() + `/${this.id}/assignment.json`;
+        this.taskHistoryLocation = getAgentsPath() + `/${this.id}/task_history.json`;
+        this.taskManager = null;
     }
 
     async init() {
         this.agentInfo = await getAgentInfo(this.id);
         const instantMemoPath = getAgentsPath() + `/${this.id}/instant_memos.json`;
-        const { currentLocation, dailyPlans, hourlyPlans, nextAction, innerThoughts } = await readJsonFileAsync(instantMemoPath);
-        this.currentLocation = currentLocation ?? this.agentInfo.initialLocation;;
-        this.dailyPlans = dailyPlans;
-        this.hourlyPlans = hourlyPlans;
+        
+        let instantMemoData = await ensureFileExists(instantMemoPath, {
+            currentLocation: null,
+            dailyPlans: "",
+            hourlyPlans: [],
+            nextAction: null,
+            innerThoughts: ""
+        });
+
+        const { currentLocation, dailyPlans, hourlyPlans, nextAction, innerThoughts } = instantMemoData;
+        this.currentLocation = currentLocation ?? this.agentInfo.initialLocation;
+        this.dailyPlans = dailyPlans ?? "";
+        this.hourlyPlans = hourlyPlans ?? [];
         const timestamp = globalTime.getCurrentTimestamp();
         this.nextAction = nextAction ?? [timestamp, "stay", "keep doing what you are doing"];
+        this.innerThoughts = innerThoughts ?? "";
+
+        await ensureFileExists(this.memoryLocation, []);
         this.memory = new Memory(this.memoryLocation);
-        this.innerThoughts = innerThoughts;
+
+        await ensureFileExists(this.taskLocation, {});
+        await ensureFileExists(this.taskHistoryLocation, []);
         globalScen.updateAgentLocation(this.id, this.currentLocation);
     }
 
     async getDailyPlans() {
-        const dailyPlans = await dailyPlanning(this.agentInfo, globalTime.value.day)
-        sysinfo(`|${this.id}| dailyPlans: ${dailyPlans}`)
+        const dailyPlans = await dailyPlanning(this.agentInfo, this.taskManager.getLatestTaskDescription(), globalTime.value.day)
         if (dailyPlans) {
             this.dailyPlans = dailyPlans;
+            sysinfo(`|${this.id}| dailyPlans: ${dailyPlans}`);
         } else {
-            syswarn(`|${this.id}| No daily plans found for he/she today.`);
+            syswarn(`|${this.id}| No daily plans found for today.`);
         }
     }
 
@@ -70,78 +74,63 @@ class Agent {
         }
 
         try {
-            const timetable = await hourlyPlanning(this.agentInfo, this.dailyPlans)
-            sysinfo("|", this.id, "| timetable:", timetable);
-            this.hourlyPlans = timetable;
+            this.hourlyPlans = await hourlyPlanning(this.agentInfo, this.dailyPlans);
+            sysinfo("|", this.id, "| timetable:", this.hourlyPlans);
         } catch (error) {
-            syserror("error | getHourlyPlans | Agent.mjs | ", error);
+            syserror("Error in getHourlyPlans:", error);
         }
     }
 
     async getRelatedMemos(event) {
         const relatedMemos = await this.memory.retrieveMemories(event);
-        const relatedMemosStr = getMemosDescription(relatedMemos);
-        this.relatedMemos = relatedMemosStr;
+        this.relatedMemos = getMemosDescription(relatedMemos);
     }
 
     async getInnerThoughts(topic) {
-        const innerThoughts = await getInnerThoughts(this, topic)
-        this.innerThoughts = innerThoughts;
+        this.innerThoughts = await getInnerThoughts(this, topic);
+    }
+
+    setGlobalTaskManager(globalTaskManager) {
+        this.taskManager = new TaskManager(this.taskLocation, this.taskHistoryLocation, globalTaskManager, this.agentInfo.role);
     }
 
     async getWillToConverse() {
-        // check whether there is another agent try to converse with this agent
-        // if yes, set the next action to converse with this agent
-        if (this.agentInfo.wakeHour > globalTime.value.hour) {
-            return;
-        } 
-        const planRightNow = getCurrentPlan(this.hourlyPlans, globalTime.value);
-        this.currentPlan = planRightNow;
-        await this.getRelatedMemos(this.currentPlan)
+        if (this.agentInfo.wakeHour > globalTime.value.hour) return;
+
+        this.currentPlan = getCurrentPlan(this.hourlyPlans, globalTime.value);
+        await this.getRelatedMemos(this.currentPlan);
         const willing = await willToConverse(this);
 
         if (willing.will_converse) {
-            const someoneIsSleeping = willing.converse_with.some((id) => globalAgents.get(id).agentInfo.wakeHour < globalTime.value.hour);
-            if (someoneIsSleeping) {
-                return ;
+            const someoneIsSleeping = willing.converse_with.some((id) => globalAgents.get(id).agentInfo.wakeHour > globalTime.value.hour);
+            if (!someoneIsSleeping) {
+                GlobalConversation.push({
+                    timestamp: globalTime.getCurrentTimestamp(),
+                    participants: [...willing.converse_with, this.id],
+                    topic: willing.topic
+                });
             }
-            GlobalConversation.push({
-                timestamp: globalTime.getCurrentTimestamp(),
-                participants: [...willing.converse_with, this.id],
-                topic: willing.topic
-            })
         }
     }
 
-    // nextAction = [timestamp, location, action]
-
     async getNextAction() {
-        // compare the current time with the timetable and return the current running plan
-        // ["stay", "keep finishing the research about the local food"]
         const timestamp = globalTime.getCurrentTimestamp();
         if (this.agentInfo.wakeHour > globalTime.value.hour) {
             this.nextAction = [timestamp, this.currentLocation, "sleep"];
             sysinfo("|", this.id, "| location:", this.nextAction[1], ", action:", this.nextAction[2]);
             return;
-        } 
+        }
 
-        if (GlobalConversation.length > 0) {
-            for (let i = 0; i < GlobalConversation.length; i++) {
-                const conversation = GlobalConversation[i];
-                if (conversation.participants.includes(this.id)) {
-                    this.nextAction = [timestamp, this.currentLocation, "converse with " + conversation.participants.filter((id) => id!== this.id).join(',') + " about " + conversation.topic];
-                    return;
-                }
-            }
+        const conversation = GlobalConversation.find(conv => conv.participants.includes(this.id));
+        if (conversation) {
+            const otherParticipants = conversation.participants.filter(id => id !== this.id).join(',');
+            this.nextAction = [timestamp, this.currentLocation, `converse with ${otherParticipants} about ${conversation.topic}`];
+            return;
         }
-        
+
         const surroundingRightNow = await getSurroundingInfo(this);
-        let nextAction = null;
-        while (!nextAction) {
-            nextAction = await getNextAction(this.agentInfo, this.currentPlan, surroundingRightNow, this.relatedMemos) 
-        }
-        
-        this.nextAction = nextAction ?? [timestamp, "stay", "keep doing what you are doing"]
+        this.nextAction = await getNextAction(this.agentInfo, this.currentPlan, surroundingRightNow, this.relatedMemos) 
+            || [timestamp, "stay", "keep doing what you are doing"];
 
         this.currentLocation = this.nextAction[1] === "stay" ? this.currentLocation : this.nextAction[1];
         globalScen.updateAgentLocation(this.id, this.currentLocation);
@@ -149,7 +138,6 @@ class Agent {
     }
 
     async saveToInstantMemory() {
-        // save the current state of the agent to the memory file
         const memory = {
             currentLocation: this.currentLocation,
             dailyPlans: this.dailyPlans,
@@ -164,12 +152,12 @@ class Agent {
             await writeJsonFileAsync(memoryLocation, memory);
             sysinfo("|", this.id, "| Instant memory saved to", memoryLocation);
         } catch (error) {
-            syserror("error | saveToInstantMemory | Agent.mjs | ", error);
+            syserror("Error in saveToInstantMemory:", error);
         }
     }
 
     async saveToMemory() {
-        await this.memory.createMemoryNode(`${this.nextAction[2]} at ${this.currentLocation} `)
+        await this.memory.createMemoryNode(`${this.nextAction[2]} at ${this.currentLocation}`);
     }
 
     async saveNextAction() {
@@ -179,6 +167,16 @@ class Agent {
 
         await writeJsonFileAsync(filepath, nextAction);
         sysinfo("|", this.id, "| Next action saved to", filepath);
+    }
+
+    async updateTaskProgress() {
+        const actionImpact = await this.taskManager.evaluateActionImpact(this.nextAction[2]);
+        if (actionImpact.isRelated) {
+            await this.taskManager.updateTaskProgress(actionImpact.newProgress);
+            sysinfo("|", this.id, "| Task progress updated:", actionImpact.newProgress);
+        } else {
+            sysinfo("|", this.id, "| No task progress update for this action.");
+        }
     }
 
     async clearNextActions() {
@@ -195,23 +193,28 @@ class Agent {
         const memoryLocation = getAgentsPath() + `/${this.id}/memos.json`;
         await writeJsonFileAsync(memoryLocation, []);
     }
+
+    async clearTask() {
+        const assignmentPath = getAgentsPath() + `/${this.id}/assignment.json`;
+        const taskHistoryPath = getAgentsPath() + `/${this.id}/task_history.json`;
+        await writeJsonFileAsync(assignmentPath, {});
+        await writeJsonFileAsync(taskHistoryPath, []);
+    }
 }
 
 async function initializeAgents(agentIds) {
     const agentPromises = agentIds.map(async (id) => {
         const agent = new Agent(id);
-        await agent.init(); // 初始化 Agent
+        await agent.init();
         return [id, agent];
     });
 
-    // 使用 Promise.all 等待所有 Agent 初始化完成
     const agentsArray = await Promise.all(agentPromises);
     agentsArray.forEach(([id, agent]) => {
         globalAgents.set(id, agent);
     });
 }
 
-// const globalAgentIds = ["Maria_Lopez"];
 const globalAgentIds = ["Maria_Lopez", "Zhang_Chen", "David_Thompson", "Emily_Carter"];
 const globalAgents = new Map();
 await initializeAgents(globalAgentIds);

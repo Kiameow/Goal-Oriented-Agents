@@ -94,6 +94,31 @@ class GlobalTime {
         syserror("Error writing to JSON file:", err);
       }
     }
+
+    static isValidTimestamp(timestamp) {
+      if (typeof timestamp !== 'string') return false;
+      const parts = timestamp.split(':');
+      if (parts.length !== 3) return false;
+      const [day, hour, minute] = parts.map(Number);
+      return (
+        !isNaN(day) && day >= 0 &&
+        !isNaN(hour) && hour >= 0 && hour < 24 &&
+        !isNaN(minute) && minute >= 0 && minute < 60
+      );
+    }
+
+    static compareTimestamps(timestamp1, timestamp2) {
+      if (!this.isValidTimestamp(timestamp1) || !this.isValidTimestamp(timestamp2)) {
+        throw new Error('Invalid timestamp format');
+      }
+      const time1 = this.parseTimestamp(timestamp1);
+      const time2 = this.parseTimestamp(timestamp2);
+      
+      if (time1.day !== time2.day) return time1.day < time2.day ? -1 : 1;
+      if (time1.hour !== time2.hour) return time1.hour < time2.hour ? -1 : 1;
+      if (time1.minute !== time2.minute) return time1.minute < time2.minute ? -1 : 1;
+      return 0;
+    }
   }
 
 // 创建全局状态的单例实例

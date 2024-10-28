@@ -190,6 +190,11 @@
     "sleep"
   ],
   [
+    "0:6:10",
+    "DTL",
+    "sleep"
+  ],
+  [
     "0:6:20",
     "DTL",
     "sleep"
@@ -212,231 +217,321 @@
   [
     "0:7:0",
     "DTL",
-    "converse with Zhang_Chen,David_Thompson about expanding the restaurant chain into new markets"
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:10",
     "DTL",
-    "Wake up, prepare for the day, start with a cup of coffee."
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:20",
     "DTL",
-    "converse with Zhang_Chen,David_Thompson about discussion about the plan to expand the restaurant chain into new markets"
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:30",
     "DTL",
-    "Wake up, prepare for the day, start with a cup of coffee."
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:40",
     "DTL",
-    "Wake up, prepare for the day, start with a cup of coffee."
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:50",
     "DTL",
-    "converse with Zhang_Chen,David_Thompson about discuss the plan to expand the restaurant chain into new markets"
+    "converse with Zhang_Chen,David_Thompson about Expansion plans for the restaurant chain"
   ],
   [
     "0:8:0",
     "DTL",
-    "update brand planning documents and prepare for any upcoming meetings or presentations"
+    "Eat breakfast and check emails, prepare for the day."
   ],
   [
     "0:8:10",
     "DTL",
-    "Focus on updating brand planning documents and prepare for any upcoming meetings or presentations"
+    "Eat breakfast and check emails, prepare for the day."
   ],
   [
     "0:8:20",
     "DTL",
-    "Focus on updating brand planning documents and prepare for any upcoming meetings or presentations."
+    "Eat breakfast and check emails, prepare for the day."
   ],
   [
     "0:8:30",
     "DTL",
-    "Focus on updating brand planning documents and prepare for any upcoming meetings or presentations."
+    "Eat breakfast and check emails, prepare for the day."
   ],
   [
     "0:8:40",
     "DTL",
-    "focus on updating brand planning documents and prepare for any upcoming meetings or presentations"
+    "Eat breakfast and check emails, prepare for the day."
   ],
   [
     "0:8:50",
-    "DTL",
-    "Focus on updating brand planning documents and prepare for any upcoming meetings or presentations."
-  ],
-  [
-    "0:8:50",
-    "DTL",
-    "Focus on updating brand planning documents and prepare for upcoming meetings or presentations"
+    "MLH",
+    "prepare for the day."
   ],
   [
     "0:9:0",
     "MLH",
-    "go back to Maria Lopez Home and discuss the market trends and consumer behavior data with the team"
+    "meet with Maria Lopez to discuss financial projections and budget for the expansion plans"
   ],
   [
     "0:9:10",
-    "MLH",
-    "converse with Zhang_Chen,Maria_Lopez about discuss the plan to expand the restaurant chain into new markets"
+    "stay",
+    "discuss with the team about restaurant chain expansion and marketing strategies"
   ],
   [
     "0:9:20",
     "MLH",
-    "keep finishing the discussion about the expansion plan"
+    "Discuss with team members about the budget and financial plans"
   ],
   [
     "0:9:30",
     "MLH",
-    "Review market trends and consumer behavior data to gain further insights"
+    "Discuss with the team about the expansion plan"
   ],
   [
     "0:9:40",
     "MLH",
-    "keep discussing with team members about the expansion plan"
+    "Discuss with team members about the expansion plan and future strategies"
   ],
   [
     "0:9:50",
     "MLH",
-    "keep finishing the discussion about expansion into new markets"
+    "Discuss with team members about the restaurant chain expansion plans"
   ],
   [
     "0:10:0",
     "MLH",
-    "Develop brand communication strategy"
+    "prepare for tomorrow's work"
   ],
   [
     "0:10:10",
     "MLH",
-    "Develop brand communication strategy"
+    "prepare for tomorrow's work"
   ],
   [
     "0:10:20",
     "MLH",
-    "Discuss with the team about the upcoming restaurant chain expansion and financial planning"
+    "prepare for tomorrow's work with the team"
   ],
   [
     "0:10:30",
     "MLH",
-    "Develop brand communication strategy"
+    "continue discussing expansion plans with the team"
   ],
   [
     "0:10:40",
     "MLH",
-    "Develop brand communication strategy"
+    "prepare for tomorrow's work"
   ],
   [
     "0:10:50",
     "MLH",
-    "Develop brand communication strategy"
+    "prepare for tomorrow's work"
   ],
   [
     "0:11:0",
     "MLH",
-    "develop a brand communication strategy that resonates with the target audience"
+    "analyze research findings and plan out strategies for brand positioning"
   ],
   [
     "0:11:10",
     "MLH",
-    "develop a brand communication strategy that resonates with the target audience"
+    "analyze research findings and plan out strategies for brand positioning"
   ],
   [
     "0:11:20",
     "MLH",
-    "develop a brand communication strategy that resonates with the target audience"
+    "analyze research findings and plan out strategies for brand positioning"
   ],
   [
     "0:11:30",
     "MLH",
-    "discuss with team members about the expansion plan and its impact on brand communication"
+    "analyze research findings and plan out strategies for brand positioning"
   ],
   [
     "0:11:40",
     "MLH",
-    "stay and discuss with team members about the expansion plan"
+    "analyze research findings and plan out strategies for brand positioning"
   ],
   [
     "0:11:50",
-    "stay",
-    "develop a brand communication strategy that resonates with the target audience"
+    "MLH",
+    "analyze research findings and plan out strategies for brand positioning"
   ],
   [
     "0:12:0",
     "MLH",
-    "have lunch and take a short break"
+    "Have lunch break and take a short rest"
   ],
   [
     "0:12:10",
     "MLH",
-    "have lunch and take a short break"
+    "Have lunch break and take a short rest"
   ],
   [
     "0:12:20",
     "MLH",
-    "have lunch and take a short break"
+    "Have lunch break and take a short rest"
   ],
   [
     "0:12:30",
     "MLH",
-    "have lunch and take a short break during 12pm to 1pm slot"
+    "Have lunch break and take a short rest"
   ],
   [
     "0:12:40",
     "MLH",
-    "have lunch and take a short break"
+    "Have lunch break and take a short rest"
   ],
   [
     "0:12:50",
     "MLH",
-    "have lunch and take a short break"
+    "Have lunch break and take a short rest"
   ],
   [
     "0:13:0",
     "MLH",
-    "continue discussing the expansion plan with the team"
+    "continue with the development of creative designs and marketing strategies based on research insights"
   ],
   [
     "0:13:10",
     "MLH",
-    "continue discussing with the team about the expansion plan and identify potential opportunities"
+    "meet with Maria Lopez to discuss budget and financial projections"
   ],
   [
     "0:13:20",
     "MLH",
-    "continue discussing the expansion plan with the team"
+    "continue discussing expansion plans with the team"
   ],
   [
     "0:13:30",
     "MLH",
-    "continue discussing the expansion plan with the team"
+    "continue discussing expansion plans with the team"
   ],
   [
     "0:13:40",
-    "MLH",
-    "continue discussing the expansion plan with the team"
+    "stay",
+    "continue with the development of creative designs and marketing strategies based on research insights"
   ],
   [
     "0:13:50",
     "MLH",
-    "continue discussing the expansion plan with the team"
+    "continue discussing expansion plans with the team"
   ],
   [
     "0:14:0",
     "MLH",
-    "update brand planning documents and prepare for any upcoming meetings or presentations"
+    "Develop creative designs based on research insights"
   ],
   [
     "0:14:10",
     "MLH",
-    "stay"
+    "Develop creative designs based on research insights"
   ],
   [
     "0:14:20",
     "MLH",
-    "meet with David Thompson to discuss the budget and financial planning"
+    "Develop creative designs based on research insights"
+  ],
+  [
+    "0:14:30",
+    "MLH",
+    "Develop creative designs based on research insights"
+  ],
+  [
+    "0:14:40",
+    "MLH",
+    "Develop creative designs based on research insights"
+  ],
+  [
+    "0:14:50",
+    "stay",
+    "Develop creative designs based on research insights"
+  ],
+  [
+    "0:15:0",
+    "stay",
+    "continue developing creative designs and marketing strategies based on research insights"
+  ],
+  [
+    "0:15:10",
+    "stay",
+    "continue developing creative designs and marketing strategies based on research insights"
+  ],
+  [
+    "0:15:20",
+    "stay",
+    "continue developing creative designs and marketing strategies based on research insights"
+  ],
+  [
+    "0:15:30",
+    "MLH",
+    "continue discussing the expansion plans with the team"
+  ],
+  [
+    "0:15:40",
+    "MLH",
+    "continue discussing the expansion plans with the team"
+  ],
+  [
+    "0:15:50",
+    "stay",
+    "continue developing creative designs and marketing strategies based on research insights"
+  ],
+  [
+    "0:16:0",
+    "MLH",
+    "Continue with the development of creative designs and marketing strategies"
+  ],
+  [
+    "0:16:10",
+    "MLH",
+    "Continue with the development of creative designs and marketing strategies"
   ]
 ]

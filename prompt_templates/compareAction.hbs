@@ -1,0 +1,17 @@
+The agent is currently performing the action: "{{actionDescription}}".
+Please find the most similar task from the following list of tasks:
+
+{{#each taskNodes}}
+- Task {{@index}}: Description: "{{this.description}}", Start Time: "{{this.startTime}}", Deadline: "{{this.deadline}}", Progress: {{this.progress}}%.
+{{/each}}
+
+Return the task that is most relevant to the current action in the following format, or indicate if no task matches:
+
+<##FLAG##>
+{
+  "description": "<Task description>",
+  "startTime": "<Start time>",
+  "deadline": "<Deadline>",
+  "progress": <Updated progress>
+}
+<##FLAG##>

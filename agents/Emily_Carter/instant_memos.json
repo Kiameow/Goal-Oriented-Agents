@@ -1,6 +1,6 @@
 {
   "currentLocation": "DTL",
-  "dailyPlans": "1. 7am to 8am: Wake up, prepare for the day and start with a cup of coffee.\n2. 8am to 10am: Review market trends and consumer behavior data to gain insights.\n3. 10am to 12pm: Develop a brand communication strategy that resonates with the target audience.\n4. 12pm to 1pm: Have lunch and take a short break.\n5. 1pm to 3pm: Work on craft compelling narratives and stories that reflect the restaurant brand's identity.\n6. 3pm to 4pm: Focus on innovative ideas to set the restaurant brand apart from competitors.\n7. 4pm to 5pm: Update brand planning documents and prepare for any upcoming meetings or presentations.\n8. 5pm to 6pm: Relax, read or engage in a hobby before dinner.\n9. 6pm to 7pm: Have dinner with family or friends, discuss daily events and unwind.\n10. 7pm and onward: Get rest for the day, prepare for tomorrow's tasks and activities.",
+  "dailyPlans": "\n1. 7:00 AM to 8:00 AM: Wake up, conduct a morning routine (hygiene, get dressed)\n2. 8:00 AM to 9:00 AM: Breakfast and check emails, prepare for the day\n3. 9:00 AM to 10:30 AM: Conduct market research to understand target audience preferences and needs for food brands\n4. 10:30 AM to 12:00 PM: Analyze research findings and plan out strategies for brand positioning\n5. 12:00 PM to 1:30 PM: Lunch break\n6. 1:30 PM to 4:30 PM: Develop creative designs and marketing strategies based on research insights\n7. 4:30 PM to 5:30 PM: Review work progress and plan for the next day\n8. 5:30 PM to 7:30 PM: Personal time (exercise, relaxation, hobbies)\n9. 7:30 PM to 9:00 PM: Dinner and catch up on social media or news\n10. 9:00 PM to 10:30 PM: Read or watch something related to her field or prepare for tomorrow's work\n11. 10:30 PM to 7:00 AM: Sleep and rest for the next day\n",
   "hourlyPlans": [
     {
       "plan": "sleep",
@@ -38,87 +38,87 @@
       "isDone": false
     },
     {
-      "plan": "Wake up, prepare for the day, start with a cup of coffee.",
+      "plan": "Wake up, conduct a morning routine.",
       "clockScale": 8,
       "isDone": false
     },
     {
-      "plan": "From 8am to 9am, Emily Carter should focus on updating brand planning documents and prepare for any upcoming meetings or presentations.",
+      "plan": "Eat breakfast and check emails, prepare for the day.",
       "clockScale": 9,
       "isDone": false
     },
     {
-      "plan": "9am to 10am: Review market trends and consumer behavior data to gain further insights.",
+      "plan": "D. Develop creative designs and marketing strategies.",
       "clockScale": 10,
       "isDone": false
     },
     {
-      "plan": "Develop brand communication strategy.",
+      "plan": "prepare for tomorrow's work",
       "clockScale": 11,
       "isDone": false
     },
     {
-      "plan": "Between 11am and 12pm, Emily Carter should develop a brand communication strategy that resonates with the target audience.",
+      "plan": "Between 11 AM and 12 PM, Emily Carter should analyze research findings and plan out strategies for brand positioning.",
       "clockScale": 12,
       "isDone": false
     },
     {
-      "plan": "have lunch and take a short break during 12pm to 1pm slot.",
+      "plan": "Have lunch break and take a short rest during this period.",
       "clockScale": 13,
       "isDone": false
     },
     {
-      "plan": "continue with compelling narratives and stories",
+      "plan": "continuing with the development of creative designs and marketing strategies based on research insights",
       "clockScale": 14,
       "isDone": false
     },
     {
-      "plan": "From 14:00 to 15:00, Emily Carter should focus on updating brand planning documents and prepare for any upcoming meetings or presentations.",
+      "plan": "Develop creative designs based on research insights from 14:30 PM to 15:00 PM.",
       "clockScale": 15,
       "isDone": false
     },
     {
-      "plan": "Continue with the brand planning tasks during the time from 15:00 to 16:00.",
+      "plan": "From 15:00 to 16:00, Emily Carter should continue developing creative designs and marketing strategies based on research insights.",
       "clockScale": 16,
       "isDone": false
     },
     {
-      "plan": "Update brand planning documents and prepare for meetings or presentations.",
+      "plan": "16:00 PM to 17:00 PM: Continue with the development of creative designs and marketing strategies.",
       "clockScale": 17,
       "isDone": false
     },
     {
-      "plan": "Relax, read or engage in a hobby before dinner.",
+      "plan": "At 5:30 PM to 7:30 PM, Emily Carter should take personal time for exercise, relaxation, or hobbies.",
       "clockScale": 18,
       "isDone": false
     },
     {
-      "plan": "Have dinner with family or friends, discuss daily events and unwind from 18:00 to 19:00.",
+      "plan": "During the time from 6:00 PM to 7:00 PM, Emily Carter should focus on personal activities such as exercise, relaxation, or hobbies.",
       "clockScale": 19,
       "isDone": false
     },
     {
-      "plan": "From 7pm to 8pm, Emily Carter should continue with her daily routine and relax, prepare for tomorrow's tasks and activities.",
+      "plan": "Dinner and continue with personal activities from 19:00 to 20:00.",
       "clockScale": 20,
       "isDone": false
     },
     {
-      "plan": "At 7pm to 8pm, Emily Carter should relax, continue with her hobby or engage in other activities to unwind before getting rest for the day and preparing for tomorrow's tasks.",
+      "plan": "From 20:00 to 21:00, Emily Carter should continue with her daily plan and keep doing the on-going task.",
       "clockScale": 21,
       "isDone": false
     },
     {
-      "plan": "Relax and prepare for tomorrow's tasks.",
+      "plan": "At 9 PM to 10:30 PM, Emily Carter should be reading or watching something related to her field or preparing for tomorrow's work. Therefore, from 21:00 to 22:00, she should continue with this activity.",
       "clockScale": 22,
       "isDone": false
     },
     {
-      "plan": "Get rest for the day, prepare for tomorrow's tasks and activities.",
+      "plan": "Between 22:00 and 23:00, Emily Carter should continue with her personal time activities such as exercise, relaxation, or hobbies.",
       "clockScale": 23,
       "isDone": false
     },
     {
-      "plan": "From 23:00 to 24:00, Emily Carter should get rest for the day, prepare for tomorrow's tasks and activities.",
+      "plan": "Prepare for tomorrow's work or relax before bedtime.",
       "clockScale": 24,
       "isDone": false
     }
@@ -127,5 +127,6 @@
     "0:0:0",
     "stay",
     "keep doing what you are doing"
-  ]
+  ],
+  "innerThoughts": ""
 }

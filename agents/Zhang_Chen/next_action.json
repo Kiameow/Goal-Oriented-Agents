@@ -190,6 +190,11 @@
     "sleep"
   ],
   [
+    "0:6:10",
+    "DTL",
+    "sleep"
+  ],
+  [
     "0:6:20",
     "DTL",
     "sleep"
@@ -221,6 +226,36 @@
   ],
   [
     "0:7:20",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "sleep"
+  ],
+  [
+    "0:7:30",
     "DTL",
     "sleep"
   ],
@@ -280,173 +315,218 @@
     "sleep"
   ],
   [
-    "0:8:50",
-    "DTL",
-    "sleep"
-  ],
-  [
     "0:9:0",
     "MLH",
-    "Wake up, check emails, and plan daily marketing tasks"
+    "Wake up and conduct morning routine"
   ],
   [
     "0:9:10",
     "MLH",
-    "converse with Maria_Lopez,Emily_Carter about discuss the plan to expand the restaurant chain into new markets"
+    "Wake up and conduct morning routine"
   ],
   [
     "0:9:20",
     "MLH",
-    "converse with Maria_Lopez about discussion about the expansion plan into new markets"
+    "Wake up, conduct morning routine, and prepare for the day."
   ],
   [
     "0:9:30",
-    "MLH",
-    "Wake up, check emails, and plan daily marketing tasks"
+    "stay",
+    "Wake up, conduct morning routine, and prepare for the day"
   ],
   [
     "0:9:40",
-    "stay",
-    "check emails and plan daily marketing tasks"
+    "MLH",
+    "Wake up, conduct morning routine, and prepare for the day"
   ],
   [
     "0:9:50",
     "MLH",
-    "converse with Maria_Lopez about The plan to expand the restaurant chain into new markets"
+    "Wake up and conduct morning routine"
   ],
   [
     "0:10:0",
     "MLH",
-    "analyze market trends and develop marketing strategies for the restaurant"
+    "continue with his market research on food brand preferences and needs"
   ],
   [
     "0:10:10",
     "MLH",
-    "continue discussing with team members about the expansion plan"
+    "continue with his market research on food brand preferences and needs"
   ],
   [
     "0:10:20",
     "MLH",
-    "continue discussing the expansion plan with Maria Lopez"
+    "continue with his market research on food brand preferences and needs"
   ],
   [
     "0:10:30",
     "MLH",
-    "continue the discussion about the expansion plan with the team"
+    "continue with his market research on food brand preferences and needs"
   ],
   [
     "0:10:40",
-    "MLH",
-    "meet with Maria Lopez to discuss financial plans for the expansion"
+    "stay",
+    "continue with his market research on food brand preferences and needs"
   ],
   [
     "0:10:50",
-    "MLH",
-    "continue discussing the expansion plan with Maria Lopez"
+    "stay",
+    "continue with his market research on food brand preferences and needs"
   ],
   [
     "0:11:0",
     "MLH",
-    "Analyze market trends and develop marketing strategies"
+    "continue with market research on food brand preferences and needs"
   ],
   [
     "0:11:10",
     "MLH",
-    "stay and have a discussion with team members"
+    "continue with market research on food brand preferences and needs"
   ],
   [
     "0:11:20",
     "MLH",
-    "continue discussing with Maria Lopez about the expansion plan"
+    "continue with market research on food brand preferences and needs"
   ],
   [
     "0:11:30",
-    "MLH",
-    "continue the discussion about the expansion plan with Maria Lopez"
+    "stay",
+    "continue with market research on food brand preferences and needs"
   ],
   [
     "0:11:40",
-    "stay",
-    "Analyze market trends and develop marketing strategies"
+    "MLH",
+    "continue with market research on food brand preferences and needs"
   ],
   [
     "0:11:50",
-    "MLH",
-    "stay at Maria Lopez Home"
+    "stay",
+    "continue with market research on food brand preferences and needs"
   ],
   [
     "0:12:0",
-    "MLH",
-    "have lunch and review previous marketing projects"
+    "stay",
+    "Have lunch break and relax for a while."
   ],
   [
     "0:12:10",
-    "MLH",
-    "have lunch and review previous marketing projects"
+    "stay",
+    "Have lunch break and relax for a while."
   ],
   [
     "0:12:20",
     "MLH",
-    "have lunch and review previous marketing projects"
+    "Have lunch break and relax for a while"
   ],
   [
     "0:12:30",
     "MLH",
-    "have lunch and review previous marketing projects"
+    "Have lunch break and relax for a while"
   ],
   [
     "0:12:40",
     "MLH",
-    "have lunch and review previous marketing projects"
+    "Have lunch break and relax for a while"
   ],
   [
     "0:12:50",
-    "MLH",
-    "have lunch and review previous marketing projects"
+    "stay",
+    "Have lunch break and relax for a while."
   ],
   [
     "0:13:0",
     "MLH",
-    "continue discussing expansion plans with the team"
+    "continue with his on-going marketing tasks"
   ],
   [
     "0:13:10",
-    "MLH",
-    "continue discussing the expansion plan with Maria Lopez"
+    "stay",
+    "continue with his on-going marketing tasks"
   ],
   [
     "0:13:20",
     "MLH",
-    "continue discussing the expansion plan with Maria Lopez"
+    "continue with his on-going marketing tasks"
   ],
   [
     "0:13:30",
     "MLH",
-    "continue discussing the expansion plan with Maria Lopez"
+    "continue with his on-going marketing tasks"
   ],
   [
     "0:13:40",
     "MLH",
-    "continue discussing the expansion plan with Maria Lopez"
+    "continue discussing the expansion plans with the team"
   ],
   [
     "0:13:50",
     "MLH",
-    "discuss with Maria Lopez about the potential risks and opportunities of expanding into new markets"
+    "continue with his on-going marketing tasks"
   ],
   [
     "0:14:0",
     "MLH",
-    "discuss with team members about the expansion plan and its financial implications"
+    "analyze market research data and develop marketing strategies"
   ],
   [
     "0:14:10",
     "MLH",
-    "discuss with Maria Lopez about the detailed expansion plan"
+    "analyze market research data and develop marketing strategies"
   ],
   [
     "0:14:20",
     "MLH",
-    "meet with Maria Lopez to discuss the expansion plan"
+    "analyze market research data and develop marketing strategies"
+  ],
+  [
+    "0:14:30",
+    "MLH",
+    "analyze market research data and develop marketing strategies"
+  ],
+  [
+    "0:14:40",
+    "MLH",
+    "analyze market research data and develop marketing strategies"
+  ],
+  [
+    "0:14:50",
+    "stay",
+    "analyze market research data and develop marketing strategies"
+  ],
+  [
+    "0:15:0",
+    "MLH",
+    "Analyze market research data"
+  ],
+  [
+    "0:15:10",
+    "MLH",
+    "Analyze market research data"
+  ],
+  [
+    "0:15:20",
+    "MLH",
+    "Analyze market research data"
+  ],
+  [
+    "0:15:30",
+    "MLH",
+    "Analyze market research data"
+  ],
+  [
+    "0:15:40",
+    "stay",
+    "Analyze market research data"
+  ],
+  [
+    "0:15:50",
+    "MLH",
+    "Analyze market research data"
+  ],
+  [
+    "0:16:0",
+    "MLH",
+    "continue discussing expansion plans with the team"
   ]
 ]

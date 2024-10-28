@@ -1,13 +1,14 @@
-Extract the main keywords from the following text:
-"{{text}}"
+---
+I will give you a sentence and you need to extract the main keywords from it.
 
-The output should be a JSON array containing the main keywords, focusing on nouns, topics, or significant concepts. And all the keywords should be English and lowercase.
+The output should be a JSON array containing the main keywords, focusing on nouns, topics, or significant concepts wrapped with <##FLAG##> tags. And all the keywords should be English and lowercase.
 
-example output:
-<##FLAG##>
-[
-  "keyword1",
-  "keyword2",
-  "keyword3"
-]
-<##FLAG##>
+example 1: 
+text: "The quick brown fox jumps over the lazy dog. The dog barks at the moon."
+output: <##FLAG##>["fox", "jumps", "dog", "barks", "moon"]<##FLAG##>
+example 2: 
+text: "The United Nations Security Council is responsible for the safety and security of the world."
+output: <##FLAG##>["un", "security", "council", "responsible", "safety", "security", "world"]<##FLAG##>
+---
+
+Here is the sentence: "{{ text }}"

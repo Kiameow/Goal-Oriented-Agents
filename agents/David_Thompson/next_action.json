@@ -182,271 +182,356 @@
   [
     "0:6:0",
     "DTL",
-    "Exercise"
+    "Wake up, perform morning routine (hygiene, get dressed)"
   ],
   [
     "0:6:10",
     "DTL",
-    "Exercise and prepare for the day"
+    "converse with Emily_Carter,Zhang_Chen about Expanding the restaurant chain and setting benchmark for quality and service"
+  ],
+  [
+    "0:6:10",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about discussion about expanding the restaurant chain into new markets and setting a benchmark for quality and service"
   ],
   [
     "0:6:20",
     "DTL",
-    "converse with Zhang_Chen,Emily_Carter about expanding the restaurant chain into new markets"
+    "converse with Zhang_Chen,Emily_Carter about plans to expand the restaurant chain into new markets"
   ],
   [
     "0:6:30",
     "DTL",
-    "Exercise"
+    "converse with Zhang_Chen,Emily_Carter about Expanding the restaurant chain into new markets"
   ],
   [
     "0:6:40",
     "DTL",
-    "converse with Zhang_Chen,Emily_Carter about plan to expand the restaurant chain into new markets"
+    "converse with Zhang_Chen,Emily_Carter about Expansion plan into new markets"
   ],
   [
     "0:6:50",
     "DTL",
-    "converse with Zhang_Chen,Emily_Carter about plan to expand the restaurant chain into new markets"
+    "converse with Zhang_Chen,Emily_Carter about discussion on expansion plans and other related matters"
   ],
   [
     "0:7:0",
     "DTL",
-    "converse with Zhang_Chen,Emily_Carter about expanding the restaurant chain into new markets"
+    "converse with Zhang_Chen,Emily_Carter about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:10",
     "DTL",
-    "Focus on project management, ensure current projects are running smoothly and meeting deadlines."
+    "converse with Zhang_Chen,Emily_Carter about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:20",
     "DTL",
-    "converse with Zhang_Chen,Emily_Carter about discussion about the plan to expand the restaurant chain into new markets"
+    "converse with Zhang_Chen,Emily_Carter about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:30",
     "DTL",
-    "Focus on project management, ensure current projects are running smoothly and meeting deadlines."
+    "converse with Zhang_Chen,Emily_Carter about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:30",
     "DTL",
-    "Focus on project management, ensure current projects are running smoothly and meeting deadlines."
+    "converse with Zhang_Chen,Emily_Carter about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:30",
-    "MLH",
-    "Focus on project management, ensure current projects are running smoothly and meeting deadlines"
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Emily_Carter,Zhang_Chen about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Emily_Carter,Zhang_Chen about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Emily_Carter,Zhang_Chen about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Zhang_Chen,Emily_Carter about Expansion plans for the restaurant chain"
+  ],
+  [
+    "0:7:30",
+    "DTL",
+    "converse with Emily_Carter,Zhang_Chen about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:40",
     "DTL",
-    "Focus on project management, ensure current projects are running smoothly and meeting deadlines."
+    "converse with Emily_Carter,Zhang_Chen about Expansion plans for the restaurant chain"
   ],
   [
     "0:7:50",
     "DTL",
-    "converse with Zhang_Chen,Emily_Carter about discuss the plan to expand the restaurant chain into new markets"
+    "converse with Emily_Carter,Zhang_Chen about Expansion plans for the restaurant chain"
   ],
   [
     "0:8:0",
     "MLH",
-    "continue the discussion about the expansion plan"
+    "Conduct market research, analyze data, and identify key trends"
   ],
   [
     "0:8:10",
-    "DTL",
-    "go to David Thompson Loft to prepare for the meeting"
+    "MLH",
+    "converse with Maria_Lopez about Expansion plans and current tasks"
   ],
   [
     "0:8:20",
     "MLH",
-    "stay and continue the discussion about expansion plans"
+    "converse with Maria_Lopez about Expansion plans and current tasks"
   ],
   [
     "0:8:30",
     "MLH",
-    "keep discussing with Maria Lopez about the financial plan"
+    "converse with Maria_Lopez about Expansion plans for the restaurant chain"
   ],
   [
     "0:8:40",
     "MLH",
-    "converse with Maria_Lopez about Expansion plan discussion"
+    "converse with Maria_Lopez about Expansion plans for the restaurant chain"
   ],
   [
     "0:8:50",
     "MLH",
-    "converse with Maria_Lopez about expansion plan"
-  ],
-  [
-    "0:8:50",
-    "MLH",
-    "go over the plan for expansion into new markets with Zhang Chen and Emily Carter"
+    "converse with Maria_Lopez about Expansion plans for the restaurant chain"
   ],
   [
     "0:9:0",
     "MLH",
-    "converse with Maria_Lopez about expansion plan"
+    "Continue with market research and analyzing collected data"
   ],
   [
     "0:9:10",
-    "DTL",
-    "Meet with the team to discuss expansion plan and gather feedback"
+    "MLH",
+    "Continue with market research and analyzing collected data"
   ],
   [
     "0:9:20",
     "MLH",
-    "go to Maria Lopez Home and discuss the expansion plan with Zhang Chen and Emily Carter"
+    "Continue with market research and analyzing collected data"
   ],
   [
     "0:9:30",
     "MLH",
-    "meet with the team to discuss expansion plan and gather feedback"
+    "Continue with market research and analyzing collected data."
   ],
   [
     "0:9:40",
     "MLH",
-    "Meet with the team to discuss expansion plan and gather feedback"
+    "Continue with market research and analyzing collected data."
   ],
   [
     "0:9:50",
     "MLH",
-    "Meet with the team to discuss expansion plan and gather feedback"
+    "Continue with market research and analyzing collected data"
   ],
   [
     "0:10:0",
     "MLH",
-    "From 10am to 11am, David Thompson will work on improving customer satisfaction by reviewing feedback and suggestions from previous customers."
+    "From 10 o'clock to 11 o'clock, David Thompson will analyze the collected data and identify key trends and insights at Maria Lopez Home, updating the restaurant brand strategy accordingly."
   ],
   [
     "0:10:10",
     "MLH",
-    "From 10am to 11am, David Thompson should work on improving customer satisfaction by reviewing feedback and suggestions from previous customers."
+    "analyze the collected data and identify key trends and insights, updating the restaurant brand strategy accordingly"
   ],
   [
     "0:10:20",
     "MLH",
-    "From 10am to 11am, David Thompson will work on improving customer satisfaction by reviewing feedback and suggestions from previous customers at Maria Lopez Home"
+    "talk with Maria Lopez about financial status and budget for expansion plans"
   ],
   [
     "0:10:30",
     "MLH",
-    "From 10am to 10:10am, David Thompson will discuss with Maria Lopez about the expansion plan and financial planning at Maria Lopez Home (MLH)"
+    "stay"
   ],
   [
     "0:10:40",
     "MLH",
-    "From 10am to 11am, David Thompson should work on improving customer satisfaction by reviewing feedback and suggestions from previous customers."
+    "continue discussing the expansion plans with Maria Lopez"
   ],
   [
     "0:10:50",
     "MLH",
-    "From 10am to 11am, David Thompson should work on improving customer satisfaction by reviewing feedback and suggestions from previous customers."
+    "continue discussing expansion plans with Maria Lopez"
   ],
   [
     "0:11:0",
     "DTL",
-    "meet with team to discuss expansion plan and gather feedback"
+    "meet with the team to discuss the expansion plans"
   ],
   [
     "0:11:10",
-    "MLH",
-    "meet with team to discuss expansion plan and gather feedback"
+    "DTL",
+    "During the time from 11:00 PM to 12:00 PM, David Thompson will analyze the collected data and identify key trends and insights. He will then update the restaurant brand strategy accordingly."
   ],
   [
     "0:11:20",
-    "MLH",
-    "meet with team to discuss expansion plan and gather feedback"
+    "DTL",
+    "analyze the collected data and identify key trends and insights. Update the restaurant brand strategy accordingly."
   ],
   [
     "0:11:30",
     "DTL",
-    "meet with team to discuss expansion plan and gather feedback"
+    "analyze the collected data and identify key trends and insights. Update the restaurant brand strategy accordingly."
   ],
   [
     "0:11:40",
-    "MLH",
-    "meet with team to discuss expansion plan and gather feedback"
+    "DTL",
+    "During the time from 11:00 PM to 12:00 PM, David Thompson will analyze the collected data and identify key trends and insights. Update the restaurant brand strategy accordingly."
   ],
   [
     "0:11:50",
-    "MLH",
-    "meet with team to discuss expansion plan and gather feedback"
+    "DTL",
+    "analyze the collected data and identify key trends and insights. Update the restaurant brand strategy accordingly."
   ],
   [
     "0:12:0",
-    "MLH",
-    "have lunch and discuss the day's progress with key team members"
+    "DTL",
+    "Lunch break. Meet with the team or have a personal lunch."
   ],
   [
     "0:12:10",
-    "MLH",
-    "have lunch and discuss the day's progress with key team members"
+    "DTL",
+    "Lunch break. Meet with the team or have a personal lunch."
   ],
   [
     "0:12:20",
-    "MLH",
-    "have lunch and discuss the day's progress with key team members"
+    "DTL",
+    "Planning to Lunch break. Meet with the team"
   ],
   [
     "0:12:30",
-    "MLH",
-    "have lunch and discuss the day's progress with key team members"
+    "DTL",
+    "Lunch break. Meet with the team or have a personal lunch."
   ],
   [
     "0:12:40",
     "DTL",
-    "have lunch and discuss the day's progress with key team members"
+    "Lunch break. Meet with the team"
   ],
   [
     "0:12:50",
     "DTL",
-    "have lunch and discuss the day's progress with key team members"
+    "Lunch break. Meet with the team or have a personal lunch."
   ],
   [
     "0:13:0",
-    "MLH",
-    "continue discussing with Maria Lopez about the expansion plan"
+    "DTL",
+    "Conduct market research"
   ],
   [
     "0:13:10",
     "DTL",
-    "continue discussing the expansion plan with the team"
+    "Conduct market research"
   ],
   [
     "0:13:20",
     "DTL",
-    "continuing with the current tasks"
+    "Conduct market research"
   ],
   [
     "0:13:30",
     "DTL",
-    "continuing with the current tasks"
+    "Conduct market research"
   ],
   [
     "0:13:40",
-    "MLH",
-    "continue discussing the expansion plan with Maria Lopez"
+    "DTL",
+    "Conduct market research"
   ],
   [
     "0:13:50",
-    "DTL",
-    "continue discussing the expansion plan with the team"
+    "MLH",
+    "Conduct market research"
   ],
   [
     "0:14:0",
-    "DTL",
-    "Attend to administrative tasks and prepare for tomorrow's schedule"
+    "MLH",
+    "Conduct market research"
   ],
   [
     "0:14:10",
-    "DTL",
-    "Attend to administrative tasks and prepare for tomorrow's schedule"
+    "MLH",
+    "Conduct market research"
   ],
   [
     "0:14:20",
     "DTL",
-    "Attend to administrative tasks and prepare for tomorrow's schedule"
+    "Conduct market research"
+  ],
+  [
+    "0:14:30",
+    "MLH",
+    "Conduct market research"
+  ],
+  [
+    "0:14:40",
+    "DTL",
+    "Conduct market research"
+  ],
+  [
+    "0:14:50",
+    "DTL",
+    "Conduct market research"
+  ],
+  [
+    "0:15:0",
+    "DTL",
+    "Focus on other primary work tasks"
+  ],
+  [
+    "0:15:10",
+    "MLH",
+    "will discuss with Maria Lopez about the recent sales figures and marketing strategies"
+  ],
+  [
+    "0:15:20",
+    "DTL",
+    "continue discussing with the team about the expansion plans"
+  ],
+  [
+    "0:15:30",
+    "DTL",
+    "Focus on other primary work tasks"
+  ],
+  [
+    "0:15:40",
+    "DTL",
+    "Focus on other primary work tasks"
+  ],
+  [
+    "0:15:50",
+    "DTL",
+    "Focus on other primary work tasks"
+  ],
+  [
+    "0:16:0",
+    "DTL",
+    "Focus on other primary work tasks, including project management, team building, and strategic planning"
+  ],
+  [
+    "0:16:10",
+    "DTL",
+    "Focus on other primary work tasks, including project management, team building, and strategic planning"
   ]
 ]

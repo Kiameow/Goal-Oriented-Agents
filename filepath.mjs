@@ -14,3 +14,7 @@ export function getAgentsPath() {
 export function getScenPath() {
     return __dirname + "/scen";
 }
+
+export function getProjectPath() {
+    return __dirname + "/project";
+}

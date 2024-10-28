@@ -1,0 +1,39 @@
+{{!
+  generateTaskTemplate.hbs
+  Variables:
+    commonset
+    agentName
+    goal
+    role
+    datetime
+    wakeHour
+}}
+---
+{{commonset}}
+
+{{ agentName }}'s professional goal is {{ goal }}, working as {{ role }}.
+---
+Today is day {{datetime}}. {{agentName}} wakes up at {{wakeHour}}am. Generate a list of specific work-related tasks that {{agentName}} needs to accomplish today, based on their role and responsibilities. Each task should include the following details: description, start time, deadline and progress. The progress should start at 0.
+
+The output should be in the form of a JSON object that has the following structure:
+
+<##FLAG##>
+{
+  "tasks": [
+    {
+      "description": "<Task description>",
+      "startTime": "<Start time>",
+      "deadline": "<Deadline>",
+      "progress": 0
+    },
+    {
+      "description": "<Task description>",
+      "startTime": "<Start time>",
+      "deadline": "<Deadline>",
+      "progress": 0
+    }
+  ]
+}
+<##FLAG##>
+
+Please generate all tasks {{agentName}} should complete during working hours. Ensure the tasks are relevant to {{role}}'s responsibilities.

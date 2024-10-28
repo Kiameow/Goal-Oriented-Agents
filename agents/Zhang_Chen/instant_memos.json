@@ -1,6 +1,6 @@
 {
   "currentLocation": "DTL",
-  "dailyPlans": "\n1. 9am to 10am: Wake up, check emails and plan for the day ahead in terms of marketing tasks.\n2. 10am to 12pm: Analyze market trends and develop effective marketing strategies for the restaurant.\n3. 12pm to 1pm: Have lunch and review previous marketing projects to identify areas for improvement.\n4. 1pm to 3pm: Work on creative promotion strategies to achieve brand exposure and sales growth.\n5. 3pm to 4pm: Collaborate with the team to discuss marketing strategies and ensure successful implementation.\n6. 4pm to 5pm: Work on customer satisfaction surveys to gather feedback and improve marketing strategies accordingly.\n7. 5pm to 6pm: Check progress of marketing projects and make necessary adjustments to ensure efficient execution capabilities.\n8. 6pm to 9pm: Rest and prepare for tomorrow's marketing tasks.",
+  "dailyPlans": "\n1. 9:00 AM to 10:00 AM: Wake up, morning routine (hygiene, get dressed). Prepare for the day by going through a regular morning routine.\n2. 10:00 AM to 12:00 PM: Conduct market research on food brand preferences and needs. Start with online research, exploring market trends and target audience preferences.\n3. 12:00 PM to 1:30 PM: Lunch break. Have a balanced meal and relax for a while.\n4. 1:30 PM to 5:30 PM: Analyze market research data and develop marketing strategies based on the insights gained. Identify potential opportunities and threats in the market.\n5. 5:30 PM to 7:00 PM: Work on other marketing tasks or prepare for upcoming meetings. This could include planning promotional activities or creating marketing materials.\n6. 7:00 PM to 9:00 PM: Dinner break. Have a relaxing meal with family or friends, discuss non-work related topics, and unwind from the day's stress.\n7. 9:00 PM to 10:30 PM: Review the day's work and prepare for tomorrow's tasks. Update any necessary documents or plans and plan for the next day's market research activities if necessary.\n8. 10:30 PM to 7:00 AM: Sleep and rest for the next day. Get adequate rest to recharge for the next day's activities and meet the challenges of the role as a marketing specialist.\n",
   "hourlyPlans": [
     {
       "plan": "sleep",
@@ -48,77 +48,77 @@
       "isDone": false
     },
     {
-      "plan": "Wake up, check emails, and plan daily marketing tasks.",
+      "plan": "Wake up, conduct morning routine, and prepare for the day.",
       "clockScale": 10,
       "isDone": false
     },
     {
-      "plan": "From 10am to 11am, Zhang Chen should analyze market trends and develop marketing strategies for the restaurant.",
+      "plan": "From 10:00 AM to 11:00 AM, Zhang Chen should continue with his market research on food brand preferences and needs.",
       "clockScale": 11,
       "isDone": false
     },
     {
-      "plan": "Analyze market trends and develop marketing strategies during 11am to 12pm.",
+      "plan": "From 11:00 AM to 12:00 PM, Zhang Chen should continue with market research on food brand preferences and needs.",
       "clockScale": 12,
       "isDone": false
     },
     {
-      "plan": "have lunch and review previous marketing projects.",
+      "plan": "Have lunch break and relax for a while.",
       "clockScale": 13,
       "isDone": false
     },
     {
-      "plan": "From 1pm to 2pm, Zhang Chen should work on creative promotion strategies to achieve brand exposure and sales growth.",
+      "plan": "From 1 PM to 2 PM, Zhang Chen should continue with his on-going marketing tasks.",
       "clockScale": 14,
       "isDone": false
     },
     {
-      "plan": "From 14:00 to 15:00, Zhang Chen should work on creative promotion strategies to achieve brand exposure and sales growth.",
+      "plan": "From 14:00 to 15:00, Zhang Chen should analyze market research data and develop marketing strategies.",
       "clockScale": 15,
       "isDone": false
     },
     {
-      "plan": "Collaborate with team on marketing strategies.",
+      "plan": "Analyze market research data.",
       "clockScale": 16,
       "isDone": false
     },
     {
-      "plan": "Collaborate with team on marketing strategies and ensure successful implementation.",
+      "plan": "From 4:30 PM to 5:30 PM, agent should analyze market research data and develop marketing strategies. After that, from 5:30 PM to 7:00 PM, agent should work on other marketing tasks or prepare for upcoming meetings. Therefore, during the time from 4:00 PM to 5:30 PM, the agent should continue with the on-going task of analyzing market research data and developing marketing strategies.",
       "clockScale": 17,
       "isDone": false
     },
     {
-      "plan": "Collaborate with the team during 5pm to 6pm to discuss marketing strategies and ensure successful implementation of projects. From 6pm to 7pm, rest and prepare for tomorrow's marketing tasks.",
+      "plan": "Dinner break. Have a relaxing meal with family or friends.",
       "clockScale": 18,
       "isDone": false
     },
     {
-      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "plan": "During the time from 6:00 PM to 7:00 PM, Zhang Chen should have his dinner break. He should have a relaxing meal with family or friends, discuss non-work related topics, and unwind from the day's stress.",
       "clockScale": 19,
       "isDone": false
     },
     {
-      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "plan": "From 7:00 PM to 9:00 PM, Zhang Chen should take a dinner break, have a relaxing meal with family or friends, discuss non-work related topics, and unwind from the day's stress. After that, from 9:00 PM to 10:30 PM, he should review the day's work and prepare for tomorrow's tasks, update necessary documents or plans, and plan for the next day's market research activities if necessary. Therefore, from 19:00 to 20:00, he should focus on reviewing the day's work and preparing for tomorrow's tasks.",
       "clockScale": 20,
       "isDone": false
     },
     {
-      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "plan": "From 20:00 to 21:00, Zhang Chen should review the day's work and prepare for tomorrow's tasks.",
       "clockScale": 21,
       "isDone": false
     },
     {
-      "plan": "From 21:00 to 22:00, Zhang Chen should rest and prepare for the next day's marketing tasks.",
+      "plan": "From 9 PM to 10 PM, Zhang Chen should review the day's work and prepare for tomorrow's tasks. He should update necessary documents or plans as needed and plan for the next day's market research activities if necessary. Therefore, from 21'o clock to 22'o clock, the agent should be reviewing the day's work and preparing for tomorrow's tasks while adhering to the schedule set by Zhang Chen.",
       "clockScale": 22,
       "isDone": false
     },
     {
-      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "plan": "From 22:00 to 23:00, Zhang Chen should review the day's work and prepare for tomorrow's tasks.",
       "clockScale": 23,
       "isDone": false
     },
     {
-      "plan": "Rest and prepare for tomorrow's marketing tasks.",
+      "plan": "prepare for tomorrow and go to bed early",
       "clockScale": 24,
       "isDone": false
     }
@@ -127,5 +127,6 @@
     "0:0:0",
     "stay",
     "keep doing what you are doing"
-  ]
+  ],
+  "innerThoughts": ""
 }

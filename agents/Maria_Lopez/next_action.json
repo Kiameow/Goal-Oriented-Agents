@@ -190,6 +190,11 @@
     "sleep"
   ],
   [
+    "0:6:10",
+    "MLH",
+    "sleep"
+  ],
+  [
     "0:6:20",
     "MLH",
     "sleep"
@@ -221,6 +226,36 @@
   ],
   [
     "0:7:20",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:30",
+    "MLH",
+    "sleep"
+  ],
+  [
+    "0:7:30",
     "MLH",
     "sleep"
   ],
@@ -280,173 +315,223 @@
     "sleep"
   ],
   [
-    "0:8:50",
-    "MLH",
-    "sleep"
-  ],
-  [
     "0:9:0",
     "MLH",
-    "converse with David_Thompson about expansion plan"
+    "Wake up and perform morning routine"
   ],
   [
     "0:9:10",
     "MLH",
-    "converse with Zhang_Chen,Emily_Carter about discuss the plan to expand the restaurant chain into new markets"
+    "Wake up, perform morning routine."
   ],
   [
     "0:9:20",
     "MLH",
-    "converse with Zhang_Chen,Zhang_Chen about discussion about the expansion plan into new markets"
+    "Wake up, perform morning routine"
   ],
   [
     "0:9:30",
     "MLH",
-    "Wake up, prepare for the day, set goals for the restaurant launch project"
+    "Wake up, perform morning routine."
   ],
   [
     "0:9:40",
     "MLH",
-    "Wake up, prepare for the day, set goals for the restaurant launch project"
+    "Wake up, perform morning routine."
   ],
   [
     "0:9:50",
     "MLH",
-    "converse with Zhang_Chen,Zhang_Chen about The plan to expand the restaurant chain into new markets"
+    "Wake up, perform morning routine"
   ],
   [
     "0:10:0",
     "MLH",
-    "meet with other founders and discuss the strategic plan for the restaurant brand"
+    "continue with the market research to understand the target audience's preferences and needs regarding food brands"
   ],
   [
     "0:10:10",
     "MLH",
-    "meet with other founders and discuss the strategic plan for the restaurant brand"
+    "continue with the market research to understand the target audience's preferences and needs regarding food brands"
   ],
   [
     "0:10:20",
     "MLH",
-    "prepare for the meeting with other founders and discuss the strategic plan for the restaurant brand"
+    "continue with the market research to understand the target audience's preferences and needs regarding food brands"
   ],
   [
     "0:10:30",
     "MLH",
-    "meet with other founders and discuss the strategic plan for the restaurant brand"
+    "continue with the market research to understand the target audience's preferences and needs regarding food brands"
   ],
   [
     "0:10:40",
     "MLH",
-    "meet with other founders and discuss the strategic plan for the restaurant brand"
+    "continue with the market research to understand the target audience's preferences and needs regarding food brands"
   ],
   [
     "0:10:50",
     "MLH",
-    "meet with other founders and discuss the strategic plan for the restaurant brand"
+    "continue with the market research to understand the target audience's preferences and needs regarding food brands"
   ],
   [
     "0:11:0",
     "MLH",
-    "meet with founders and discuss strategic plan"
+    "perform market research to understand target audience preferences and needs. This could include analyzing customer surveys, conducting interviews, or browsing online reviews and social media platforms."
   ],
   [
     "0:11:10",
     "MLH",
-    "meet with founders and discuss strategic plan"
+    "perform market research to understand target audience preferences and needs"
   ],
   [
     "0:11:20",
     "MLH",
-    "meet with founders and discuss strategic plan"
+    "Perform market research to understand target audience preferences and needs. This could include analyzing customer surveys, conducting interviews, or browsing online reviews and social media platforms."
   ],
   [
     "0:11:30",
     "MLH",
-    "meet with founders and discuss strategic plan"
+    "Perform market research to understand target audience preferences and needs. This could include analyzing customer surveys, conducting interviews, or browsing online reviews and social media platforms."
   ],
   [
     "0:11:40",
     "MLH",
-    "meet with founders and discuss strategic plan"
+    "perform market research to understand target audience preferences and needs"
   ],
   [
     "0:11:50",
     "MLH",
-    "meet with founders and discuss strategic plan"
+    "Perform market research to understand target audience preferences and needs. This could include analyzing customer surveys, conducting interviews, or browsing online reviews and social media platforms."
   ],
   [
     "0:12:0",
     "MLH",
-    "Manage budget allocation for the restaurant launch"
+    "plan lunch and discuss market research findings with others"
   ],
   [
     "0:12:10",
     "MLH",
-    "Manage budget allocation for the restaurant launch"
+    "eat lunch and discuss market research findings with David Thompson in the Home"
   ],
   [
     "0:12:20",
     "MLH",
-    "manage budget allocation for the restaurant launch"
+    "eat lunch"
   ],
   [
     "0:12:30",
     "MLH",
-    "Manage budget allocation for the restaurant launch"
+    "eat lunch"
   ],
   [
     "0:12:40",
     "MLH",
-    "Manage budget allocation for the restaurant launch"
+    "eat lunch"
   ],
   [
     "0:12:50",
     "MLH",
-    "Manage budget allocation for the restaurant launch"
+    "plan to eat lunch and discuss market research findings with others in the dining area of Maria Lopez Home"
   ],
   [
     "0:13:0",
     "MLH",
-    "Research market trends and identify potential customers for the restaurant"
+    "analyze financial data and budgets"
   ],
   [
     "0:13:10",
     "MLH",
-    "Research market trends and identify potential customers for the restaurant"
+    "stay and rest for a while before the meeting"
   ],
   [
     "0:13:20",
     "MLH",
-    "Research market trends and identify potential customers for the restaurant"
+    "stay and rest"
   ],
   [
     "0:13:30",
     "MLH",
-    "Research market trends and identify potential customers for the restaurant"
+    "rest and prepare for the meeting"
   ],
   [
     "0:13:40",
     "MLH",
-    "Research market trends and identify potential customers for the restaurant"
+    "prepare for the meeting by reviewing financial data and budgets"
   ],
   [
     "0:13:50",
     "MLH",
-    "Research market trends and identify potential customers for the restaurant"
+    "rest and prepare for the meeting"
   ],
   [
     "0:14:0",
     "MLH",
-    "continue with her on-going tasks."
+    "Analyze financial data and budgets. Collaborate with the team on strategic planning."
   ],
   [
     "0:14:10",
     "MLH",
-    "continue with her on-going tasks at home"
+    "Analyze financial data and budgets. Collaborate with the team on strategic planning."
   ],
   [
     "0:14:20",
     "MLH",
-    "continue with her on-going tasks"
+    "Analyze financial data and budgets. Collaborate with the team on strategic planning."
+  ],
+  [
+    "0:14:30",
+    "MLH",
+    "Analyze financial data and budgets. Discuss with David Thompson about the strategic plans and budget allocation"
+  ],
+  [
+    "0:14:40",
+    "MLH",
+    "Analyze financial data and budgets. Collaborate with the team on strategic planning."
+  ],
+  [
+    "0:14:50",
+    "MLH",
+    "Analyze financial data and budgets. Collaborate with the team on strategic planning."
+  ],
+  [
+    "0:15:0",
+    "MLH",
+    "rest"
+  ],
+  [
+    "0:15:10",
+    "MLH",
+    "plan to meet with the marketing team to discuss marketing strategies"
+  ],
+  [
+    "0:15:20",
+    "MLH",
+    "prepare for the meeting"
+  ],
+  [
+    "0:15:30",
+    "MLH",
+    "prepare for the meeting"
+  ],
+  [
+    "0:15:40",
+    "MLH",
+    "plan about restaurant chain expansion"
+  ],
+  [
+    "0:15:50",
+    "MLH",
+    "stay"
+  ],
+  [
+    "0:16:0",
+    "MLH",
+    "Collaborate with the team on strategic planning"
+  ],
+  [
+    "0:16:10",
+    "MLH",
+    "Collaborate with the team on strategic planning"
   ]
 ]

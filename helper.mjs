@@ -22,6 +22,19 @@ export async function writeJsonFileAsync(filepath, data) {
     await fsAsync.writeFile(filepath, jsonContent, 'utf-8');
 }
 
+export async function ensureFileExists(filePath, defaultContent) {
+    try {
+        return await readJsonFileAsync(filePath);
+    } catch (error) {
+        if (error.code === 'ENOENT') {
+            await writeJsonFileAsync(filePath, defaultContent);
+            return defaultContent;
+        } else {
+            throw error;
+        }
+    }
+}
+
 export async function handlebarHydrate(templatePath, data) {
     const template = await fsAsync.readFile(templatePath, 'utf-8');
     const compliedTemplate = Handlebars.compile(template);
@@ -87,4 +100,16 @@ export function hasOverlap(arrA, arrB) {
 export function containsChinese(str) {
     const chineseRegex = /[\u4e00-\u9fff]/;
     return chineseRegex.test(str);
+}
+
+// write me a function to extract the last number in the string
+export function extractLastNumber(str) {
+    if (typeof str !== 'string') {
+        return null;
+    }
+    const matches = str.match(/\d+/g);
+    if (matches && matches.length > 0) {
+        return parseInt(matches[matches.length - 1], 10);
+    }
+    return null;
 }

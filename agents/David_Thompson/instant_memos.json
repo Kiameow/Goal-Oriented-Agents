@@ -1,6 +1,6 @@
 {
   "currentLocation": "DTL",
-  "dailyPlans": "1. 6am to 7am: Wake up, exercise and prepare for the day.\n2. 7am to 8am: Review the restaurant chain's current status and identify any issues or challenges.\n3. 8am to 9am: Plan for the expansion into new markets, focusing on strategic locations and market research.\n4. 9am to 10am: Meet with the team to discuss the expansion plan and gather feedback.\n5. 10am to 12pm: Work on improving customer satisfaction by reviewing feedback and suggestions from previous customers.\n6. 12pm to 1pm: Have lunch and discuss the day's progress with key team members.\n7. 1pm to 3pm: Focus on project management, ensuring all current projects are running smoothly and meeting deadlines.\n8. 3pm to 4pm: Attend to administrative tasks and prepare for tomorrow's schedule.\n9. 4pm to 5pm: Work on long-term growth strategies, including product development and market research.\n10. 5pm to 6pm: Relax and enjoy some personal time before dinner and rest for the day.",
+  "dailyPlans": "\n1. 6:00 AM to 7:00 AM: Wake up, perform morning routine (hygiene, get dressed).\n2. 7:00 AM to 8:00 AM: Breakfast. Review the day's schedule and prepare for the day's work.\n3. 8:00 AM to 10:00 AM: Conduct market research to understand the target audience's preferences and needs for food brands. Start with online surveys, interviews, and market analysis.\n4. 10:00 AM to 12:00 PM: Analyze the collected data and identify key trends and insights. Update the restaurant brand strategy accordingly.\n5. 12:00 PM to 1:30 PM: Lunch break. Meet with the team or have a personal lunch.\n6. 1:30 PM to 4:30 PM: Focus on other primary work tasks, including project management, team building, and strategic planning.\n7. 4:30 PM to 5:30 PM: Review the day's work and plan for tomorrow's activities. Update any necessary documents or plans.\n8. 5:30 PM to 7:00 PM: Evening personal time (exercise, relaxation, family time).\n9. 7:00 PM to 9:00 PM: Dinner and catch up on social media or news.\n10. 9:00 PM to 10:30 PM: Prepare for bedtime, read or watch something relaxing before turning in.\n11. 10:30 PM to 7:00 AM: Sleep and rest for the next day.\n",
   "hourlyPlans": [
     {
       "plan": "sleep",
@@ -33,92 +33,92 @@
       "isDone": false
     },
     {
-      "plan": "Exercise and prepare for the day.",
+      "plan": "Wake up, perform morning routine (hygiene, get dressed).",
       "clockScale": 7,
       "isDone": false
     },
     {
-      "plan": "Focus on project management, ensure current projects are running smoothly and meeting deadlines.",
+      "plan": "Breakfast. Review the day's schedule and prepare for work.",
       "clockScale": 8,
       "isDone": false
     },
     {
-      "plan": "8am to 9am: Plan for expansion into new markets, focus on strategic locations and market research.",
+      "plan": "Conduct market research, analyze data, and identify key trends from 8 o'clock to 9 o'clock.",
       "clockScale": 9,
       "isDone": false
     },
     {
-      "plan": "Meet with the team to discuss expansion plan and gather feedback.",
+      "plan": "Continue with market research and analyzing collected data.",
       "clockScale": 10,
       "isDone": false
     },
     {
-      "plan": "From 10am to 11am, David Thompson should work on improving customer satisfaction by reviewing feedback and suggestions from previous customers.",
+      "plan": "From 10 o'clock to 11 o'clock, David Thompson should analyze the collected data and identify key trends and insights, updating the restaurant brand strategy accordingly.",
       "clockScale": 11,
       "isDone": false
     },
     {
-      "plan": "meet with team to discuss expansion plan and gather feedback.",
+      "plan": "During the time from 11:00 PM to 12:00 PM, David Thompson should analyze the collected data and identify key trends and insights. Update the restaurant brand strategy accordingly.",
       "clockScale": 12,
       "isDone": false
     },
     {
-      "plan": "have lunch and discuss the day's progress with key team members.",
+      "plan": "Lunch break. Meet with the team or have a personal lunch.",
       "clockScale": 13,
       "isDone": false
     },
     {
-      "plan": "continuing with the current tasks assigned to him",
+      "plan": "Conduct market research.",
       "clockScale": 14,
       "isDone": false
     },
     {
-      "plan": "Attend to administrative tasks and prepare for tomorrow's schedule during 14'o clock to 15'o clock.",
+      "plan": "Conduct market research.",
       "clockScale": 15,
       "isDone": false
     },
     {
-      "plan": "Work on long-term growth strategies.",
+      "plan": "Focus on other primary work tasks during this period.",
       "clockScale": 16,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "plan": "Focus on other primary work tasks, including project management, team building, and strategic planning during 4:30 PM to 5:30 PM. Continue with these tasks from 5:30 PM to 6:30 PM.",
       "clockScale": 17,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "plan": "David Thompson from 5:30 PM to 7:00 PM should focus on his evening personal time for exercise, relaxation, and family time.",
       "clockScale": 18,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "plan": "From 18:00 to 19:00 PM, David Thompson should focus on other primary work tasks, including project management, team building, and strategic planning.",
       "clockScale": 19,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy personal time.",
+      "plan": "Dinner and continue with social media or news.",
       "clockScale": 20,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy personal time before dinner and rest for the day from 20:00 to 21:00.",
+      "plan": "During the time from 20:00 to 21:00, David Thompson should focus on his evening personal time, which might include exercise, relaxation, or family time. Therefore, the agent should suggest him to <Keep up with his routine and enjoy some personal time>.",
       "clockScale": 21,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "plan": "Dinner and social media or news catch up.",
       "clockScale": 22,
       "isDone": false
     },
     {
-      "plan": "Relax and enjoy personal time before dinner and rest for the day.",
+      "plan": "During the time from 22:00 to 23:00, David Thompson should focus on other primary work tasks, including project management, team building, and strategic planning.",
       "clockScale": 23,
       "isDone": false
     },
     {
-      "plan": "Relax, enjoy personal time, and prepare for the next day.",
+      "plan": "From 23:00 to 24:00, David Thompson should prepare for bedtime, read or watch something relaxing before turning in.",
       "clockScale": 24,
       "isDone": false
     }
@@ -127,5 +127,6 @@
     "0:0:0",
     "stay",
     "keep doing what you are doing"
-  ]
+  ],
+  "innerThoughts": ""
 }
