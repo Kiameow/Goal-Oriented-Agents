@@ -337,7 +337,7 @@ class GlobalTaskManager {
     async appendToProjectHistory(action) {
         try {
             const currentState = {
-                timestamp: new Date().toISOString(),
+                timestamp: globalTime.getCurrentTimestamp(),
                 action: action,
                 projectInfo: { ...this.projectInfo }
             };
